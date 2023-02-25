@@ -1,0 +1,11 @@
+ACB-Bible.db cross reference map legends for Json files:
+
+BibleBooks To:
+JsonBooks:
+	BookID: id
+	Chapters: c
+	Title: t
+
+BibleVerses To:
+JsonVerses:
+	VerseID: id

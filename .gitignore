@@ -126,3 +126,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 DATA/ACB-Bible.db
+DATA/ACB-DB/ACB-Bible.db
