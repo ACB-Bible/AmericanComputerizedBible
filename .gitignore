@@ -125,6 +125,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
 DATA/ACB-Bible.db
 DATA/ACB-DB/ACB-Bible.db
 *.sqbpro
