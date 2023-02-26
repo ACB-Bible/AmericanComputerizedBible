@@ -1,0 +1,1 @@
+var mainDataPath = 'https://github.com/ACB-Bible/AmericanComputerizedBible/'
