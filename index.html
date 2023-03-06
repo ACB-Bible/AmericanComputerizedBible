@@ -5,147 +5,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About ACB</title>
-    <link rel="icon" type="image/x-icon" href="./IMAGES/favicon.ico">
+    <link href="./IMAGES/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./CSS/main.css" rel="stylesheet" type="text/css">
+    <title>American Computerized Bible</title>
 </head>
-<style>
-    html {
-        font-size: 112%;
-        height: 100%;
-        width: 100%;
-        z-index: 200;
-    }
-
-    body {
-        height: 100%;
-        width: 100%;
-        overflow-x: hidden;
-        z-index: 150;
-    }
-
-    h1,
-    h2 {
-        width: 55%;
-        margin: auto;
-    }
-
-    .cs-acbMain {
-        position: relative;
-        width: 70%;
-        margin: auto;
-        z-index: 100;
-    }
-
-    .cs-acbParagraph {
-        width: 58%;
-        margin: auto;
-        text-align: justify;
-        word-break: keep-all;
-        padding-bottom: 1em;
-        z-index: 70;
-    }
-
-    .cs-acbCenter {
-        text-align: center;
-    }
-
-    .cs-acbBold {
-        font-size: 1.2rem;
-        font-weight: 550;
-    }
-
-    .cs-acbBold1 {
-        font-size: 2.2rem;
-        font-weight: 800;
-    }
-
-    .cs-acbCrimson {
-        color: crimson;
-        font-size: .9rem;
-        font-weight: 600;
-    }
-
-    .cs-acbGold {
-        color: #9e6105;
-    }
-
-    .cs-acbJesusSays {
-        color: rgb(20, 98, 243);
-        background-color: #fcefed;
-        padding-bottom: .1em;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    .cs-acbNumber {
-        font-size: .75rem;
-        font-weight: 600;
-        padding-right: .15em;
-        color: #9e6105;
-        vertical-align: .15em;
-    }
-
-    .cs-acbPardon {
-        width: 40%;
-    }
-
-    .cs-acbSignature {
-        font-style: italic;
-    }
-
-</style>
 
 <body>
-    <div id="id-acbMain" class="cs-acbMain">
-        <br>
-        <p class="cs-acbCenter cs-acbParagraph cs-acbBold1">American <span class="cs-acbGold">Computerized</span> Bible
-        </p><br>
-        <h2>In The Beginning, God Created!</h2><br>
-        <p id="id-acbParagraph1" class="cs-acbParagraph">
+    <div id="id-acbHeader" class="cs-acbHeader">
+        <p class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible</p>
+        <div class="cs-acbMenu">
+            <button id="id-acbBtn1" href="" class="cs-acbMenuBtn acbMenuBtn1">Home</button>
+            <button id="id-acbBtn2" href="" class="cs-acbMenuBtn">Old Testament</button>
+            <button id="id-acbBtn3" href="" class="cs-acbMenuBtn">New Testament</button>
+            <button id="id-acbBtn4" href="" class="cs-acbMenuBtn">Versions</button>
+            <button id="id-acbBtn5" href="" class="cs-acbMenuBtn">About</button>
+        </div>
+    </div>
 
-            <span class="cs-acbBold">The 'American Computerized Bible'</span> is a ministry the Holy Spirit has
-            led me to, and it's a work in progress. It's actually two projects in one, the first part
-            is the technological part which is the actual web page and Bible editing software that
-            we're coding. It will also contain many different public domain versions of the Holy Bible,
-            including The 'Twenty-First Century Bible' which is a new and improved, kinder, gentler version
-            of the Holy Bible that we're translating from various ancient texts including the
-            'King James Version' of the Holy Bible which was first published in 1611. The
-            'Twenty-First Century Bible' is a living Biblical translation and it's inspired by the teachings
-            of Jesus Christ for people in the twenty-first century and beyond to study. As of March 5, 2023,
-            the 'Twenty-first Century Bible' is in the first draft stage, and except for editing and proof
-            reading, translation through the book of Leviticus Chapter: 14, is mostly complete, until
-            tomorrow. The 'American Computerized Bible' currently has eight public domain versions
-            of the Holy Bible in the ACB-Bible database.
-        </p><br>
-
-        <p id="id-acbParagraph2" class="cs-acbParagraph cs-acbBold cs-acbPardon">
-            Pardon our inconsistency, but this web site is being totally rewritten, and
-            it will be down for a while
-        </p><br>
-
-        <p id="id-acbParagraph4" class="cs-acbParagraph">
-
-            <span id="id-acbLine2" class="cs-acbCrimson">Matthew 16:24-25</span><br>
-
-            <span class="cs-acbNumber">24</span>Then Jesus said to His disciples,
-            <span id="id-acbQuote2" class="cs-acbJesusSays"> “If anyone wants to come after
-                Me, he must deny himself, take up his cross, and follow Me.
-                <span class="cs-acbNumber">25</span>For whoever wants to save his life will lose it; but whoever loses
-                his life for My sake will find it.
-                <span class="cs-acbNumber">26</span>For what good will it do a person if he gains the whole world, but
-                forfeits his soul? Or what will a person give in exchange for his soul?
-            </span>
-        </p><br>
-
-        <p id="id-acbParagraph5" class="cs-acbParagraph">
-
-        <span id="id-acbLine1" class="cs-acbCrimson">Revelation 21:5</span><br>
-            <span id="id-acbQuote1" class="cs-acbJesusSays">
-                <span class="cs-acbNumber">5</span>Behold I'm making all things new again.
-                And he said, 'Write this: These words are true and faithful.'"
-            </span><br><br>
-        </p><br><br><br>
-
+    <div id="id-acbMainContainer" class="cs-acbMainContainer">
+        <picture class="cs-acbPic1">
+            <!--<source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">-->
+            <img src="./IMAGES/Lazarus.jpg" alt="Flowers" class="cs-acbImage1">
+        </picture>
+        <div id="id-acbMainText" class="cs-acbMainText">
+            <p id="id-acbTextTitle1" class="cs-acbTextTitle">Twenty-First Century Version</p>
+            <p id="id-acbTextTitle2" class="cs-acbTextTitle">Genesis 1</p>
+            <p>
+                <span class="cs-acbNumber">1</span> In the beginning, God created Heaven and Earth.
+                <span class="cs-acbNumber">2</span> The Earth was void and without form, darkness covered the face of
+                the deep, and God's Spirit moved over the waters.
+                <span class="cs-acbNumber">3</span> And God said, "Let there be light," and there was light.
+                <span class="cs-acbNumber">4</span> God saw that the light was good, and he separated the light from the
+                darkness.
+                <span class="cs-acbNumber">5</span> God called the light Day and the darkness Night. That morning and
+                that evening were the first day.
+            </p>
+            <p>
+                <span class="cs-acbNumber">6</span> And God said, "Let there be a firmament in the middle of the waters,
+                and
+                it'll divide the waters from the waters."
+                <span class="cs-acbNumber">7</span> God made the firmament and divided the waters under the firmament
+                from
+                the waters above the firmament, and it was so.
+                <span class="cs-acbNumber">8</span> God called the firmament Heaven. That morning and that evening were
+                the
+                second day.
+            </p>
+            <p>
+                <span class="cs-acbNumber">9</span> And God said, "Let the waters under Heaven be gathered together into
+                one
+                place and let the dry land appear," and it was so.
+                <span class="cs-acbNumber">10</span> God named the dry land Earth and He called the waters the seas, and
+                God saw that it was good.
+                <span class="cs-acbNumber">11</span> And God said, "Let the Earth bring forth every kind of grass,
+                seed-bearing herb, and fruit-bearing tree, each with their seed," and it was so.
+                <span class="cs-acbNumber">12</span> And the Earth brought forth every kind of grass, herb, and
+                fruit-bearing tree with their seed, and God saw that it was good.
+                <span class="cs-acbNumber">13</span> That morning and that evening were the third day.
+            </p>
+            <p>
+                <span class="cs-acbNumber">14</span> And God said, "Let there be lights in the Heavens to divide the day
+                from the night and let them be a sign for the seasons, days, months, and years.
+                <span class="cs-acbNumber">15</span> Let the lights in the Heavens give light on the Earth," and it was
+                so.
+                <span class="cs-acbNumber">16</span> God made two great lights, the Sun to rule the day, and the Moon
+                and
+                Stars to rule the night.
+                <span class="cs-acbNumber">17</span> God placed the lights in the Heavens to give light to the Earth.
+                <span class="cs-acbNumber">18</span> And to divide the light from the darkness and to rule over the days
+                and
+                nights, and God saw that it was good.
+                <span class="cs-acbNumber">19</span> That morning and that evening were the fourth day.
+            </p>
+            <p>
+                <span class="cs-acbNumber">20</span> And God said, "Let the waters bring forth abundant life with living
+                creatures that move and birds that fly in the Heavens above the Earth."
+                <span class="cs-acbNumber">21</span> God created an abundance of great whales and every kind of living
+                moving creature that lived in the waters, plus every type of winged bird, and God saw that it was good.
+                <span class="cs-acbNumber">22</span> And God blessed them and said, "Be fruitful, multiply, and fill the
+                waters of the seas with abundant life, and let the birds multiply abundantly upon the Earth."
+                <span class="cs-acbNumber">23</span> That morning and that evening were the fifth day.
+            </p>
+            <p>
+                <span class="cs-acbNumber">24</span> And God said, "Let the Earth bring forth every kind of living
+                creature
+                including every kind of cattle, every kind of animal, everything that creeps, and every other living
+                thing
+                on Earth" and it was so.
+                <span class="cs-acbNumber">25</span> God created animals of every kind. He created every kind of cattle,
+                everything that creeps, and every other living thing on Earth, and God saw that it was good.
+            <p>
+                <span class="cs-acbNumber">26</span> And God said, "Let us make man in our image, a man who looks like
+                us.
+                And he'll preserve and control all the fish, birds, cattle, everything that creeps, and every other
+                living
+                thing on Earth."
+                <span class="cs-acbNumber">27</span> So God created man in his image, both male and female.
+                <span class="cs-acbNumber">28</span> God blessed them and said, "Be fruitful, multiply, and replenish the
+                Earth. Take control of the fish, birds, and every other living thing on Earth."
+            </p>
+            <p>
+                <span class="cs-acbNumber">29</span> And God said, "Behold, I've given you every seed-bearing herb and every
+                seed-bearing fruit tree on Earth for you to eat.
+                <span class="cs-acbNumber">30</span> I've given you every living thing on Earth, every beast, every bird,
+                every green herb for food, everything that creeps, and every other living thing on the Earth," and it was so.
+                <span class="cs-acbNumber">31</span> God saw that everything he'd created was very good. That morning and that evening were the sixth day.
+            </p>
+        </div>
+        <br><br><br>
     </div>
 
 </body>
