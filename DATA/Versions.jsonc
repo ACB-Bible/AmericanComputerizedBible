@@ -1,0 +1,69 @@
+/*
+SQLIte3 ACB-Bible.db Map Legend BibleVersions table field to Versions.jsonc key names
+BibleVersions Field:        Versions Key Name:
+    VersionID               id
+    About                   ab
+    Abreviation             ar
+    Available               av
+    VersionName             vn
+*/
+
+
+[
+    {
+        "ab": "Revelation 21:5 Behold I'm making all things new again. And He said, 'Write this: These words are true and faithful.' The Twenty-First Century Bible was begun in 2019, it's a ministry and a work in process that the Lord has blessed me with and laid on my heart. It's being translated from various ancient texts, including \"The King James Version\" of the Bible which was first published in 1611. It's a living translation inspired by the teachings of our savior Jesus Christ for the people in the twenty-first century and beyond. As of February 9, 2023, the outline and rough draft of this translation is mostly complete through the book of Leviticus Chapter: 11. I believe that God through the Holy Spirit has given me these words, and they're not meant to force any kind of religion on you, question your faith, or belittle your relationship with God. These words were given to me to spread the word of love and joy that Jesus Christ offers us. It's my hope that you'll find these words to be inspirational, and that they reinforce your faith in His Son, our savior Jesus Christ...Gregg Butler",
+        "ar": "TWF",
+        "av": 1,
+        "id": 1,
+        "vn": "Twenty-First Century Bible"
+    },
+    {
+        "ab": "The 'American Standard Version(ASV)' of the New Testament in the Bible was translated into English and published in 1900, but it was later revised, re-released, and published along with the translated  version of the Old Testament in 1901. It was originally known by its full name, but soon came to be known by other names, such as the 'American Revised Version,' the 'American Standard Revision,' the 'American Standard Revised Bible,' and the 'American Standard Edition.' By the time its copyright was renewed in 1929, it had come to be known by its present name, the 'American Standard Version.' In the United States because it was used in seminaries, it was sometimes simply referred to as the 'Standard Bible.'",
+        "ar": "ASV",
+        "av": 1,
+        "id": 2,
+        "vn": "American Standard Version"
+    },
+    {
+        "ab": "The 'Bible In Basic English(BBE)' was translated into English by Professor S.H. Hooke using 850 of the most basic standard words in the English language. He added another 100 poetic words and 50 Biblical words for a total of 1,000 from the English language. It was supposed to be easily understood by the common people of the time and effective in communicating the Bible to those with limited a education or where English is a second language. The New Testament was released in 1941 and the Old Testament was released in 1949.",
+        "ar": "BBE",
+        "av": 1,
+        "id": 3,
+        "vn": "Bible in Basic English"
+    },
+    {
+        "ab": "The 'Darby Bible(DBY)' was translated by John Nelson Darby from the original formal, Greek, and Hebrew language texts of the Holy Scriptures. Darby translated and published his version of the Hebrew and Greek texts of the New Testament in 1867, with revised editions in 1872 and 1884. After his death, some of his students produced an Old Testament translation based on Darby's French and German translations. The complete Darby Bible, including Darby's 3rd edition New Testament and his students' Old Testament versions of his translations was first published in 1890.",
+        "ar": "DBY",
+        "av": 1,
+        "id": 4,
+        "vn": "Darby English Bible"
+    },
+    {
+        "ab": "The 'King James Version(KJV)' which also known as the 'King James Bible(KJB)' or the 'Authorized Version(AV)' of the Bible was translated into English for the Church of England. It was commissioned by England's King James VI and I in 1604, and it was completed and published in 1611. The books of the 'King James Version(KJV)' include 39 books of the Old Testament, 27 books of the New Testament, and an intertestamental section that contains 14 books of the Apocrypha. This translation is noted for its 'majesty of style,' and has been described as one of the most important books in English culture and a driving force in shaping the English-speaking world. In my researching the Bible for the 'American Computerized Bible,' I have discovered in my research that there were various attempts to translate the Bible into English since the seventh century. Unless more records are discovered in the future, I have determined that theere were at least six prominent versions of the Bible that were translated before the 'King James Version(KJV)' of the Bible, including the 'Old English Bible(OEB),' circa. pre-1066, the 'Middle English Bible(MEB),' circa. 1066-1500, 'Wycliffe's Bible(WYC)' c.1382-1395, the 'Early Modern English Bible(EMEB),' 'Tyndale Bible(TYN)' c.1526-1535, 'The Great Bible(TGB),' circa. 1539, 'Douay-Rheims Bible(D-R)(DRB)(DRV)', (DRB)New Testament circa. 1582, (DRB)Old Testament circa. 1609-1610.",
+        "ar": "KJV",
+        "av": 1,
+        "id": 5,
+        "vn": "King James Version"
+    },
+    {
+        "ab": "The Noah Webster's (WBT)1833 limited revision of the King James Version focused mainly on replacing archaic words and making simple grammatical changes. For example: 'why' instead of 'wherefore', 'its' instead of 'his' when referring to nonliving things, 'male child' instead of 'manchild', etc. He also introduced euphemisms to remove words he found offensive: 'whore' becomes 'lewd woman' and changed some of the spelling of the 1611 version, some of which had been changed by British usage since 1611 and others that he himself had deliberately changed in his dictionary to reflect an American identity over a British one. Overall, very few changes were made, and the result is a book which is almost indistinguishable from the King James Version. It has sometimes been called the 'Common Version' (which is not to be confused with the Common Bible of 1973, an ecumenical edition of the Revised Standard Version)",
+        "ar": "WBT",
+        "av": 1,
+        "id": 6,
+        "vn": "Webster's Bible"
+    },
+    {
+        "ab": "The World English Bible (also known as the WEB) is a free updated revision of the American Standard Version (1901). It is one of the few public domain, present-day English translations of the entire Bible, and it is freely distributed to the public using electronic formats. The Bible was created by volunteers using the ASV as the base text as part of the ebible.org project through Rainbow Missions, Inc., a Colorado nonprofit corporation",
+        "ar": "WEB",
+        "av": 1,
+        "id": 7,
+        "vn": "World English Bible"
+    },
+    {
+        "ab": "The Young's Literal Translation (YLT) is a translation of the Bible into English, published in 1862. The translation was made by Robert Young, compiler of Young's Analytical Concordance to the Bible and Concise Critical Comments on the New Testament. Young used the Textus Receptus (TR) and the Masoretic Text (MT) as the basis for his translation. He wrote in the preface to the first edition, 'It has been no part of the Translator's plan to attempt to form a New Hebrew or Greek Text—he has therefore somewhat rigidly adhered to the received ones.'",
+        "ar": "YLT",
+        "av": 1,
+        "id": 8,
+        "vn": "Young's Literal Translation"
+    }
+]
