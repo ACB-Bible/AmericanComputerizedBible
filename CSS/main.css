@@ -77,8 +77,8 @@ body {
 }
 
 .cs-acbPic1 {
-    position: relative;
-    top: .2%;
+    position: fixed;
+    top: 16%;
     left: 6.5%;
     float: left;
     width: 13.5%;
@@ -88,7 +88,7 @@ body {
 .cs-acbImage1 {
     border-radius: 3px;
     width:auto;
-    border: 1px solid #9e6105;
+    border: 2px solid #9e6105;
 }
 
 .cs-acbMainText {
