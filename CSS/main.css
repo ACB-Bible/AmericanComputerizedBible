@@ -37,7 +37,6 @@ body {
     width: 38%;
     font-size: 1.7rem;
     float: left;
-    /*background-color:aqua;*/
 }
 
 .cs-acbMenu {
@@ -58,7 +57,6 @@ body {
 
 .cs-acbMenuBtn {
     font-size: .9rem;
-    font-weight: 525;
     padding-left: 2em;
     outline: none;
     border: none;
@@ -76,19 +74,128 @@ body {
     z-index: 110;
 }
 
+.cs-acbVersion {
+    position: relative;
+    top: 3%;
+    height: 3%;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 550;
+}
+
+/* #region Controls for selecting books, chapter, and verses */
+.cs-acbSelectContainer {
+    position: fixed;
+    top: 15%;
+    left: 6.8%;
+    border: 2px solid rgba(112, 111, 111, .4);
+    box-shadow: 0 5px 7px rgba(112, 111, 111, 0.25);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    width: 13.5%;
+    height: 82%;
+    float: Left;
+    background-color: #e8eef1;
+}
+
+.cs-acbSelectLabel {
+    display: flex;
+    position: relative;
+    background-color: #BFCAD1;
+    padding-left: 10px;
+    align-items: center;
+    font-size: .95rem;
+    font-weight: 550;
+    border-left: 2px solid rgba(112, 111, 111, .4);
+    border-top: 2px solid rgba(112, 111, 111, .4);
+    border-right: 2px solid rgba(112, 111, 111, .4);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 5%;
+    width: 26%;
+    width: 76.5%;
+    margin: auto;
+}
+
+.cs-acbBookLabel {
+    top: 6%;
+}
+
+.arrow {
+    display: block;
+    position: relative;
+    left: 60%;
+    border: solid black;
+    border-width: 0 .15em .15em 0;
+    padding: .2em;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transition: all 0.2s ease;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 0.4s ease;
+}
+
+.cs-acbChapterLabel {
+    top: 12%;
+}
+
+.cs-acbSelectBox {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 550;
+    height: 24%;
+    width: 80%;
+    margin: auto;
+    border: 2px solid rgba(112, 111, 111, .4);
+}
+
+.cs-acbBook {
+    display: none;
+    top: 6%;
+    background-color: rgb(252, 248, 248);
+}
+
+.cs-acbOpenBook {
+    display: block;
+}
+
+.cs-acbChapter {
+    top: 12%;
+    background-color: rgb(252, 248, 248);
+}
+
+/* #endregion Controls for selecting books, chapter, and verses */
+
 .cs-acbPic1 {
     position: fixed;
     top: 16%;
-    left: 6.5%;
-    float: left;
+    left: 78%;
+    float: right;
     width: 13.5%;
     height: 34%;
 }
 
 .cs-acbImage1 {
-    border-radius: 3px;
-    width:auto;
-    border: 2px solid #9e6105;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 2px solid rgba(77, 76, 76, 0.4);
+    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
+    width: auto;
+}
+
+.cs-acbImage2 {
+    position: relative;
+    float: left;
+    padding-right: .5em;
 }
 
 .cs-acbMainText {
@@ -97,7 +204,7 @@ body {
     margin: auto;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color:white;
+    background-color: white;
     padding-top: .2em;
     padding-left: 1.8em;
     padding-right: 1.8em;
