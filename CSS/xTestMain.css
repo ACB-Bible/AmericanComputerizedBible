@@ -105,15 +105,15 @@ body {
 }
 
 .cs-acbBookBox {
-    top: 13%;
+    top: 12%;
 }
 
 .cs-acbChapterBox {
-    top: 23%;
+    top: 22%;
 }
 
 .cs-acbVerseBox {
-    top: 33%;
+    top: 32%;
 }
 
 .cs-acbSelectLabel {
@@ -204,6 +204,17 @@ body {
     overflow: hidden;
     scroll-behavior: none;
     z-index: 9;
+}
+
+.cs-acbSort {
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    background-color: #f6fbfe;
+    padding: .35em;
+    padding-bottom: .35em;
+    font-size: .60em;
+    left: 20%;
 }
 
 .arrow {
