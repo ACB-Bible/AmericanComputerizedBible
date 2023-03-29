@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    //acbFetchVersions();
+    acbFetchVersions();
 });
 
 // #region Fetch functions Section
