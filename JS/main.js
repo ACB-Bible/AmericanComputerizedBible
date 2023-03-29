@@ -4,18 +4,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // #region Fetch functions Section
-function acbFetchVersions() {
-    alert('test Version');
-    acbRemoveItems('id-acbVersion');
-
+async function acbFetchVersions() {
+    const url = "${mainDataPath}DATA/Versions.jsonc"
+    //alert('test Version');
+    //acbRemoveItems('id-acbVersion');
+    const response = await fetch(url);
+    const versions = await response.json();
+    versions.forEach(version => {
+        alert(version.ar);
+    });
 }
 
-function acbFetchBooks() {
+async function acbFetchBooks() {
     alert('test Book');
     acbRemoveItems('id-acbBook');
 }
 
-function acbFetchChapters() {
+async function acbFetchChapters() {
     alert('test Chapter');
     acbRemoveItems('id-acbChapter');
     acbCloseBox();

@@ -180,12 +180,15 @@ body {
 }
 
 .cs-acbSelect {
+    display: inline-block;
     position: relative;
+    text-decoration: none;
     border-bottom: 2px solid rgba(112, 111, 111, 0.20);
     font-family: Tahoma;
     font-size: .82rem;
     font-weight: 400;
     padding: .7em;
+    
     width: 100%;
     z-index: 9;
 }
