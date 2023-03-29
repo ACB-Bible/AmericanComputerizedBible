@@ -4,5 +4,5 @@ var upDown = 0;
 var open = 0;
 var bookOpen = 0;
 var chapterOpen = 0;
-var vreseOpen = 0;
+var verseOpen = 0;
 var versionOpen = 0;

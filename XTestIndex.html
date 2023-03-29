@@ -19,24 +19,24 @@
             <button id="id-acbBtn1" class="cs-acbMenuBtn">Home</button>
             <button id="id-acbBtn2" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old Testament</button>
             <button id="id-acbBtn3" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New Testament</button>
-            <button id="id-acbBtn4" onclick="acbOpenVersion()" class="cs-acbMenuBtn">Versions</button>
+            <button id="id-acbBtn4" onclick="acbOpenClose()" class="cs-acbMenuBtn">Versions</button>
             <button id="id-acbBtn5" class="cs-acbMenuBtn">About</button>
         </div>
     </div>
 
-    <div id="id-acbFixedPanel" onclick="acbClose()" class="cs-acbFixedPanel"></div>
-    <div id="id-acbVersion" class="cs-acbVersion">
+    <div id="id-acbFixedPanel" onclick="acbOpenClose()" class="cs-acbFixedPanel"></div>
+    <div id="id-acbVersionList" class="cs-acbVersion">
         <div id="id-acbInnerVersion" class="cs-acbInnerVersion cs-acbInnerSelectBox">
-            <div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Twenty-First Century Bible</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Song Of Solomon</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version 8</div>
+            <div id="id-acbVersion">
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect" id="1" data-version="TWF">Twenty-First Century Bible</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Song Of Solomon</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version</div>
+                <div id="id-acbVersion1" onclick="acbFetch(4)" class="cs-acbSelect">Test This Version 8</div>
             </div>
 
         </div>
@@ -44,47 +44,47 @@
 
     <div id="id-acbMainContainer" class="cs-acbMainContainer">
 
-        <div class="cs-acbSelectContainer">
+        <div id="id-acbSelectContainer" onclick="acbOpenClose()" class="cs-acbSelectContainer">
             <h3 id="id-acbTestament" class="cs-acbTestament">Old Testament</h3>
 
             <div class="cs-acbBox cs-acbBookBox">
-                <label for="id-acbBook" class="cs-acbSelectLabel" title="Select a Book" onclick="acbOpenBook()">Book
-                    <span class="cs-acbSort" title="Sort Books Alphabetically">sort</span>
-                        <i id="id-acbArrow" class="arrow down">
-                        </i>
+                <label id="id-acbBookLabel" for="id-acbBook" onclick="acbOpenClose()" class="cs-acbSelectLabel" title="Select a Book">Book
+                    <span id="id-acbSort" class="cs-acbSort" onclick="acbSort()" title="Sort Books Alphabetically">sort</span>
+                    <i id="id-acbArrow1" onclick="acbOpenClose()" class="arrow down"></i>
                 </label>
 
                 <div id="id-acbBook" class="cs-acbSelectBox">
                     <div id="id-acbInnerBook" class=" cs-acbInnerSelectBox">
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Song Of Solomon</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version 8</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Book</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Song Of Solomon</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version 8</div>
 
                     </div>
                 </div>
             </div>
 
             <div class="cs-acbBox cs-acbChapterBox">
-                <label for="id-acbChapter" class="cs-acbSelectLabel cs-acbNarrowLabel"
-                    title="Select a Chapter">Chapter</label>
+                <label id="id-acbChapterLabel" for="id-acbChapter" onclick="acbOpenClose()" class="cs-acbSelectLabel cs-acbNarrowLabel" title="Select a Chapter">Chapter
+                    <i id="id-acbArrow2" class="arrow down"></i>
+                </label>
 
                 <div id="id-acbChapter" class="cs-acbSelectBox">
                     <div id="id-acbInnerChapter" class=" cs-acbInnerSelectBox">
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Song Of Solomon</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version 8</div>
+                        <div id="id-acbVersion1" onclick="acbChapter()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Song Of Solomon</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version 8</div>
 
 
                     </div>
@@ -93,20 +93,20 @@
 
 
             <div class="cs-acbBox cs-acbVerseBox">
-                <label for="id-acbVerser" class="cs-acbSelectLabel cs-acbNarrowLabel"
-                    title="Select a Verser">Verse</label>
+                <label id="id-acbVerseLabel" for="id-acbVerse" onclick="acbOpenClose()" class="cs-acbSelectLabel cs-acbNarrowLabel" title="Select a Verse">Verse&nbsp;&nbsp;&nbsp;<i id="id-acbArrow3" class="arrow down"></i>
+                </label>
 
                 <div id="id-acbVerse" class="cs-acbSelectBox">
                     <div id="id-acbInnerVerse" class=" cs-acbInnerSelectBox">
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Verse</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Song Of Solomon</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version</div>
-                        <div id="id-acbVersion1" onclick="acbVersion()" class="cs-acbSelect">Test This Version 8</div>
+                        <div id="id-acbVersion1" onclick="acbVerse()" class="cs-acbSelect">Test This Verse</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Song Of Solomon</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version</div>
+                        <div id="id-acbVersion1" onclick="acbFetch()" class="cs-acbSelect">Test This Version 8</div>
 
 
                     </div>
