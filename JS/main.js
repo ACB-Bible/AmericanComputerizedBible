@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // #region Fetch functions Section
 async function acbFetchVersions() {
-    const url = "${mainDataPath}DATA/Versions.jsonc"
+    const url = `${mainDataPath}Versions.jsonc`;
     //alert('test Version');
     //acbRemoveItems('id-acbVersion');
     const response = await fetch(url);
