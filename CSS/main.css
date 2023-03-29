@@ -105,15 +105,15 @@ body {
 }
 
 .cs-acbBookBox {
-    top: 13%;
+    top: 12%;
 }
 
 .cs-acbChapterBox {
-    top: 23%;
+    top: 22%;
 }
 
 .cs-acbVerseBox {
-    top: 33%;
+    top: 32%;
 }
 
 .cs-acbSelectLabel {
@@ -121,6 +121,7 @@ body {
     top: 0;
     display: flex;
     background-color: #BFCAD1;
+    color: rgb(73, 73, 73);
     padding-left: 10px;
     align-items: center;
     font-family: Tahoma;
@@ -179,12 +180,15 @@ body {
 }
 
 .cs-acbSelect {
+    display: inline-block;
     position: relative;
+    text-decoration: none;
     border-bottom: 2px solid rgba(112, 111, 111, 0.20);
     font-family: Tahoma;
     font-size: .82rem;
     font-weight: 400;
     padding: .7em;
+    
     width: 100%;
     z-index: 9;
 }
@@ -206,19 +210,24 @@ body {
     z-index: 9;
 }
 
+.cs-acbSort {
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    background-color: #f6fbfe;
+    padding: .35em;
+    padding-bottom: .35em;
+    font-size: .60em;
+    left: 20%;
+}
+
 .arrow {
     display: block;
     position: relative;
-    left: 60%;
-    border: solid rgb(29, 28, 28);
+    left: 56%;
+    border: solid rgb(73, 73, 73);;
     border-width: 0 .12em .12em 0;
     padding: .25em;
-}
-
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    transition: all 0.2s ease;
 }
 
 .down {

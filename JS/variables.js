@@ -1,4 +1,4 @@
-var mainDataPath = 'https://github.com/ACB-Bible/AmericanComputerizedBible/';
+var mainDataPath = "https://acb-bible.github.io/AmericanComputerizedBible/"
 var upDown = 0;
 //var open key nothing = 0, book = 1, chapter = 2, verse = 3, version = 4
 var open = 0;
