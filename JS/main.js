@@ -73,12 +73,13 @@ async function acbFetchVerses() {
 
         let a = document.createElement("a");
         a.addEventListener("click", acbGetChapter, true);
-        a.id = `id-acbChp${verse.id}`;
-        a.textContent = verse.vt;
+        a.id = `id-acbChp${verse.vid}`;
+        a.dataset.bid = verse.bid;
         a.dataset.cn = verse.cn;
         a.dataset.vn = verse.vn;
+        a.textContent = verse.vt;
         a.classList.add('cs-acbSelect');
-        aVerse = `{id: ${verse.id}, cn: ${verse.cn}, pn: ${verse.pn}, vt: ${verse.vt}, jq: ${verse.jq}} `;
+        aVerse = `{bid: ${verse.bid}, cn: ${verse.cn}, vid: ${verse.vid}, vn: ${verse.vn}, vt: ${verse.vt},`;
         holdVerses.push(aVerse);
         document.getElementById("id-acbInnerChapter").appendChild(a);
     });
