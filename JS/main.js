@@ -4,7 +4,8 @@
 });*/
 window.onload = () => {
     acbFetchVersions();
-    //acbFetchBooks();
+    acbFetchBooks();
+    acbFetchVerses();
 };
 
 // #region Fetch functions Section
@@ -28,7 +29,7 @@ async function acbFetchVersions() {
         a.classList.add('cs-acbSelect');
         document.getElementById("id-acbVersion").appendChild(a);
     });
-}
+};
 
 async function acbFetchBooks() {
 
@@ -36,27 +37,52 @@ async function acbFetchBooks() {
     this.event.preventDefault();
     const url = `${mainDataPath}Books.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
-    const books = await res.json();
-
-    acbRemoveItems('id-acbBook');
-    books.forEach(book => {
-        let a = document.createElement("a");
-        a.addEventListener("click", acbGetBook, true);
-        a.id = `id-acbBk ${book.id}`;
-        a.textContent = book.t;
-        a.dataset.c = book.c;
-        a.classList.add('cs-acbSelect');
-        document.getElementById("id-acbInnerBook").appendChild(a);
+    const fetchBooks = await res.json();
+    let aBook = '';
+    acbRemoveItems('id-acbInnerBook');
+    fetchBooks.forEach(book => {
+        if (book.id < 40) {
+            let a = document.createElement("a");
+            a.addEventListener("click", acbGetBook, true);
+            a.id = `id-acbBk${book.id}`;
+            a.textContent = book.t;
+            a.dataset.c = book.c;
+            a.classList.add('cs-acbSelect');
+            aBook = `{id: ${book.id}, title: ${book.t}}`;
+            oldBooks.push(aBook);
+            document.getElementById("id-acbInnerBook").appendChild(a);
+        } else {
+            aBook = `{id: "${book.id}", title: "${book.t}}"`
+            newBooks.push(aBook);
+        };
     });
-}
+};
 
 async function acbFetchVerses() {
-    alert('test Chapter');
-    acbRemoveItems('id-acbChapter');
+
+    this.event.stopImmediatePropagation();
+    this.event.preventDefault();
     const url = `${mainDataPath}TWF/TWFVerses.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
-    const verseObj = await res.json();
-    verses.push(verseObj);
+    const fetchVerses = await res.json();
+    let aVerse = '';
+    let holdVerse = [];
+
+    acbRemoveItems('id-acbInnerChapter');
+    fetchVerses.forEach(verse => {
+
+        let a = document.createElement("a");
+        a.addEventListener("click", acbGetChapter, true);
+        a.id = `id-acbChp${verse.id}`;
+        a.textContent = verse.vt;
+        a.dataset.cn = verse.cn;
+        a.dataset.vn = verse.vn;
+        a.classList.add('cs-acbSelect');
+        aVerse = `{id: ${verse.id}, cn: ${verse.cn}, pn: ${verse.pn}, vt: ${verse.vt}, jq: ${verse.jq}} `;
+        holdVerse.push(aVerse);
+        document.getElementById("id-acbInnerChapter").appendChild(a);
+    });
+    verses.push(holdVerse);
 }
 // #endregion End Fetch functions Section
 
