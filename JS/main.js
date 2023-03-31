@@ -14,7 +14,7 @@ async function acbFetchVersions() {
     this.event.stopImmediatePropagation();
     this.event.preventDefault();
     let i = 1;
-    const url = `${mainDataPath}Versions.jsonc`;
+    const url = `${mainPath}DATA/Versions.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
     const versions = await res.json();
 
@@ -35,7 +35,7 @@ async function acbFetchBooks() {
 
     this.event.stopImmediatePropagation();
     this.event.preventDefault();
-    const url = `${mainDataPath}Books.jsonc`;
+    const url = `${mainPath}DATA/Books.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
     const fetchBooks = await res.json();
     let aBook = '';
@@ -62,11 +62,11 @@ async function acbFetchVerses() {
 
     this.event.stopImmediatePropagation();
     this.event.preventDefault();
-    const url = `${mainDataPath}TWF/TWFVerses.jsonc`;
+    const url = `${mainPath}DATA/${version}Verses.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
     const fetchVerses = await res.json();
     let aVerse = '';
-    let holdVerse = [];
+    let holdVerses = [];
 
     acbRemoveItems('id-acbInnerChapter');
     fetchVerses.forEach(verse => {
@@ -79,10 +79,10 @@ async function acbFetchVerses() {
         a.dataset.vn = verse.vn;
         a.classList.add('cs-acbSelect');
         aVerse = `{id: ${verse.id}, cn: ${verse.cn}, pn: ${verse.pn}, vt: ${verse.vt}, jq: ${verse.jq}} `;
-        holdVerse.push(aVerse);
+        holdVerses.push(aVerse);
         document.getElementById("id-acbInnerChapter").appendChild(a);
     });
-    verses.push(holdVerse);
+    verses.push(holdVerses);
 }
 // #endregion End Fetch functions Section
 
