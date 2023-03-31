@@ -6,4 +6,5 @@ var bookOpen = 0;
 var chapterOpen = 0;
 var verseOpen = 0;
 var versionOpen = 0;
-var versionAry = [];
+var books = [];
+var verses = [];

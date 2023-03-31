@@ -1,41 +1,68 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     acbFetchVersions();
-});
+});*/
+window.onload = () => {
+    acbFetchVersions();
+    //acbFetchBooks();
+};
 
 // #region Fetch functions Section
 async function acbFetchVersions() {
+
+    this.event.stopImmediatePropagation();
+    this.event.preventDefault();
+    let i = 1;
     const url = `${mainDataPath}Versions.jsonc`;
-    //alert('test Version');
-    //acbRemoveItems('id-acbVersion');
-    const response = await fetch(url);
-    const versions = await response.json();
+    const res = await fetch(url, { mode: 'cors' });
+    const versions = await res.json();
+
     versions.forEach(version => {
-        alert(version.ar);
+        let a = document.createElement("a");
+        a.addEventListener("click", acbGetVersion, true);
+        a.id = version.id;
+        a.textContent = version.vn;
+        a.dataset.ar = version.ar;
+        a.dataset.loaded = i;
+        i = 0;
+        a.classList.add('cs-acbSelect');
+        document.getElementById("id-acbVersion").appendChild(a);
     });
 }
 
 async function acbFetchBooks() {
-    alert('test Book');
+
+    this.event.stopImmediatePropagation();
+    this.event.preventDefault();
+    const url = `${mainDataPath}Books.jsonc`;
+    const res = await fetch(url, { mode: 'cors' });
+    const books = await res.json();
+
     acbRemoveItems('id-acbBook');
+    books.forEach(book => {
+        let a = document.createElement("a");
+        a.addEventListener("click", acbGetBook, true);
+        a.id = `id-acbBk ${book.id}`;
+        a.textContent = book.t;
+        a.dataset.c = book.c;
+        a.classList.add('cs-acbSelect');
+        document.getElementById("id-acbInnerBook").appendChild(a);
+    });
 }
 
-async function acbFetchChapters() {
+async function acbFetchVerses() {
     alert('test Chapter');
     acbRemoveItems('id-acbChapter');
-    acbCloseBox();
-}
-
-function acbFetchVerses() {
-    alert('test Verse');
-    acbRemoveItems('id-acbVerse');
-    acbCloseBox();
+    const url = `${mainDataPath}TWF/TWFVerses.jsonc`;
+    const res = await fetch(url, { mode: 'cors' });
+    const verseObj = await res.json();
+    verses.push(verseObj);
 }
 // #endregion End Fetch functions Section
 
 // #region Get functions Section
 function acbGetVersion() {
-    alert('test Version');
+    alert('test Version1');
     acbCloseBox();
 }
 
