@@ -9,4 +9,4 @@ var versionOpen = 0;
 var oldBooks = [];
 var newBooks = [];
 var verses = [];
-var version = 'TWF';
+var vLoaded = 'TWF';

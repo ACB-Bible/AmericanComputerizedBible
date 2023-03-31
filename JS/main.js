@@ -62,7 +62,7 @@ async function acbFetchVerses() {
 
     this.event.stopImmediatePropagation();
     this.event.preventDefault();
-    const url = `${mainPath}DATA/${version}Verses.jsonc`;
+    const url = `${mainPath}DATA/${vLoaded}/${vLoaded}Verses.jsonc`;
     const res = await fetch(url, { mode: 'cors' });
     const fetchVerses = await res.json();
     let aVerse = '';
