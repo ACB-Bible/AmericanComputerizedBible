@@ -1,9 +1,11 @@
 /*
 SQLIte3 ACB-Bible.db Map Legend BibleVersions table fields to JsonVersions.jsonc key names
-BibleBooks Field:   Books Key Name:
-	BookID       	id
-	Chapters        c
-    Title           t
+Bible Books
+-------------------------
+    Key:    Field:
+    c       Chapters
+    id      BookID
+    t       Title
 */
 [
     {

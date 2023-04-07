@@ -1,121 +1,207 @@
 
-/*document.addEventListener("DOMContentLoaded", function () {
-    acbFetchVersions();
+/*document.addEventListenechapterIndxr("DOMContentLoaded", function () {
+    acbStartVersions();
 });*/
-window.onload = () => {
-    acbFetchVersions();
-    acbFetchBooks();
-    acbFetchVerses();
+
+window.onload = async () => {
+    let vrsnRes = false;
+    let bkRes = false;
+    let chptRes = false;
+    let vrssRes = false;
+
+    vrsnRes = await acbStartVersions();
+    if (vrsnRes) { bkRes = await acbStartBooks() };
+    if (bkRes) { vrssRes = await acbStartVerses() };
+    if (vrssRes) { chptRes = await acbStartChapter() };
 };
 
-// #region Fetch functions Section
-async function acbFetchVersions() {
+// #region Start functions Section
+async function acbStartVersions() {
 
-    this.event.stopImmediatePropagation();
-    this.event.preventDefault();
-    let i = 1;
-    const url = `${mainPath}DATA/Versions.jsonc`;
-    const res = await fetch(url, { mode: 'cors' });
-    const versions = await res.json();
+    let i = 0;
+    let url;
 
+    url = `${mainPath}DATA/Versions.jsonc`;
+    const versions = await fileFetch(url);
     versions.forEach(version => {
         let a = document.createElement("a");
-        a.addEventListener("click", acbGetVersion, true);
-        a.id = version.id;
+        a.addEventListener("click", acbChangeVersion, true);
+        a.id = `id-acbVrsn${version.id}`;
         a.textContent = version.vn;
         a.dataset.ar = version.ar;
-        a.dataset.loaded = i;
-        i = 0;
+        a.dataset.idx = i;
+        a.dataset.loaded = false;
         a.classList.add('cs-acbSelect');
         document.getElementById("id-acbVersion").appendChild(a);
+        i++;
     });
+    document.getElementById(versionClicked).dataset.loaded = true;
+    return Promise.resolve(true);
 };
 
-async function acbFetchBooks() {
+async function acbStartBooks() {
 
-    this.event.stopImmediatePropagation();
-    this.event.preventDefault();
-    const url = `${mainPath}DATA/Books.jsonc`;
-    const res = await fetch(url, { mode: 'cors' });
-    const fetchBooks = await res.json();
     let aBook = '';
+    let i = 0;
+    const url = `${mainPath}DATA/Books.jsonc`;
+    const books = await fileFetch(url);
+
     acbRemoveItems('id-acbInnerBook');
-    fetchBooks.forEach(book => {
-        if (book.id < 40) {
-            let a = document.createElement("a");
-            a.addEventListener("click", acbGetBook, true);
-            a.id = `id-acbBk${book.id}`;
-            a.textContent = book.t;
-            a.dataset.c = book.c;
-            a.classList.add('cs-acbSelect');
-            aBook = `{id: ${book.id}, title: ${book.t}}`;
-            oldBooks.push(aBook);
-            document.getElementById("id-acbInnerBook").appendChild(a);
-        } else {
-            aBook = `{id: "${book.id}", title: "${book.t}}"`
-            newBooks.push(aBook);
-        };
-    });
+    while (i < 39) {
+        let a = document.createElement("a");
+        a.addEventListener("click", acbChangeBook, true);
+        a.id = `id-acbBk${books[i].id}`;
+        a.textContent = books[i].t;
+        a.dataset.c = books[i].c;
+        a.dataset.idx = i;
+        a.classList.add('cs-acbSelect');
+        aBook = `{id: "${books[i].id}", t: "${books[i].t}, c: ${books[i].c}}"`
+        oldBooks.push(aBook);
+        document.getElementById("id-acbInnerBook").appendChild(a);
+        i++;
+    };
+
+    while (i >= 39) {
+        aBook = `{id: "${books[i].id}", t: "${books[i].t}, c: ${books[i].c}}"`
+        newBooks.push(aBook);
+        i++;
+        if (i > 65) break;
+    };
+    return Promise.resolve(true);
 };
 
-async function acbFetchVerses() {
+async function acbStartVerses() {
 
-    this.event.stopImmediatePropagation();
-    this.event.preventDefault();
-    const url = `${mainPath}DATA/${vLoaded}/${vLoaded}Verses.jsonc`;
-    const res = await fetch(url, { mode: 'cors' });
-    const fetchVerses = await res.json();
-    let aVerse = '';
-    let holdVerses = [];
+    let i = 0;
+    let x = 0;
+    let newLine = 1;
+    var verseIndx = 0;
 
     acbRemoveItems('id-acbInnerChapter');
-    fetchVerses.forEach(verse => {
+    const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.jsonc`;
+    const res = await fileFetch(url);
+    allVerses.push(res);
+    verses = res;
 
+    while (verses[i].bid === 1 && verses[i].cn === 1) {
+        if (newLine) {
+            let d = document.createElement("div");
+            d.id = `id-acbVrss${verseIndx}`;
+            d.classList.add('cs-acbSelectLine');
+            document.getElementById(`id-acbInnerVerse`).appendChild(d);
+            newLine = 0;
+        };
         let a = document.createElement("a");
-        a.addEventListener("click", acbGetChapter, true);
-        a.id = `id-acbChp${verse.vid}`;
-        a.dataset.bid = verse.bid;
-        a.dataset.cn = verse.cn;
-        a.dataset.vn = verse.vn;
-        a.textContent = verse.vt;
-        a.classList.add('cs-acbSelect');
-        aVerse = `{bid: ${verse.bid}, cn: ${verse.cn}, vid: ${verse.vid}, vn: ${verse.vn}, vt: ${verse.vt},`;
-        holdVerses.push(aVerse);
-        document.getElementById("id-acbInnerChapter").appendChild(a);
-    });
-    verses.push(holdVerses);
-}
-// #endregion End Fetch functions Section
+        a.addEventListener("click", acbGoToVerse, true);
+        a.id = `id-acbVrs${verses[i].vid}`;
+        a.dataset.bid = verses[i].bid;
+        a.dataset.cn = verses[i].cn;
+        a.dataset.vn = verses[i].vn;
+        a.textContent = verses[i].vn;
+        a.classList.add('cs-acbSelector');
+        document.getElementById(`id-acbVrss${verseIndx}`).appendChild(a);
+        if (x < 4) { x++; } else { x = 0; newLine = 1; verseIndx++; };
+        i++;
+    };
+    let d = document.createElement("div");
+    d.id = `id-acbVrss${verseIndx + 1}`;
+    d.textContent = ' ... ';
+    d.classList.add('cs-acbSelectLine');
+    document.getElementById(`id-acbInnerVerse`).appendChild(d);
+    document.getElementById(verseClicked).style.color = "crimson";
+    document.getElementById(verseClicked).style.backgroundColor = "#adb6bb";
+    return Promise.resolve(true);
+};
 
-// #region Get functions Section
-function acbGetVersion() {
-    alert('test Version1');
-    acbCloseBox();
-}
+async function acbStartChapter() {
 
-function acbGetBook() {
-    alert('test Book');
-    acbCloseBox();
-}
+    let i = 1;
+    let x = 0;
+    let newLine = 1;
+    var chapterIndx = 0;
 
-function acbGetChapter() {
-    alert('test Chapter');
     acbCloseBox();
-}
+    acbRemoveItems(`id-acbInnerChapter`);
+    while (i <= chapterCount) {
+        if (newLine) {
+            let d = document.createElement("div");
+            d.id = `id-acbChpt${chapterIndx}`;
+            d.classList.add('cs-acbSelectLine');
+            document.getElementById(`id-acbInnerChapter`).appendChild(d);
+            newLine = 0;
+        };
+        let a = document.createElement("a");
+        a.addEventListener("click", acbChangeChapter, true);
+        a.id = `id-acbChp${i}`;
+        a.dataset.cn = i;
+        a.textContent = i;
+        a.classList.add('cs-acbSelector');
+        document.getElementById(`id-acbChpt${chapterIndx}`).appendChild(a);
+        if (x < 4) { x++; } else { x = 0; newLine = 1; chapterIndx++; };
+        i++;
+    };
+    let d = document.createElement("div");
+    d.id = `id-acbChpt${chapterIndx + 1}`;
+    d.textContent = ' ... ';
+    d.classList.add('cs-acbSelectLine');
+    document.getElementById(`id-acbInnerChapter`).appendChild(d);
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "#adb6bb";
+    return Promise.resolve(true);
+};
+// #endregion End Start functions Section
 
-function acbGetVerse() {
-    alert('test Verse');
+// #region Change functions Section
+function acbChangeVersion(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
     acbCloseBox();
-}
-// #endregion End Get functions Section
+};
+
+function acbChangeBook(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    acbCloseBox();
+};
+
+function acbChangeChapter(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    acbCloseBox();
+    document.getElementById(chapterClicked).style.color = "black";
+    document.getElementById(chapterClicked).style.backgroundColor = "white";
+    e.target.style.color = "crimson";
+    e.target.style.backgroundColor = "#adb6bb";
+    chapterClicked = e.target.id;
+
+};
+
+function acbGoToVerse(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    acbCloseBox();
+    document.getElementById(verseClicked).style.color = "black";
+    document.getElementById(verseClicked).style.backgroundColor = "white";
+    e.target.style.color = "crimson";
+    e.target.style.backgroundColor = "#adb6bb";
+    verseClicked = e.target.id;    
+};
+// #endregion End Change functions Section
 
 // #region OpenClose functions Section
-
 function acbOpenClose() {
 
-    let id = this.event.target.id;
-    this.event.stopImmediatePropagation();
     this.event.preventDefault();
+    this.event.stopImmediatePropagation();
+    let id = this.event.target.id;
 
     if (id === "id-acbSelectContainer" || id === "id-acbFixedPanel" || versionOpen === 1 || bookOpen === 1 || chapterOpen === 1 || verseOpen === 1) {
         acbCloseBox();
@@ -176,6 +262,13 @@ function acbCloseBox() {
 // #endregion End OpenClose functions Section
 
 // #region Miscellaneous functions Section
+async function fileFetch(url) {
+
+    const res = await fetch(url, { mode: 'cors' });
+    const aFile = await res.json();
+    return Promise.resolve(aFile);
+}
+
 function acbRemoveItems(id) {
 
     let el = document.getElementById(id);
@@ -194,10 +287,11 @@ function acbSetOldTestament() {
     document.getElementById("id-acbTestament").textContent = "Old Testament"
 };
 
-function acbSort() {
+function acbSort(e) {
 
-    this.event.stopImmediatePropagation();
-    this.event.preventDefault();
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
     if (bookOpen === 1) {
         alert('sort');
     };
