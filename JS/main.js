@@ -264,7 +264,8 @@ function acbCloseBox() {
 // #region Miscellaneous functions Section
 async function fileFetch(url) {
 
-    const res = await fetch(url, { mode: 'cors' });
+    //const res = await fetch(url, { mode: 'cors' });
+    const res = await fetch(url, { mode: 'cors', headers: {"Content-Type": "application/json"} });
     const aFile = await res.json();
     return Promise.resolve(aFile);
 }
