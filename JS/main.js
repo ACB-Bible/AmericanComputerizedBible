@@ -265,7 +265,7 @@ function acbCloseBox() {
 async function fileFetch(url) {
 
     //const res = await fetch(url, { mode: 'cors' });
-    const res = await fetch(url, { mode: 'cors', headers: {"Content-Type": "application/json"} });
+    const res = await fetch(url, { mode: 'cors', headers: {"Content-Type": "text/plain;charset=UTF-8"} });
     const aFile = await res.json();
     return Promise.resolve(aFile);
 }
