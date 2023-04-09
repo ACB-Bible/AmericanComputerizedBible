@@ -13,6 +13,7 @@ window.onload = async () => {
     if (vrsnRes) { bkRes = await acbStartBooks() };
     if (bkRes) { vrssRes = await acbStartVerses() };
     if (vrssRes) { chptRes = await acbStartChapter() };
+    pageLoad = chptRes;
 };
 
 // #region Start functions Section
@@ -192,7 +193,7 @@ function acbGoToVerse(e) {
     document.getElementById(verseClicked).style.backgroundColor = "white";
     e.target.style.color = "crimson";
     e.target.style.backgroundColor = "#adb6bb";
-    verseClicked = e.target.id;    
+    verseClicked = e.target.id;
 };
 // #endregion End Change functions Section
 
@@ -265,7 +266,7 @@ function acbCloseBox() {
 
 async function fileFetch(url) {
 
-    const res = await fetch(url, { mode: 'cors' });    
+    const res = await fetch(url, { mode: 'cors' });
     const aFile = await res.json();
     return Promise.resolve(aFile);
 }
