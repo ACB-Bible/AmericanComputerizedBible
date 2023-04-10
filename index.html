@@ -26,7 +26,8 @@
         Tyndale Bible,<br>WEB World English Bible,<br>WYC Wycliffe's Bible,<br>YLT Young's Literal Translation,<br></h1>
     </h1>
     <h1 ID="SEO Mary Joseph Jesus and God" class="cs-acbSEO">This website is all about
-        God, Jesus Christ, the Bible, our Savior, the Messiah, the Good News, the cross, and includes the New and Old Testaments written by the ancient prophets
+        God, Jesus Christ, the Bible, our Savior, the Messiah, the Good News, the cross, and includes the New and Old
+        Testaments written by the ancient prophets
     </h1>
 
 
@@ -34,8 +35,8 @@
         <p class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible</p>
         <div class="cs-acbMenu">
             <button id="id-acbBtn1" class="cs-acbMenuBtn">Home</button>
-            <button id="id-acbBtn2" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old Testament</button>
-            <button id="id-acbBtn3" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New Testament</button>
+            <button id="id-acbBtn2" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old</button>
+            <button id="id-acbBtn3" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New</button>
             <button id="id-acbBtn4" onclick="acbOpenClose()" class="cs-acbMenuBtn">Versions</button>
             <button id="id-acbBtn5" class="cs-acbMenuBtn">About</button>
         </div>
@@ -56,17 +57,25 @@
         <div id="id-acbSelectContainer" onclick="acbOpenClose()" class="cs-acbSelectContainer">
             <h3 id="id-acbTestament" class="cs-acbTestament">Old Testament</h3>
 
+            <!---->
+            <div class="cs-acbChangeBook">
+                <div id="id-acbChangeBook" class="cs-acbChange">
+
+                </div>
+            </div>
+            <!---->
+
             <div class="cs-acbBox cs-acbBookBox">
                 <label id="id-acbBookLabel" for="id-acbBook" onclick="acbOpenClose()" class="cs-acbSelectLabel"
                     title="Select a Book">Book
-                    <span id="id-acbSort" class="cs-acbSort" onclick="acbSort()"
+                    <span id="id-acbSort" class="cs-acbSort" onclick="acbSort(event)"
                         title="Sort Books Alphabetically">sort</span>
                     <i id="id-acbArrow1" onclick="acbOpenClose()" class="arrow down"></i>
                 </label>
 
                 <div id="id-acbBook" class="cs-acbSelectBox">
-                    <div id="id-acbInnerBook" class=" cs-acbInnerSelectBox">
 
+                    <div id="id-acbInnerBook" class=" cs-acbInnerSelectBox">
 
                     </div>
                 </div>

@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../Resources/Misc"
 		}
 	],
 	"settings": {}
