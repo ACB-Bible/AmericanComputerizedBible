@@ -10,7 +10,7 @@ window.onload = async () => {
     let vrssRes = false;
 
     vrsnRes = await acbStartVersions();
-    if (vrsnRes) { bkRes = await acbStartBooks() };
+    if (vrsnRes) { bkRes = await acbLoadBooks(oldBooks) };
     if (bkRes) { vrssRes = await acbStartVerses() };
     if (vrssRes) { chptRes = await acbStartChapter() };
     pageLoad = chptRes;
@@ -21,10 +21,7 @@ window.onload = async () => {
 async function acbStartVersions() {
 
     let i = 0;
-    let url;
 
-    url = `${mainPath}DATA/Versions.jsonc`;
-    const versions = await fileFetch(url);
     versions.forEach(version => {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeVersion, true);
@@ -38,39 +35,6 @@ async function acbStartVersions() {
         i++;
     });
     document.getElementById(versionClicked).dataset.loaded = true;
-    return Promise.resolve(true);
-};
-
-async function acbStartBooks() {
-
-    let aBook = '';
-    let i = 0;
-    const url = `${mainPath}DATA/Books.jsonc`;
-    const books = await fileFetch(url);
-
-    acbRemoveItems('id-acbInnerBook');
-    while (i < 39) {
-        let a = document.createElement("a");
-        a.addEventListener("click", acbChangeBook, true);
-        a.id = `id-acbBk${books[i].id}`;
-        a.textContent = books[i].t;
-        a.dataset.c = books[i].c;
-        a.dataset.idx = i;
-        a.classList.add('cs-acbSelect');
-        //aBook = `{id: "${books[i].id}", t: "${books[i].t}", c: "${books[i].c}"},`
-        //oldBooks.push(aBook);
-        document.getElementById("id-acbInnerBook").appendChild(a);
-        i++;
-    };
-
-    /*
-    while (i >= 39) {
-        aBook = `{id: "${books[i].id}", t: "${books[i].t}", c: "${books[i].c}"}`
-        newBooks.push(aBook);
-        i++;
-        if (i > 65) break;
-    };
-*/
     return Promise.resolve(true);
 };
 
@@ -168,7 +132,7 @@ function acbChangeBook(e) {
 
     e.preventDefault();
     e.stopImmediatePropagation();
-
+    bookAlph = false;
     acbCloseBox();
 };
 
@@ -286,37 +250,66 @@ function acbRemoveItems(id) {
 function acbSetNewTestament() {
 
     document.getElementById("id-acbTestament").textContent = "New Testament";
+    acbLoadBooks(newBooks);
     testament = 1;
 };
 
 function acbSetOldTestament() {
 
     document.getElementById("id-acbTestament").textContent = "Old Testament";
+    acbLoadBooks(newBooks);
     testament = 0;
 };
 
-function acbSort(e) {
+async function acbLoadBooks(books) {
+
+    let i = 0;
+
+    acbRemoveItems('id-acbInnerBook');
+    while (i < 39) {
+        let a = document.createElement("a");
+        a.addEventListener("click", acbChangeBook, true);
+        a.id = `id-acbBk${books[i].id}`;
+        a.textContent = books[i].t;
+        a.dataset.c = books[i].c;
+        a.dataset.idx = i;
+        a.classList.add('cs-acbSelect');
+        document.getElementById("id-acbInnerBook").appendChild(a);
+        i++;
+    };
+    return Promise.resolve(true);
+};
+
+function acbSortBooks(e) {
 
     e.preventDefault();
     e.stopImmediatePropagation();
-    if (bookOpen === 1) {
-        if (!bookSorted) {
-            oldAlph = oldBooks;
-            newAlph = newBooks;
-            oldAlph.sort((a, b) => (a.t > b.t) ? 1 : -1);
-            newAlph.sort((a, b) => (a.t > b.t) ? 1 : -1);
-            bookSorted = true;
-        };
 
+    if (bookOpen === 1) {
         switch (testament) {
             case 0:
-                alert('sort0');
+                if (bookAlph) {
+                    acbLoadBooks(oldBooks);
+                    bookAlph = false;
+                    document.getElementById("id-acbSortBooks").title = "Sort Books Alphabetically";
+                } else {
+                    acbLoadBooks(oldAlph);
+                    bookAlph = true;
+                    document.getElementById("id-acbSortBooks").title = "Sort Books Biblically";
+                };
                 break;
             case 1:
-                alert('sort1');
+                if (bookAlph) {
+                    acbLoadBooks(newBooks);
+                    bookAlph = false;
+                    document.getElementById("id-acbSortBooks").title = "Sort Books Alphabetically";
+                } else {
+                    acbLoadBooks(newAlph);
+                    document.getElementById("id-acbSortBooks").title = "Sort Books Biblically";
+                    bookAlph = true;
+                };
                 break;
         };
-
     };
 };
 

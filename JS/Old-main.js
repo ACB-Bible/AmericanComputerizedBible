@@ -13,6 +13,8 @@ window.onload = async () => {
     if (vrsnRes) { bkRes = await acbStartBooks() };
     if (bkRes) { vrssRes = await acbStartVerses() };
     if (vrssRes) { chptRes = await acbStartChapter() };
+    pageLoad = chptRes;
+
 };
 
 // #region Start functions Section
@@ -55,18 +57,20 @@ async function acbStartBooks() {
         a.dataset.c = books[i].c;
         a.dataset.idx = i;
         a.classList.add('cs-acbSelect');
-        aBook = `{id: "${books[i].id}", t: "${books[i].t}, c: ${books[i].c}}"`
-        oldBooks.push(aBook);
+        //aBook = `{id: "${books[i].id}", t: "${books[i].t}", c: "${books[i].c}"},`
+        //oldBooks.push(aBook);
         document.getElementById("id-acbInnerBook").appendChild(a);
         i++;
     };
 
+    /*
     while (i >= 39) {
-        aBook = `{id: "${books[i].id}", t: "${books[i].t}, c: ${books[i].c}}"`
+        aBook = `{id: "${books[i].id}", t: "${books[i].t}", c: "${books[i].c}"}`
         newBooks.push(aBook);
         i++;
         if (i > 65) break;
     };
+*/
     return Promise.resolve(true);
 };
 
@@ -109,7 +113,7 @@ async function acbStartVerses() {
     d.classList.add('cs-acbSelectLine');
     document.getElementById(`id-acbInnerVerse`).appendChild(d);
     document.getElementById(verseClicked).style.color = "crimson";
-    document.getElementById(verseClicked).style.backgroundColor = "#adb6bb";
+    document.getElementById(verseClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     return Promise.resolve(true);
 };
 
@@ -146,7 +150,7 @@ async function acbStartChapter() {
     d.classList.add('cs-acbSelectLine');
     document.getElementById(`id-acbInnerChapter`).appendChild(d);
     document.getElementById(chapterClicked).style.color = "crimson";
-    document.getElementById(chapterClicked).style.backgroundColor = "#adb6bb";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     return Promise.resolve(true);
 };
 // #endregion End Start functions Section
@@ -177,7 +181,8 @@ function acbChangeChapter(e) {
     document.getElementById(chapterClicked).style.color = "black";
     document.getElementById(chapterClicked).style.backgroundColor = "white";
     e.target.style.color = "crimson";
-    e.target.style.backgroundColor = "#adb6bb";
+    e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterClicked = e.target.id;
 
 };
@@ -191,8 +196,8 @@ function acbGoToVerse(e) {
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
     e.target.style.color = "crimson";
-    e.target.style.backgroundColor = "#adb6bb";
-    verseClicked = e.target.id;    
+    e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    verseClicked = e.target.id;
 };
 // #endregion End Change functions Section
 
@@ -262,6 +267,7 @@ function acbCloseBox() {
 // #endregion End OpenClose functions Section
 
 // #region Miscellaneous functions Section
+
 async function fileFetch(url) {
 
     const res = await fetch(url, { mode: 'cors' });
@@ -279,21 +285,38 @@ function acbRemoveItems(id) {
 
 function acbSetNewTestament() {
 
-    document.getElementById("id-acbTestament").textContent = "New Testament"
+    document.getElementById("id-acbTestament").textContent = "New Testament";
+    testament = 1;
 };
 
 function acbSetOldTestament() {
 
-    document.getElementById("id-acbTestament").textContent = "Old Testament"
+    document.getElementById("id-acbTestament").textContent = "Old Testament";
+    testament = 0;
 };
 
 function acbSort(e) {
 
     e.preventDefault();
     e.stopImmediatePropagation();
-
     if (bookOpen === 1) {
-        alert('sort');
+        if (!bookSorted) {
+            oldAlph = oldBooks;
+            newAlph = newBooks;
+            oldAlph.sort((a, b) => (a.t > b.t) ? 1 : -1);
+            newAlph.sort((a, b) => (a.t > b.t) ? 1 : -1);
+            bookSorted = true;
+        };
+
+        switch (testament) {
+            case 0:
+                alert('sort0');
+                break;
+            case 1:
+                alert('sort1');
+                break;
+        };
+
     };
 };
 
