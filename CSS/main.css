@@ -53,9 +53,10 @@ body {
     padding-top: .1em;
 }
 
-.cs-acbMenu>button:hover {
+.cs-acbMenu>button:hover,
+.cs-acbSelectLabel:hover {
     cursor: pointer;
-    color: rgb(122, 121, 121);
+    color: white;
 }
 
 .cs-acbMenuBtn {
@@ -237,36 +238,21 @@ body {
 }
 
 .cs-acbSortBooks {
-    display: inline-block;
+    display: none;
     position: relative;
     border-radius: 10px;
     background-color: #f6fbfe;
+    color: rgb(73, 73, 73);
     padding: .35em;
     padding-bottom: .35em;
     font-size: .60em;
     left: 20%;
 }
 
-.arrow {
-    display: block;
-    position: relative;
-    left: 56%;
-    border: solid rgb(73, 73, 73);;
-    border-width: 0 .12em .12em 0;
-    padding: .25em;
+.cs-acbSortBooks:hover {
+    color: crimson;
 }
 
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transition: all 0.4s ease;
-}
-
-.arrow:hover,
-.cs-acbSelectLabel:hover,
-.cs-acbInnerSelectBox:hover {
-    cursor: pointer;
-}
 /* #endregion Controls for selecting books, chapter, and verses */
 
 .cs-acbPic1 {
