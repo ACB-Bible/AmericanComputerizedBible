@@ -61,25 +61,14 @@ async function acbLoadChapter() {
     return Promise.resolve(true);
 };
 
-async function acbLoadVerses(idx, loaded, bid, cn) {
+function acbLoadVerses(bid, cn) {
 
     let i = 0;
     let x = 0;
     let newLine = 1;
     var verseIndx = 0;
 
-    if (loaded === 1) {
-        verses = allVerses[idx];
-    } else {
-        const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
-        const verse = await fileFetch(url);
-        allVerses.push(verse);
-        verses = allVerses[0];
-        versionIdx++;
-    };
     acbRemoveItems('id-acbInnerVerse');
-
-    alert(verses[i].bid);
     while (verses[i].bid === bid && verses[i].cn === cn) {
         if (newLine) {
             let d = document.createElement("div");
@@ -109,7 +98,6 @@ async function acbLoadVerses(idx, loaded, bid, cn) {
     acbScroll('id-acbInnerVerse');
     document.getElementById(verseClicked).style.color = "crimson";
     document.getElementById(verseClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
-    return Promise.resolve(true);
 };
 // #endregion End Load functions Section
 
@@ -123,9 +111,19 @@ async function acbChangeVersion() {
     let loaded = document.getElementById(versionClicked).dataset.loaded;
     let idx = Number(document.getElementById(versionClicked).dataset.idx);
 
-    idx = await acbLoadVerses(idx, loaded, "1", "1");
-    document.getElementById(versionClicked).dataset.loaded = 1;
-    document.getElementById(versionClicked).dataset.idx = versionIdx;
+    if (loaded === 1) {
+        verses = allVerses[idx];
+    } else {
+        const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
+        const verse = await fileFetch(url);
+        allVerses.push(verse);
+        verses = allVerses[idx];
+        acbLoadVerses("1", "1");
+        document.getElementById(versionClicked).dataset.loaded = 1;
+        document.getElementById(versionClicked).dataset.idx = versionIdx;
+        versionIdx++;
+    };
+
     document.getElementById('cs-acbTextTitle').textContent = document.getElementById(versionClicked).dataset.textContent;
     document.getElementById('cs-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();
