@@ -8,11 +8,6 @@ BibleVersions:
 */
 [
     {
-        "ar": "TWF",
-        "id": 1,
-        "vn": "Twenty-First Century Bible"
-    },
-    {
         "ar": "ASV",
         "id": 2,
         "vn": "American Standard Version"
@@ -31,6 +26,11 @@ BibleVersions:
         "ar": "KJV",
         "id": 5,
         "vn": "King James Version"
+    },
+    {
+        "ar": "TWF",
+        "id": 1,
+        "vn": "Twenty-First Century Version"
     },
     {
         "ar": "WBT",

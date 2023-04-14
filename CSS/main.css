@@ -203,6 +203,7 @@ body {
 
 .cs-acbSelect:hover {
     background-color: rgba(112, 111, 111, 0.25);
+    cursor: pointer;
 }
 
 .cs-acbSelectLine {
@@ -235,6 +236,7 @@ body {
     overflow: hidden;
     scroll-behavior: none;
     z-index: 9;
+    background-color: rgba(112, 111, 111, 0.25);
 }
 
 .cs-acbSortBooks {
