@@ -61,14 +61,25 @@ async function acbLoadChapter() {
     return Promise.resolve(true);
 };
 
-async function acbLoadVerses(verses, bid, cn) {
+async function acbLoadVerses(idx, loaded, bid, cn) {
 
     let i = 0;
     let x = 0;
     let newLine = 1;
     var verseIndx = 0;
 
+    if (loaded === 1) {
+        verses = allVerses[idx];
+    } else {
+        const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
+        const verse = await fileFetch(url);
+        allVerses.push(verse);
+        verses = allVerses[0];
+        versionIdx++;
+    };
     acbRemoveItems('id-acbInnerVerse');
+
+    alert(verses[i].bid);
     while (verses[i].bid === bid && verses[i].cn === cn) {
         if (newLine) {
             let d = document.createElement("div");
@@ -94,6 +105,8 @@ async function acbLoadVerses(verses, bid, cn) {
     d.textContent = ' ... ';
     d.classList.add('cs-acbSelectLine');
     document.getElementById(`id-acbInnerVerse`).appendChild(d);
+
+    acbScroll('id-acbInnerVerse');
     document.getElementById(verseClicked).style.color = "crimson";
     document.getElementById(verseClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     return Promise.resolve(true);
@@ -107,22 +120,12 @@ async function acbChangeVersion() {
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
     versionActive = document.getElementById(versionClicked).dataset.ar;
-    let versionIdx = allVerses.length;
-    //document.getElementById(versionClicked).dataset.idx = versionIdx;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
-    let returned = false;
+    let idx = Number(document.getElementById(versionClicked).dataset.idx);
 
-    if (loaded === "1") {
-        //alert("loaded version")
-        returned = acbLoadVerses(allVerses[versionIdx], 1, 1);
-    } else {
-        //alert("load Version")
-        const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
-        const res = await fileFetch(url);
-        allVerses.push(res);
-        if (allVerses[versionIdx]) { returned = await acbLoadVerses(allVerses[versionIdx], 1, 1) };
-    };
-    if (returned) { acbScroll('id-acbInnerVerse') };
+    idx = await acbLoadVerses(idx, loaded, "1", "1");
+    document.getElementById(versionClicked).dataset.loaded = 1;
+    document.getElementById(versionClicked).dataset.idx = versionIdx;
     document.getElementById('cs-acbTextTitle').textContent = document.getElementById(versionClicked).dataset.textContent;
     document.getElementById('cs-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();

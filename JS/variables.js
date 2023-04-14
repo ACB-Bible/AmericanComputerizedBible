@@ -2,6 +2,7 @@ var mainPath = "https://acb-bible.github.io/AmericanComputerizedBible/";
 
 //testment old testament = 0 new testament = 1
 var testament = 0;
+var versionIdx = 0;
 var versionOpen = 0;
 var versionActive = 'TWF';
 var versionClicked = 'id-acbVrsn1';
@@ -18,7 +19,7 @@ var chapterCount = 50;
 var verseOpen = 0;
 var verseClicked = 'id-acbVrs1';
 var allVerses = [];
-//var verses;
+var verses;
 
 // #region Data for Books
 var oldBooks = [{"c":50,"id":1,"t":"Genesis"},{"c":40,"id":2,"t":"Exodus"},{"c":27,"id":3,"t":"Leviticus"},{"c":36,"id":4,"t":"Numbers"},{"c":34,"id":5,"t":"Deuteronomy"},{"c":24,"id":6,"t":"Joshua"},{"c":21,"id":7,"t":"Judges"},{"c":4,"id":8,"t":"Ruth"},{"c":31,"id":9,"t":"1 Samuel"},{"c":24,"id":10,"t":"2 Samuel"},{"c":22,"id":11,"t":"1 Kings"},{"c":25,"id":12,"t":"2 Kings"},{"c":29,"id":13,"t":"1 Chronicles"},{"c":36,"id":14,"t":"2 Chronicles"},{"c":10,"id":15,"t":"Ezra"},{"c":13,"id":16,"t":"Nehemiah"},{"c":10,"id":17,"t":"Esther"},{"c":42,"id":18,"t":"Job"},{"c":150,"id":19,"t":"Psalm"},{"c":31,"id":20,"t":"Proverbs"},{"c":12,"id":21,"t":"Ecclesiastes"},{"c":8,"id":22,"t":"Song of Solomon"},{"c":66,"id":23,"t":"Isaiah"},{"c":52,"id":24,"t":"Jeremiah"},{"c":5,"id":25,"t":"Lamentations"},{"c":48,"id":26,"t":"Ezekiel"},{"c":12,"id":27,"t":"Daniel"},{"c":14,"id":28,"t":"Hosea"},{"c":3,"id":29,"t":"Joel"},{"c":9,"id":30,"t":"Amos"},{"c":1,"id":31,"t":"Obadiah"},{"c":4,"id":32,"t":"Jonah"},{"c":7,"id":33,"t":"Micah"},{"c":3,"id":34,"t":"Nahum"},{"c":3,"id":35,"t":"Habakkuk"},{"c":3,"id":36,"t":"Zephaniah"},{"c":2,"id":37,"t":"Haggai"},{"c":14,"id":38,"t":"Zechariah"},{"c":4,"id":39,"t":"Malachi"}];
