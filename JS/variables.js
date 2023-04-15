@@ -2,7 +2,7 @@ var mainPath = "https://acb-bible.github.io/AmericanComputerizedBible/";
 
 //testment old testament = 0 new testament = 1
 var testament = 0;
-var versionIdx = 0;
+var versionIdx = 1;
 var versionOpen = 0;
 var versionActive = 'TWF';
 var versionClicked = 'id-acbVrsn1';
