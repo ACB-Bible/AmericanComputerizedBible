@@ -1,10 +1,30 @@
 window.onload = async () => {
 
+    acbLoadVersions();
     acbLoadChapter();
     acbLoadBooks(oldBooks)
 };
 
 // #region Load functions Section
+async function acbLoadVersions() {
+
+    let i = 0;
+    versions.forEach(version => {
+        let a = document.createElement("a");
+        a.addEventListener("click", acbChangeVersion, true);
+        a.id = `id-acbVrsn${version.id}`;
+        a.textContent = version.vn;
+        a.dataset.ar = version.ar;
+        a.dataset.idx = i;
+        a.dataset.loaded = false;
+        a.classList.add('cs-acbSelect');
+        document.getElementById("id-acbVersion").appendChild(a);
+        i++;
+    });
+    document.getElementById(versionClicked).dataset.loaded = 1;
+    return Promise.resolve(true);
+};
+
 async function acbLoadBooks(books) {
 
     let i = 0;
@@ -104,7 +124,7 @@ function acbLoadVerses(bid, cn) {
 // #endregion End Load functions Section
 
 // #region Change functions Section
-async function acbChangeVersion(e) {
+async function acbChangeVersion() {
 
     this.event.preventDefault();
     this.event.stopImmediatePropagation();
@@ -120,12 +140,12 @@ async function acbChangeVersion(e) {
         const verse = await fileFetch(url);
         allVerses.push(verse);
         verses = allVerses[idx];
+        if (verses) {acbLoadVerses(1, 1)};
         document.getElementById(versionClicked).dataset.loaded = 1;
         document.getElementById(versionClicked).dataset.idx = versionIdx;
         versionIdx++;
     };
 
-    if (verses) {acbLoadVerses(1, 1)};
     document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
     document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();
