@@ -160,7 +160,7 @@ async function acbLoadText(bid, cn) {
             let p = document.createElement("p");
             p.id = `id-acbP${pIndx}`;
             p.classList.add('cs-acbSelectLine');
-            document.getElementById(`id-acbMainText${pIndx}`).appendChild(p);
+            document.getElementById(`id-acbMainText`).appendChild(p);
             newLine = 0;
         };
         let sp = document.createElement("span");
