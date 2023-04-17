@@ -5,7 +5,7 @@ var testament = 0;
 var versionIdx = 1;
 var versionOpen = 0;
 var versionActive = 'TWF';
-var versionClicked = 'id-acbVrsn1';
+var versionClicked = 'id-acbVrsn5';
 
 var bookOpen = 0;
 var bookClicked = 'id-acbBk1';

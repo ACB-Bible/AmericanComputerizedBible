@@ -8,13 +8,13 @@ window.onload = async () => {
 // #region Load functions Section
 async function acbStartVerses() {
     const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
-        const verse = await fileFetch(url);
-        allVerses.push(verse);
-        verses = allVerses[0];
-        //document.getElementById(versionClicked).dataset.loaded = 1;
-        //document.getElementById(versionClicked).dataset.idx = versionIdx;
-        //versionIdx++;
-        acbLoadVerses(1, 1)
+    const verse = await fileFetch(url);
+    allVerses.push(verse);
+    verses = allVerses[0];
+    //document.getElementById(versionClicked).dataset.loaded = 1;
+    //document.getElementById(versionClicked).dataset.idx = versionIdx;
+    //versionIdx++;
+    acbLoadVerses(1, 1)
 };
 
 async function acbLoadBooks(books) {
@@ -115,10 +115,32 @@ async function acbLoadVerses(bid, cn) {
     document.getElementById(verseClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
 
+function acbSingleParagraph(bid, cn, i) {
+
+    var pIndx = 0;
+
+    while (verses[i].bid === bid && verses[i].cn === cn) {
+
+        let p = document.createElement("p");
+        p.id = `id-acbP${pIndx}`;
+        p.classList.add('cs-acbP');
+        document.getElementById(`id-acbMainText`).appendChild(p);
+        let sp = document.createElement("span");
+        if (verses[i].vn !== 1) { sp.textContent = verses[i].vn };
+        sp.classList.add('cs-acbNumber');
+        document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+        sp = document.createElement("span");
+        sp.textContent = `${verses[i].vt} `;
+        document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+        i++;
+        pIndx++;
+    };
+};
+
 async function acbLoadText(bid, cn) {
 
     let newLine = 0;
-    let firstLine = 1;
+    //let firstLine = 1;
     var pIndx = 0;
 
     acbRemoveItems('id-acbMainText');
@@ -135,39 +157,43 @@ async function acbLoadText(bid, cn) {
     p.classList.add('cs-acbTextTitle');
     document.getElementById(`id-acbMainText`).appendChild(p);
 
+    p = document.createElement("p");
+    p.id = `id-acbP${pIndx}`;
+    document.getElementById('id-acbMainText').appendChild(p);
+    let img = document.createElement("img");
+    img.src = "./IMAGES/first-one.png";
+    img.alt = "First Verse";
+    img.classList = "cs-acbImage2";
+    img.title = "Verse One";
+    document.getElementById(`id-acbP0`).appendChild(img);
+    firstLine = 0;
+
     let i = verses.findIndex(vrs => vrs.bid === bid && vrs.cn === cn);
-    let pn = verses[i].pn;
-    while (verses[i].bid === bid && verses[i].cn === cn) {
-        if (firstLine) {
-            p = document.createElement("p");
-            p.id = `id-acbP${pIndx}`;
-            document.getElementById('id-acbMainText').appendChild(p);
-            let img = document.createElement("img");
-            img.src = "./IMAGES/first-one.png";
-            img.alt = "First Verse";
-            img.classList = "cs-acbImage2";
-            img.title = "Verse One";
-            document.getElementById(`id-acbP0`).appendChild(img);
-            firstLine = 0;
-        };
+    if (verses[i].pn === 0) {
+        acbSingleParagraph(bid, cn, Number(i));
+    } else {
 
-        if (newLine) {
-            let p = document.createElement("p");
-            p.id = `id-acbP${pIndx}`;
-            document.getElementById(`id-acbMainText`).appendChild(p);
-            newLine = 0;
-        };
-        let sp = document.createElement("span");
-        sp.textContent = verses[i].vn;
-        sp.classList.add('cs-acbNumber');
-        document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+        let pn = verses[i].pn;
+        while (verses[i].bid === bid && verses[i].cn === cn) {
 
-        sp = document.createElement("span");
-        sp.textContent = `${verses[i].vt} `;
-        sp.classList.add('cs-acbP');
-        document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
-        if (verses[i].pn !== pn) { pn = verses[i].pn; newLine = 1; pIndx++; };
-        i++;
+            if (verses[i].pn !== pn) { pn = verses[i].pn; newLine = 1; pIndx++; };
+            if (newLine) {
+                let p = document.createElement("p");
+                p.id = `id-acbP${pIndx}`;
+                p.classList.add('cs-acbP');
+                document.getElementById(`id-acbMainText`).appendChild(p);
+                newLine = 0;
+            };
+
+            let sp = document.createElement("span");
+            if (verses[i].vn !== 1) { sp.textContent = verses[i].vn };
+            sp.classList.add('cs-acbNumber');
+            document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+            sp = document.createElement("span");
+            sp.textContent = `${verses[i].vt} `;
+            document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+            i++;
+        };
     };
 };
 
@@ -179,23 +205,25 @@ async function acbChangeVersion(e) {
     this.event.preventDefault();
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
+    chapterClicked = 'id-acbChp1';
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
-    let idx = Number(document.getElementById(versionClicked).dataset.idx);
+
 
     if (loaded === 1) {
+        let idx = Number(document.getElementById(versionClicked).dataset.idx);
         verses = allVerses[idx];
     } else {
         const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
         const verse = await fileFetch(url);
         allVerses.push(verse);
-        verses = allVerses[idx];
+        verses = allVerses[versionIdx];
         document.getElementById(versionClicked).dataset.loaded = 1;
         document.getElementById(versionClicked).dataset.idx = versionIdx;
         versionIdx++;
     };
 
-    if (verses) {acbLoadVerses(1, 1)};
+    if (verses) { acbLoadVerses(1, 1); acbLoadText(1, 1); };
     document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
     document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();
@@ -207,8 +235,6 @@ function acbChangeBook(e) {
     e.stopImmediatePropagation();
     acbCloseBox();
     bookClicked = e.target.id;
-    //let test =`${document.getElementById(bookClicked).textContent} 1`;
-    //document.getElementById("id-acbTextTitle2").textContent = `${document.getElementById(bookClicked).textContent} 1`;
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     acbLoadChapter();
@@ -218,8 +244,8 @@ function acbChangeBook(e) {
 
 function acbChangeChapter(e) {
 
-    this.event.preventDefault();
-    this.event.stopImmediatePropagation();
+    e.preventDefault();
+    e.stopImmediatePropagation();
     acbCloseBox();
     document.getElementById(chapterClicked).style.color = "black";
     document.getElementById(chapterClicked).style.backgroundColor = "white";
@@ -227,6 +253,9 @@ function acbChangeChapter(e) {
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterClicked = e.target.id;
+    let bid = Number(document.getElementById(bookClicked).dataset.bid);
+    let cn = Number(document.getElementById(chapterClicked).dataset.cn);
+    acbLoadText(bid, cn);
 };
 
 function acbGoToVerse(e) {
