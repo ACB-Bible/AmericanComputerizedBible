@@ -15,7 +15,7 @@ var bookAlph = false;
 var chapterOpen = 0;
 var chapterClicked = 'id-acbChp1';
 var chapterCount = 50;
-var chapterNum = 1;
+//var chapterNum = 1;
 
 var verseOpen = 0;
 var verseClicked = 'id-acbVrs0';

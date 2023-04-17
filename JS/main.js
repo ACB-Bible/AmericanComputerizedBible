@@ -11,9 +11,6 @@ async function acbStartVerses() {
     const verse = await fileFetch(url);
     allVerses.push(verse);
     verses = allVerses[0];
-    //document.getElementById(versionClicked).dataset.loaded = 1;
-    //document.getElementById(versionClicked).dataset.idx = versionIdx;
-    //versionIdx++;
     acbLoadVerses(1, 1)
 };
 
@@ -206,9 +203,9 @@ async function acbChangeVersion(e) {
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
     chapterClicked = 'id-acbChp1';
+    chapterCount = 50;
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
-
 
     if (loaded === 1) {
         let idx = Number(document.getElementById(versionClicked).dataset.idx);
@@ -253,6 +250,7 @@ function acbChangeChapter(e) {
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterClicked = e.target.id;
+    chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
     acbLoadText(bid, cn);
