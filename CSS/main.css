@@ -300,6 +300,10 @@ body {
     word-break: keep-all;
 }
 
+.cs-acbP {
+    margin-top: -.4em;
+}
+
 .cs-acbTextTitle {
     font-size: 1.3rem;
     font-weight: 550;

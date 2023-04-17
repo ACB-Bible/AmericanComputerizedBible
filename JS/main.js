@@ -142,24 +142,18 @@ async function acbLoadText(bid, cn) {
             p = document.createElement("p");
             p.id = `id-acbP${pIndx}`;
             document.getElementById('id-acbMainText').appendChild(p);
-
             let img = document.createElement("img");
             img.src = "./IMAGES/first-one.png";
             img.alt = "First Verse";
             img.classList = "cs-acbImage2";
             img.title = "Verse One";
             document.getElementById(`id-acbP0`).appendChild(img);
-
-            //let sp = document.createElement("span");
-            //sp.textContent = ` ${verses[i].vt}`;
-            //document.getElementById('id-acbP0').appendChild(sp);
             firstLine = 0;
         };
 
         if (newLine) {
             let p = document.createElement("p");
             p.id = `id-acbP${pIndx}`;
-            p.classList.add('cs-acbSelectLine');
             document.getElementById(`id-acbMainText`).appendChild(p);
             newLine = 0;
         };
@@ -169,7 +163,8 @@ async function acbLoadText(bid, cn) {
         document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
 
         sp = document.createElement("span");
-        sp.textContent = verses[i].vt;
+        sp.textContent = `${verses[i].vt} `;
+        sp.classList.add('cs-acbP');
         document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
         if (verses[i].pn !== pn) { pn = verses[i].pn; newLine = 1; pIndx++; };
         i++;
