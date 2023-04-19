@@ -2,18 +2,20 @@ window.onload = async () => {
 
     acbLoadBooks(oldBooks);
     acbLoadChapter();
-    let res = await acbStartVerses(1, 1);
-    if (res) {acbLoadText(1, 1)};
+    acbStartVerses(1, 1);
+    //let res = await acbStartVerses(1, 1);
+    //if (res) {acbLoadText(1, 1)};
 };
 
 // #region Load functions Section
 async function acbStartVerses() {
     const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
-    const verse = await fileFetch(url);
+    const verse = await fetchJson(url);
     allVerses.push(verse);
     verses = allVerses[0];
     acbLoadVerses(1, 1);
-    return Promise.resolve(true);
+    if (verse) {acbLoadText(1, 1)};
+    //return Promise.resolve(true);
 };
 
 async function acbLoadBooks(books) {
@@ -232,7 +234,7 @@ async function acbChangeVersion(e) {
         verses = allVerses[idx];
     } else {
         const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
-        const verse = await fileFetch(url);
+        const verse = await fetchJson(url);
         allVerses.push(verse);
         verses = allVerses[versionIdx];
         document.getElementById(versionClicked).dataset.loaded = 1;
@@ -365,14 +367,30 @@ function acbCloseBox() {
 };
 // #endregion End OpenClose functions Section
 
-// #region Miscellaneous functions Section
+// #region Miscellaneous functions Sectionasync function fetchJson(url) {
+async function fetchFile(url) {
+    document.getElementById('id-acbHtml').style.cursor = 'wait';
+    document.getElementById('id-acbHtml').style.pointerEvents = 'none';
+    const res = await fetch(url, { mode: 'cors' });
+    if (res) {
+        document.getElementById('id-acbHtml').style.cursor = 'default'
+        document.getElementById('id-acbHtml').style.pointerEvents = 'auto';
+    };
+    return Promise.resolve(aFile);
+};
 
-async function fileFetch(url) {
+async function fetchJson(url) {
 
+    document.getElementById('id-acbHtml').style.cursor = 'wait';
+    document.getElementById('id-acbHtml').style.pointerEvents = 'none';
     const res = await fetch(url, { mode: 'cors' });
     const aFile = await res.json();
+    if (aFile) {
+        document.getElementById('id-acbHtml').style.cursor = 'default';
+        document.getElementById('id-acbHtml').style.pointerEvents = 'auto';
+    };
     return Promise.resolve(aFile);
-}
+};
 
 function acbRemoveItems(id) {
 
