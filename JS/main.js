@@ -2,7 +2,8 @@ window.onload = async () => {
 
     acbLoadBooks(oldBooks);
     acbLoadChapter();
-    acbStartVerses(1, 1)
+    let res = await acbStartVerses(1, 1);
+    if (res) {acbLoadText(1, 1)};
 };
 
 // #region Load functions Section
@@ -11,7 +12,8 @@ async function acbStartVerses() {
     const verse = await fileFetch(url);
     allVerses.push(verse);
     verses = allVerses[0];
-    acbLoadVerses(1, 1)
+    acbLoadVerses(1, 1);
+    return Promise.resolve(true);
 };
 
 async function acbLoadBooks(books) {
@@ -120,24 +122,38 @@ function acbSingleParagraph(bid, cn, i) {
 
         let p = document.createElement("p");
         p.id = `id-acbP${pIndx}`;
+        p.addEventListener("click", acbClickedP, true);
         p.classList.add('cs-acbP');
         document.getElementById(`id-acbMainText`).appendChild(p);
         let sp = document.createElement("span");
+        sp.id = `id-acbSP${verses[i].vn}`;
         if (verses[i].vn !== 1) { sp.textContent = verses[i].vn };
         sp.classList.add('cs-acbNumber');
         document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
         sp = document.createElement("span");
+        sp.id = `id-acbSP${verses[i].vn}-2`;
         sp.textContent = `${verses[i].vt} `;
         document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
         i++;
         pIndx++;
+
     };
+};
+
+function acbClickedP(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    id = e.target.id;
+    document.getElementById(id).style.color = "black";
+    document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(verseClicked).style.color = "black";
+    document.getElementById(verseClicked).style.backgroundColor = "white";
 };
 
 async function acbLoadText(bid, cn) {
 
     let newLine = 0;
-    //let firstLine = 1;
     var pIndx = 0;
 
     acbRemoveItems('id-acbMainText');
@@ -156,14 +172,14 @@ async function acbLoadText(bid, cn) {
 
     p = document.createElement("p");
     p.id = `id-acbP${pIndx}`;
+    p.addEventListener("click", acbClickedP, true);
     document.getElementById('id-acbMainText').appendChild(p);
     let img = document.createElement("img");
-    img.src = "./IMAGES/first-one.png";
+    img.src = "./IMAGES/first-one31.png";
     img.alt = "First Verse";
     img.classList = "cs-acbImage2";
     img.title = "Verse One";
     document.getElementById(`id-acbP0`).appendChild(img);
-    firstLine = 0;
 
     let i = verses.findIndex(vrs => vrs.bid === bid && vrs.cn === cn);
     if (verses[i].pn === 0) {
@@ -177,6 +193,7 @@ async function acbLoadText(bid, cn) {
             if (newLine) {
                 let p = document.createElement("p");
                 p.id = `id-acbP${pIndx}`;
+                p.addEventListener("click", acbClickedP, true);
                 p.classList.add('cs-acbP');
                 document.getElementById(`id-acbMainText`).appendChild(p);
                 newLine = 0;
@@ -184,9 +201,12 @@ async function acbLoadText(bid, cn) {
 
             let sp = document.createElement("span");
             if (verses[i].vn !== 1) { sp.textContent = verses[i].vn };
+            sp.id = `id-acbSP${verses[i].vn}`;
             sp.classList.add('cs-acbNumber');
             document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+
             sp = document.createElement("span");
+            sp.id = `id-acbSP${verses[i].vn}-2`;
             sp.textContent = `${verses[i].vt} `;
             document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
             i++;
@@ -224,6 +244,7 @@ async function acbChangeVersion(e) {
     document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
     document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();
+    document.getElementById('id-acbBody').scrollTo(0,0);
 };
 
 function acbChangeBook(e) {
@@ -235,8 +256,11 @@ function acbChangeBook(e) {
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     acbLoadChapter();
+    verseClicked = 'id-acbVrs0';
+    chapterClicked = 'id-acbChp1';
     acbLoadVerses(bid, 1);
     acbLoadText(bid, 1);
+    document.getElementById('id-acbBody').scrollTo(0,0);
 };
 
 function acbChangeChapter(e) {
@@ -253,14 +277,22 @@ function acbChangeChapter(e) {
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
+    verseClicked = 'id-acbVrs0';
+    chapterClicked = 'id-acbChp1';
+    acbLoadVerses(bid, cn);
     acbLoadText(bid, cn);
+    document.getElementById('id-acbBody').scrollTo(0,0);
+
 };
 
 function acbGoToVerse(e) {
 
     e.preventDefault();
     e.stopImmediatePropagation();
+    let id = `id-acbSP${e.target.dataset.vn}`;
+    document.getElementById(id).scrollIntoView({block: 'center'});
     acbCloseBox();
+    document.getElementById(`${id}-2`).style.backgroundColor = "#aed0fc"
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
     e.target.style.color = "crimson";

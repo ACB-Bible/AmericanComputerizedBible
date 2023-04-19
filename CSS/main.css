@@ -279,6 +279,13 @@ body {
     border-top-right-radius: 6px;
 }
 
+.cs-acbImgLabel {
+    width: 99%;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
 .cs-acbImage2 {
     position: relative;
     top: .3em;
