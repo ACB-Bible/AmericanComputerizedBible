@@ -369,7 +369,7 @@ function acbCloseBox() {
 async function fetchFile(url) {
     document.getElementById('id-acbHtml').style.cursor = 'wait';
     document.getElementById('id-acbHtml').style.pointerEvents = 'none';
-    const res = await fetch(url, { mode: 'cors' });
+    const res = await fetch(url, { mode: 'no-cors' });
     if (res) {
         document.getElementById('id-acbHtml').style.cursor = 'default'
         document.getElementById('id-acbHtml').style.pointerEvents = 'auto';
@@ -381,7 +381,7 @@ async function fetchJson(url) {
 
     document.getElementById('id-acbHtml').style.cursor = 'wait';
     document.getElementById('id-acbHtml').style.pointerEvents = 'none';
-    const res = await fetch(url, { mode: 'cors' });
+    const res = await fetch(url, { mode: 'no-cors' });
     const aFile = await res.json();
     if (aFile) {
         document.getElementById('id-acbHtml').style.cursor = 'default';
