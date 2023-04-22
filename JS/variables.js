@@ -1,6 +1,6 @@
-var mainPath = "https://acb-bible.github.io/AmericanComputerizedBible/";
+//var mainPath = "https://acbible.github.io/AmericanComputerizedBible/";
 
-//var mainPath = "https://www.acb-bible.com/AmericanComputerizedBible/";
+var mainPath = "https://www.acbible.com/AmericanComputerizedBible/";
 
 //testment old testament = 0 new testament = 1
 var testament = 0;
