@@ -12,7 +12,7 @@ async function acbStartVerses() {
     allVerses.push(verse);
     verses = allVerses[0];
     acbLoadVerses(1, 1);
-    if (verse) { acbLoadText(1, 1) };
+    //if (verse) { acbLoadText(1, 1) };
     //return Promise.resolve(true);
 };
 
