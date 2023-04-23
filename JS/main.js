@@ -10,6 +10,7 @@ window.onload = async () => {
         document.getElementById(chapterClicked).style.color = "crimson";
         document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     };
+/*
     let res = false;
     res = await acbLoadBooks(oldBooks);
     res = false;
@@ -20,6 +21,7 @@ window.onload = async () => {
         document.getElementById(chapterClicked).style.color = "crimson";
         document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     };
+*/
 };
 
 // #region Load functions Section
@@ -430,7 +432,7 @@ function acbRemoveItems(id) {
     };
 };
 
-async function acbSetNewTestament() {
+//async function acbSetNewTestament() {
 async function acbSetNewTestament() {
 
     document.getElementById("id-acbTestament").textContent = "New Testament";
@@ -450,7 +452,7 @@ async function acbSetNewTestament() {
     testament = 1;
 };
 
-async function acbSetOldTestament() {
+//async function acbSetOldTestament() {
 async function acbSetOldTestament() {
 
     document.getElementById("id-acbTestament").textContent = "Old Testament";
