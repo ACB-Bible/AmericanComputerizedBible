@@ -1,8 +1,15 @@
 window.onload = async () => {
 
-    acbLoadBooks(oldBooks);
-    acbLoadChapter();
-    acbStartVerses(1, 1);
+    let res = false;
+    res = await acbLoadBooks(oldBooks);
+    res = false;
+    res = await acbLoadChapter();
+    res = false;
+    res = await acbStartVerses(1, 1);
+    if (res) {
+        document.getElementById(chapterClicked).style.color = "crimson";
+        document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    };
 };
 
 // #region Load functions Section
@@ -12,8 +19,7 @@ async function acbStartVerses() {
     allVerses.push(verse);
     verses = allVerses[0];
     acbLoadVerses(1, 1);
-    //if (verse) { acbLoadText(1, 1) };
-    //return Promise.resolve(true);
+    return Promise.resolve(true);
 };
 
 async function acbLoadBooks(books) {
@@ -68,8 +74,6 @@ async function acbLoadChapter() {
     d.textContent = ' ... ';
     d.classList.add('cs-acbSelectLine');
     document.getElementById(`id-acbInnerChapter`).appendChild(d);
-    document.getElementById(chapterClicked).style.color = "crimson";
-    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     return Promise.resolve(true);
 };
 
@@ -110,8 +114,7 @@ async function acbLoadVerses(bid, cn) {
     document.getElementById(`id-acbInnerVerse`).appendChild(d);
 
     acbScroll('id-acbInnerVerse');
-    document.getElementById(verseClicked).style.color = "crimson";
-    document.getElementById(verseClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+
 };
 
 function acbSingleParagraph(bid, cn, i) {
@@ -240,10 +243,12 @@ async function acbChangeVersion(e) {
         versionIdx++;
     };
 
-    if (verses) { acbLoadVerses(1, 1); acbLoadText(1, 1); };
+    if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
     document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
     document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
     acbCloseBox();
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     document.getElementById('id-acbBody').scrollTo(0, 0);
 };
 
@@ -255,12 +260,17 @@ function acbChangeBook(e) {
     bookClicked = e.target.id;
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
+    document.getElementById(chapterClicked).style.color = "black";
+    document.getElementById(chapterClicked).style.backgroundColor = "white";
     acbLoadChapter();
     verseClicked = 'id-acbVrs0';
     chapterClicked = 'id-acbChp1';
     acbLoadVerses(bid, 1);
     acbLoadText(bid, 1);
     document.getElementById('id-acbBody').scrollTo(0, 0);
+
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
 
 function acbChangeChapter(e) {
@@ -270,19 +280,18 @@ function acbChangeChapter(e) {
     acbCloseBox();
     document.getElementById(chapterClicked).style.color = "black";
     document.getElementById(chapterClicked).style.backgroundColor = "white";
-    e.target.style.color = "crimson";
-    e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
-    e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    //e.target.style.color = "crimson";
+    //e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterClicked = e.target.id;
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
     verseClicked = 'id-acbVrs0';
-    chapterClicked = 'id-acbChp1';
     acbLoadVerses(bid, cn);
     acbLoadText(bid, cn);
     document.getElementById('id-acbBody').scrollTo(0, 0);
-
 };
 
 function acbGoToVerse(e) {
@@ -335,7 +344,7 @@ function acbOpenClose() {
                 acbOpenBox("id-acbVerse");
                 verseOpen = 1;
                 break;
-            case "id-acbBtn4":
+            case "id-acbBtn3":
                 acbOpenBox('id-acbVersionList');
                 acbScroll("id-acbInnerVersion");
                 versionOpen = 1;
@@ -398,19 +407,41 @@ function acbRemoveItems(id) {
     };
 };
 
-function acbSetNewTestament() {
+async function acbSetNewTestament() {
 
     document.getElementById("id-acbTestament").textContent = "New Testament";
     newBooks.sort((a, b) => (a.id > b.id) ? 1 : -1);
-    acbLoadBooks(newBooks);
+    bookClicked = 'id-acbBk40';
+    chapterClicked = 'id-acbChp1';
+    verseClicked = 'id-acbVrs0';
+    chapterCount = 28;
+    let res = false;
+    res = await acbLoadBooks(newBooks);
+    acbLoadChapter();
+    acbLoadVerses(1, 1);
+    if (res) { acbLoadText(40, 1) };
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    document.getElementById('id-acbBody').scrollTo(0, 0);
     testament = 1;
 };
 
-function acbSetOldTestament() {
+async function acbSetOldTestament() {
 
     document.getElementById("id-acbTestament").textContent = "Old Testament";
     oldBooks.sort((a, b) => (a.id > b.id) ? 1 : -1);
-    acbLoadBooks(oldBooks);
+    bookClicked = 'id-acbBk1';
+    chapterClicked = 'id-acbChp1';
+    verseClicked = 'id-acbVrs0';
+    chapterCount = 50;
+    let res = false;
+    res = await acbLoadBooks(oldBooks);
+    acbLoadChapter();
+    acbLoadVerses(1, 1);
+    acbLoadText(1, 1);
+    document.getElementById(chapterClicked).style.color = "crimson";
+    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
+    document.getElementById('id-acbBody').scrollTo(0, 0);
     testament = 0;
 };
 
