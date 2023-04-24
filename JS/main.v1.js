@@ -20,7 +20,6 @@ async function acbStartVerses() {
     verses = allVerses[0];
     acbLoadVerses(1, 1);
     return Promise.resolve(true);
-    return Promise.resolve(true);
 };
 
 async function acbLoadBooks(books) {
@@ -113,10 +112,7 @@ async function acbLoadVerses(bid, cn) {
     d.textContent = ' ... ';
     d.classList.add('cs-acbSelectLine');
     document.getElementById(`id-acbInnerVerse`).appendChild(d);
-
     acbScroll('id-acbInnerVerse');
-
-
 };
 
 function acbSingleParagraph(bid, cn, i) {
