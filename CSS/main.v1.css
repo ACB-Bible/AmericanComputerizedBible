@@ -81,7 +81,7 @@ body {
 
 .cs-acbTestament {
     position: relative;
-    top: 3%;
+    top: 5%;
     height: 3%;
     width: 80%;
     margin: auto;
@@ -268,7 +268,7 @@ body {
 .cs-acbPic1 {
     position: fixed;
     top: 16%;
-    left: 78%;
+    left: 81%;
     float: right;
     width: 13.5%;
     height: 36%;
@@ -277,14 +277,6 @@ body {
     box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
     border: 2px solid rgba(77, 76, 76, 0.4);
     padding: 0;
-}
-
-.cs-acbPic2 {
-    position: relative;
-    top: 48%;
-    width: 76%;
-    height: 34%;
-    margin: auto;
 }
 
 .cs-acbImgLabel1 {
@@ -326,7 +318,7 @@ body {
 
 .cs-acbMainText {
     position: relative;
-    width: 40.5%;
+    width: 45%;
     margin: auto;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
