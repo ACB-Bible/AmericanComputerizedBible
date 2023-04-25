@@ -226,8 +226,8 @@ async function acbChangeVersion(e) {
     this.event.preventDefault();
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
-    chapterClicked = 'id-acbChp1';
-    chapterCount = 50;
+    //chapterClicked = 'id-acbChp1';
+    //chapterCount = 50;
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
 
@@ -244,14 +244,23 @@ async function acbChangeVersion(e) {
         versionIdx++;
     };
 
-    if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
-    if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
+    //if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
+    //if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
+    let bid = Number(document.getElementById(bookClicked).dataset.bid);
+    let cn = Number(document.getElementById(chapterClicked).dataset.cn);
+
+    if (verses) { acbLoadText(bid, cn); };
     document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
-    document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
+    //document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
+
+
+    document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
+
+
     acbCloseBox();
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
-    document.getElementById('id-acbBody').scrollTo(0, 0);
+    //document.getElementById('id-acbBody').scrollTo(0, 0);
 };
 
 function acbChangeBook(e) {
