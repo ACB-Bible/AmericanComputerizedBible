@@ -31,6 +31,7 @@ async function acbLoadBooks(books) {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeBook, true);
         a.id = `id-acbBk${book.id}`;
+        a.rel =  "nofollow";
         a.textContent = book.t;
         a.dataset.bid = book.id;
         a.dataset.c = book.c;
@@ -62,8 +63,9 @@ async function acbLoadChapter() {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeChapter, true);
         a.id = `id-acbChp${i}`;
-        a.dataset.cn = i;
+        a.rel =  "nofollow";
         a.textContent = i;
+        a.dataset.cn = i;
         a.classList.add('cs-acbSelector');
         document.getElementById(`id-acbChpt${chapterIndx}`).appendChild(a);
         if (x < 4) { x++; } else { x = 0; newLine = 1; chapterIndx++; };
@@ -97,10 +99,11 @@ async function acbLoadVerses(bid, cn) {
         let a = document.createElement("a");
         a.addEventListener("click", acbGoToVerse, true);
         a.id = `id-acbVrs${y}`;
+        a.textContent = verses[i].vn;
+        a.rel =  "nofollow";
         a.dataset.bid = verses[i].bid;
         a.dataset.cn = verses[i].cn;
         a.dataset.vn = verses[i].vn;
-        a.textContent = verses[i].vn;
         a.classList.add('cs-acbSelector');
         document.getElementById(`id-acbVrss${verseIndx}`).appendChild(a);
         if (x < 4) { x++; } else { x = 0; newLine = 1; verseIndx++; };
