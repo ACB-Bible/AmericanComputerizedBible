@@ -1,0 +1,119 @@
+html {
+    font-size: 118%;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+}
+
+a {
+    position: fixed;
+    left: 11%;
+    top: 20%;
+    font-size: 2em;
+    font-Weight: 550;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9e6105;
+}
+
+h1,
+h2 {
+    width: 35%;
+    margin: auto;
+}
+
+.cs-acbMain {
+    position: relative;
+    width: 70%;
+    margin: auto;
+}
+
+.cs-acbParagraph {
+    width: 58%;
+    margin: auto;
+    text-align: justify;
+    word-break: keep-all;
+    padding-bottom: 1em;
+}
+
+.cs-acbParagraph1 {
+    width: 48%;
+}
+
+cs-acbCenter {
+    text-align: center;
+}
+
+.cs-acbItalic {
+    font-style: italic;
+}
+
+.cs-acbBold {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.cs-acbCrimson {
+    color: crimson;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.cs-acbGold {
+    color: #9e6105;
+}
+
+.cs-acbNumber {
+    font-size: .75rem;
+    font-weight: 600;
+    padding-right: .15em;
+    color: #9e6105;
+    vertical-align: .15em;
+}
+
+.cs-acbFooter {
+    position: relative;
+    top: 16%;
+    width: 58%;
+    font-size: small;
+    text-align: center;
+}
+
+.cs-acbStatement {
+    position: relative;
+    display: block;
+    width: 99%;
+    margin: auto;
+    text-align: center;
+}
+
+.cs-acbPic1 {
+    position: fixed;
+    top: 16%;
+    left: 81%;
+    float: right;
+    width: 13.5%;
+    height: 36%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
+    border: 2px solid rgba(77, 76, 76, 0.4);
+    padding: 0;
+}
+
+.cs-acbImage1 {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}

@@ -279,6 +279,7 @@ body {
     padding: 0;
 }
 
+/*
 .cs-acbImgLabel1 {
     position: relative;
     top: -28%;
@@ -289,7 +290,7 @@ body {
     font-size: 1.2rem;
     margin: auto;
 }
-
+*/
 .cs-acbLight {
     font-size: .8rem;
 }
@@ -301,13 +302,14 @@ body {
     border-top-right-radius: 6px;
 }
 
+/*
 .cs-acbImgLabel {
     width: 99%;
     display: block;
     text-align: center;
     margin: auto;
 }
-
+*/
 .cs-acbImage2 {
     position: relative;
     top: .3em;
@@ -351,3 +353,21 @@ body {
     vertical-align: .15em;
 }
 
+.cs-acbAbout {
+    display: block;
+    position: relative;
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    width: 20%;
+    margin: auto;
+}
+
+.cs-acbLink {
+    position: relative;
+    height: 8%;
+    width: 100%;
+    z-index: 9;
+}
