@@ -12,20 +12,6 @@ body {
     overflow-x: auto;
 }
 
-a {
-    position: fixed;
-    left: 11%;
-    top: 20%;
-    font-size: 2em;
-    font-Weight: 550;
-    color: black;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #9e6105;
-}
-
 h1,
 h2 {
     width: 35%;
@@ -83,7 +69,7 @@ cs-acbCenter {
 
 .cs-acbFooter {
     position: relative;
-    top: 16%;
+    top: 14%;
     width: 58%;
     font-size: small;
     text-align: center;
@@ -107,7 +93,7 @@ cs-acbCenter {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
-    border: 2px solid rgba(77, 76, 76, 0.4);
+
     padding: 0;
 }
 
@@ -116,4 +102,52 @@ cs-acbCenter {
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+}
+
+.cs-acbImage2 {
+    height: 50%;
+    width: 75%;
+}
+
+.cs-imgBack {
+    position: absolute;
+    top: 49.5%;
+    left: 36%;
+    color: white;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.cs-imgBack:hover {
+    font-size: 1.1em;
+    color: rgb(224, 223, 223);
+}
+
+a {
+    display: block;
+    position: fixed;
+    left: 9%;
+    top: 36.5%;
+    padding-top: 1.5em;
+    text-decoration: none;
+}
+
+.cs-acbCopyright {
+    position: relative;
+    top: 14%;
+    width: 16%;
+    padding: .5em;
+    margin: auto;
+    font-size: small;
+    text-align: center;
+    border:  2px solid rgba(77, 76, 76, 0.4);
+    color: #9e6105;
+}
+
+.cs-acbTrademark {
+    font-size: .58em;
+}
+
+.cs-acbTrademarkHeader {
+    font-size: .4em;
 }

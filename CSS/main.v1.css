@@ -377,3 +377,19 @@ body {
     color: rgb(176, 184, 184);
 }
 
+.cs-acbCopyright {
+    position: relative;
+    /*top: 12%;*/
+    width: 16%;
+    padding: .5em;
+    margin: auto;
+    font-size: small;
+    text-align: center;
+    border:  2px solid rgba(77, 76, 76, 0.4);
+    color: #9e6105;
+}
+
+.cs-acbTrademark {
+    font-size: .6em;
+}
+

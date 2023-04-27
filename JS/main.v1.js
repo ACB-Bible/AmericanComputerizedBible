@@ -31,7 +31,7 @@ async function acbLoadBooks(books) {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeBook, true);
         a.id = `id-acbBk${book.id}`;
-        a.rel =  "nofollow";
+        a.rel = "nofollow";
         a.textContent = book.t;
         a.dataset.bid = book.id;
         a.dataset.c = book.c;
@@ -63,7 +63,7 @@ async function acbLoadChapter() {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeChapter, true);
         a.id = `id-acbChp${i}`;
-        a.rel =  "nofollow";
+        a.rel = "nofollow";
         a.textContent = i;
         a.dataset.cn = i;
         a.classList.add('cs-acbSelector');
@@ -100,7 +100,7 @@ async function acbLoadVerses(bid, cn) {
         a.addEventListener("click", acbGoToVerse, true);
         a.id = `id-acbVrs${y}`;
         a.textContent = verses[i].vn;
-        a.rel =  "nofollow";
+        a.rel = "nofollow";
         a.dataset.bid = verses[i].bid;
         a.dataset.cn = verses[i].cn;
         a.dataset.vn = verses[i].vn;
@@ -248,11 +248,24 @@ async function acbChangeVersion(e) {
     //if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
+    //let vn = '';
 
     if (verses) { acbLoadText(bid, cn); };
-    document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
-    //document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
+    //document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
 
+    if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
+        document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
+        let sp = document.createElement("span");
+        sp.textContent = '®';
+        sp.classList ="cs-acbTrademark";
+        document.getElementById('id-acbTextTitle1').appendChild(sp);
+        //vn = 'Twenty-First Century Bible®';
+    } else {
+        document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
+    };
+
+    //document.getElementById('id-acbTextTitle1').textContent = vn;
+    //document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
 
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
 

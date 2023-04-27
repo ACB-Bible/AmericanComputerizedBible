@@ -17,14 +17,14 @@
         {
           "@context": "http://schema.org",
           "@type": "Article",
-          "headline": "American Computerized Bible",
-          "name": "American Computerized Bible | acbible.com",
-          "description": "Read God's word anywhere at anytime. The American Computerized Bible contains 8 different versions of God's word for everyone to read because Jesus said, 'I was a stranger and you invited me in'",
+          "headline": "American Computerized Bible®",
+          "name": "American Computerized Bible® | acbible.com®",
+          "description": "Read God's word anywhere at anytime. The 'American Computerized Bible'® contains 8 different versions of God's word for everyone to read because Jesus said, 'I was a stranger and you invited me in'",
           "datePublished": "2023-04-24",
           "author": {
             "@type": "Person",
             "name": "Gregg Butler",
-            "url": "https://acbible.com/about.html"
+            "url": "https://acbible.com/about.v1.html"
           },
           "image": [
           "https://acbible.com/IMAGES/Jesus1x1.jpg",
@@ -40,7 +40,6 @@
 
     <link href="https://acbible.com/IMAGES/favicon.ico" rel="icon" type="image/x-icon">
     <link href="https://acbible.com/CSS/main.v1.css" rel="stylesheet" type="text/css">
-
 <!--
     <link href="./CSS/main.v1.css" rel="stylesheet" type="text/css">
     <link href="./IMAGES/favicon.ico" rel="icon" type="image/x-icon">
@@ -50,7 +49,7 @@
 <body id="id-acbBody">
 
     <div id="id-acbHeader" class="cs-acbHeader">
-        <h1 class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible</h1>
+        <h1 class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible<span class="cs-acbTrademark">®</span></h1>
         <div class="cs-acbMenu">
             <button id="id-acbBtn1" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old</button>
             <button id="id-acbBtn2" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New</button>
@@ -70,7 +69,7 @@
                 <a id="id-acbVrsn4" rel="nofollow" onclick="acbChangeVersion()" data-ar="KJV" data-idx="0"
                     data-loaded="0" class="cs-acbSelect">King James Version</a>
                 <a id="id-acbVrsn5" rel="nofollow" onclick="acbChangeVersion()" data-ar="TWF" data-idx="0"
-                    data-loaded="1" class="cs-acbSelect">Twenty-First Century Version</a>
+                    data-loaded="1" class="cs-acbSelect">Twenty-First Century Bible<span class="cs-acbTrademark">®</span></a>
                 <a id="id-acbVrsn6" rel="nofollow" onclick="acbChangeVersion()" data-ar="WBT" data-idx="0"
                     data-loaded="0" class="cs-acbSelect">Webster's Bible</a>
                 <a id="id-acbVrsn7" rel="nofollow" onclick="acbChangeVersion()" data-ar="WEB" data-idx="0"
@@ -128,17 +127,22 @@
             </div>
 
             <div class="cs-acbPic1">
-                <img id="id-acbLE" src="./IMAGES/genesis.jpg" alt="Let There Be Light" title="Let There Be Light"
-                    class="cs-acbImage1" type="image/jpg">
+                <img id="id-acbLE" src="https://acbible.com/IMAGES/genesis.jpg" alt="Let There Be Light" title="Let There Be Light" class="cs-acbImage1" type="image/jpg">
+                <!--
+                    <img id="id-acbLE" src="./IMAGES/genesis.jpg" alt="Let There Be Light" title="Let There Be Light" class="cs-acbImage1" type="image/jpg">
+                -->
             </div>
 
         </div>
 
         <div id="id-acbMainText" class="cs-acbMainText">
-            <p id="id-acbTextTitle1" class="cs-acbTextTitle">Twenty-First Century Bible</p>
+            <p id="id-acbTextTitle1" class="cs-acbTextTitle">Twenty-First Century Bible<span class="cs-acbTrademark">®</span></p>
             <p id="id-acbTextTitle2" class="cs-acbTextTitle">Genesis 1</p>
             <p id="id-acbP0">
-                <img src="./IMAGES/first-one31.png" class="cs-acbImage2" type="image/png">
+                <img src="https://acbible.com/IMAGES/first-one31.png" class="cs-acbImage2" type="image/png">
+                <!--
+                    <img src="./IMAGES/first-one31.png" class="cs-acbImage2" type="image/png">
+                -->
                 <span id="id-acbSP1" class="cs-acbNumber"></span><span id="id-acbSP1-2">In the
                     beginning, God created Heaven and Earth. </span><span id="id-acbSP2"
                     class="cs-acbNumber">2</span><span id="id-acbSP2-2">The Earth was void and without form, darkness
@@ -215,13 +219,19 @@
         </div>
         <br><br><br>
         <div class="cs-acbLink">
-            <!--<a href="https://acbible.com/about.html" class="cs-acbAbout">About</a>-->
-            <a href="./about.html" class="cs-acbAbout">About</a>
+
+            <a href="https://acbible.com/about.v1.html" class="cs-acbAbout">About</a>
+            <!--
+            <a href="./about.v1.html" class="cs-acbAbout">About</a>
+            -->
         </div>
-        <br><br><br><br>
+        <br><br><br>
+        <p class="cs-acbCopyright">© 2019-2023 acbible.com® All Rights Reserved</p>
+        <br>
     </div>
 
     <br><br>
+
 </body>
 
 <script src="https://acbible.com/JS/variables.v1.js" type="text/javascript"></script>
