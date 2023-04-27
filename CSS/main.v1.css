@@ -88,6 +88,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 550;
+    color: #9e6105;
 }
 
 /* #region Controls for selecting books, chapter, and verses */
@@ -278,18 +279,6 @@ body {
     padding: 0;
 }
 
-/*
-.cs-acbImgLabel1 {
-    position: relative;
-    top: -28%;
-    width: 99%;
-    display: block;
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    margin: auto;
-}
-*/
 .cs-acbLight {
     font-size: .8rem;
 }
@@ -301,14 +290,6 @@ body {
     border-top-right-radius: 6px;
 }
 
-/*
-.cs-acbImgLabel {
-    width: 99%;
-    display: block;
-    text-align: center;
-    margin: auto;
-}
-*/
 .cs-acbImage2 {
     position: relative;
     top: .3em;
@@ -379,7 +360,6 @@ body {
 
 .cs-acbCopyright {
     position: relative;
-    /*top: 12%;*/
     width: 16%;
     padding: .5em;
     margin: auto;

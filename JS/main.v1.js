@@ -164,14 +164,25 @@ async function acbLoadText(bid, cn) {
 
     let p = document.createElement("p");
     p.id = `id-acbTextTitle1`;
-    p.textContent = document.getElementById(versionClicked).textContent;
+    //p.textContent = document.getElementById(versionClicked).textContent;
     p.classList.add('cs-acbTextTitle');
     document.getElementById('id-acbMainText').appendChild(p);
+
+    if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
+        document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
+        let sp = document.createElement("span");
+        sp.textContent = '®';
+        sp.classList ="cs-acbTrademark";
+        document.getElementById('id-acbTextTitle1').appendChild(sp);
+    } else {
+        document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
+    };
 
     p = document.createElement("p");
     p.id = `id-acbTextTitle2`;
     p.textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
     p.classList.add('cs-acbTextTitle');
+    p.classList.add('cs-acbGold');
     document.getElementById(`id-acbMainText`).appendChild(p);
 
     p = document.createElement("p");
@@ -226,8 +237,6 @@ async function acbChangeVersion(e) {
     this.event.preventDefault();
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
-    //chapterClicked = 'id-acbChp1';
-    //chapterCount = 50;
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
 
@@ -243,15 +252,9 @@ async function acbChangeVersion(e) {
         document.getElementById(versionClicked).dataset.idx = versionIdx;
         versionIdx++;
     };
-
-    //if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
-    //if (verses) { acbLoadChapter(); acbLoadVerses(1, 1); acbLoadText(1, 1); };
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
-    //let vn = '';
-
     if (verses) { acbLoadText(bid, cn); };
-    //document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
 
     if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
         document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
@@ -259,21 +262,15 @@ async function acbChangeVersion(e) {
         sp.textContent = '®';
         sp.classList ="cs-acbTrademark";
         document.getElementById('id-acbTextTitle1').appendChild(sp);
-        //vn = 'Twenty-First Century Bible®';
     } else {
         document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
     };
 
-    //document.getElementById('id-acbTextTitle1').textContent = vn;
-    //document.getElementById('id-acbTextTitle2').textContent = "Genesis 1"
-
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
-
 
     acbCloseBox();
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
-    //document.getElementById('id-acbBody').scrollTo(0, 0);
 };
 
 function acbChangeBook(e) {
