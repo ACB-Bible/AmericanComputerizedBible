@@ -31,7 +31,7 @@ async function acbLoadBooks(books) {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeBook, true);
         a.id = `id-acbBk${book.id}`;
-        a.rel = "nofollow";
+        a.rel = "noopener nofollow";
         a.textContent = book.t;
         a.dataset.bid = book.id;
         a.dataset.c = book.c;
@@ -63,7 +63,7 @@ async function acbLoadChapter() {
         let a = document.createElement("a");
         a.addEventListener("click", acbChangeChapter, true);
         a.id = `id-acbChp${i}`;
-        a.rel = "nofollow";
+        a.rel = "noopener nofollow";
         a.textContent = i;
         a.dataset.cn = i;
         a.classList.add('cs-acbSelector');
@@ -100,7 +100,7 @@ async function acbLoadVerses(bid, cn) {
         a.addEventListener("click", acbGoToVerse, true);
         a.id = `id-acbVrs${y}`;
         a.textContent = verses[i].vn;
-        a.rel = "nofollow";
+        a.rel = "noopener nofollow";
         a.dataset.bid = verses[i].bid;
         a.dataset.cn = verses[i].cn;
         a.dataset.vn = verses[i].vn;
