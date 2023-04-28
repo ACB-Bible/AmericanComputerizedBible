@@ -106,11 +106,6 @@ body {
     z-index: 10;
 }
 
-/*
-.cs-acbClosed {
-    display: none;
-}
-*/
 .cs-acbBox {
     position: absolute;
     left: 0;
@@ -295,7 +290,7 @@ body {
     top: .3em;
     height: 3rem;
     float: left;
-    padding-right: .5em;
+    margin-right: .5em;
 }
 
 .cs-acbMainText {
