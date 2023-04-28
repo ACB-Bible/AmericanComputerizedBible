@@ -164,10 +164,8 @@ async function acbLoadText(bid, cn) {
 
     let p = document.createElement("p");
     p.id = `id-acbTextTitle1`;
-    //p.textContent = document.getElementById(versionClicked).textContent;
     p.classList.add('cs-acbTextTitle');
     document.getElementById('id-acbMainText').appendChild(p);
-
     if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
         document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
         let sp = document.createElement("span");
@@ -283,18 +281,12 @@ function acbChangeBook(e) {
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     document.getElementById(chapterClicked).style.color = "black";
     document.getElementById(chapterClicked).style.backgroundColor = "white";
-    document.getElementById(chapterClicked).style.color = "black";
-    document.getElementById(chapterClicked).style.backgroundColor = "white";
     acbLoadChapter();
     verseClicked = 'id-acbVrs0';
     chapterClicked = 'id-acbChp1';
     acbLoadVerses(bid, 1);
     acbLoadText(bid, 1);
     document.getElementById('id-acbBody').scrollTo(0, 0);
-
-    document.getElementById(chapterClicked).style.color = "crimson";
-    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
-
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
@@ -307,8 +299,6 @@ function acbChangeChapter(e) {
     document.getElementById(chapterClicked).style.color = "black";
     document.getElementById(chapterClicked).style.backgroundColor = "white";
     chapterClicked = e.target.id;
-    document.getElementById(chapterClicked).style.color = "crimson";
-    document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     chapterCount = Number(document.getElementById(bookClicked).dataset.c);
