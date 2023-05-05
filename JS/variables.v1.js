@@ -1,5 +1,5 @@
 var mainPath = "https://www.acbible/";
-var mainPath = "./";
+//var mainPath = "./";
 //testment old testament = 0 new testament = 1
 var state = 0;
 var testament = 0;
