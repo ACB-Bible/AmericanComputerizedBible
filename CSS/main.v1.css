@@ -6,7 +6,6 @@ html {
 }
 
 body {
-    background-color: #F6FBFE;
     background-color: #ffffff;
     height: 100%;
     min-height: 100%;
@@ -101,8 +100,7 @@ body {
     height: 100%;
     overflow: hidden;
     box-shadow: 0 5px 7px rgba(112, 111, 111, 0.25);
-    background-color: #e3e6e7;
-    background-color: #fafafa;
+    background-color: #BFCAD1;
     z-index: 10;
 }
 
@@ -129,7 +127,7 @@ body {
     position: relative;
     top: 0;
     display: flex;
-    background-color: #BFCAD1;
+    background-color: #e3e6e7;
     color: rgb(73, 73, 73);
     padding-left: 10px;
     align-items: center;
@@ -260,22 +258,17 @@ body {
 
 /* #endregion Controls for selecting books, chapter, and verses */
 
+.cs-acbLight {
+    font-size: .8rem;
+}
+
 .cs-acbPic1 {
     position: fixed;
-    top: 16%;
+    top: 25.8%;
     left: 81%;
     float: right;
     width: 13.5%;
     height: 36%;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
-    border: 2px solid rgba(77, 76, 76, 0.4);
-    padding: 0;
-}
-
-.cs-acbLight {
-    font-size: .8rem;
 }
 
 .cs-acbImage1 {
@@ -295,12 +288,12 @@ body {
 
 .cs-acbMainText {
     position: relative;
-    width: 45%;
+    width: 55%;
     margin: auto;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    box-shadow: 0 5px 7px rgba(112, 111, 111, 0.25);
     background-color: white;
+    font-size: 1.1em;
     padding-top: .2em;
     padding-left: 1.8em;
     padding-right: 1.8em;
@@ -311,6 +304,7 @@ body {
 
 .cs-acbP {
     margin-top: -.51em;
+    z-index: 1;
 }
 
 .cs-acbTextTitle {
@@ -332,9 +326,10 @@ body {
     width: 100%;
     height: 4%;
     text-align: center;
+    display: block;
 }
 
-.cs-acbAbout {
+.cs-acbMission {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -349,7 +344,7 @@ body {
     margin:0 auto;
 }
 
-.cs-acbAbout:hover {
+.cs-acbMission:hover {
     color: rgb(176, 184, 184);
 }
 
@@ -368,3 +363,20 @@ body {
     font-size: .6em;
 }
 
+.cs-acbLE {
+    display: block;
+    position: relative;
+    top: 86%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-family: Tahoma;
+    font-size: 1.2rem;
+    height: 12%;
+    width: 80%;
+    margin: auto;
+}
+
+.cs-acbLE1 {
+    font-size: .9rem
+}

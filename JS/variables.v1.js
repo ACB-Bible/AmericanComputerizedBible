@@ -1,10 +1,12 @@
-//var mainPath = "https://acbible.github.io/AmericanComputerizedBible/";
-
-var mainPath = "https://acbible.com/";
-
+var mainPath = "https://www.acbible/";
+var mainPath = "./";
 //testment old testament = 0 new testament = 1
+var state = 0;
 var testament = 0;
 var firstText = true;
+var firstHighlight = true;
+var textHighlight = 'id-acbSP1-2';
+
 var versionIdx = 1;
 var versionOpen = 0;
 var versionActive = 'TWF';
@@ -12,13 +14,12 @@ var versionClicked = 'id-acbVrsn5';
 
 var bookOpen = 0;
 var bookClicked = 'id-acbBk1';
-var bookSorted = false;
+//var bookSorted = false;
 var bookAlph = false;
 
 var chapterOpen = 0;
 var chapterClicked = 'id-acbChp1';
 var chapterCount = 50;
-//var chapterNum = 1;
 
 var verseOpen = 0;
 var verseClicked = 'id-acbVrs0';

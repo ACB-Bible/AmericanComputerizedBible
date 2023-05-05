@@ -12,9 +12,14 @@ body {
     overflow-x: auto;
 }
 
-h1,
+
 h2 {
     width: 35%;
+    margin: auto;
+}
+
+h4 {
+    width: 13%;
     margin: auto;
 }
 
@@ -25,8 +30,9 @@ h2 {
 }
 
 .cs-acbParagraph {
-    width: 58%;
+    width: 62%;
     margin: auto;
+    font-size: 1.1em;
     text-align: justify;
     word-break: keep-all;
     padding-bottom: 1em;
@@ -44,9 +50,24 @@ cs-acbCenter {
     font-style: italic;
 }
 
-.cs-acbBold {
+.cs-acbBox {
+    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
+    padding: .3em;
+    padding-top: .1em;
+}
+
+.cs-acbBox:hover {
+    background-color: rgba(59, 59, 59, 0.25);
+}
+
+.cs-acbTitle {
     font-size: 2.2rem;
     font-weight: 800;
+}
+
+.cs-acbTitle:hover {
+    cursor: pointer;
+    color: #9e6105;
 }
 
 .cs-acbCrimson {
@@ -67,14 +88,6 @@ cs-acbCenter {
     vertical-align: .15em;
 }
 
-.cs-acbFooter {
-    position: relative;
-    top: 14%;
-    width: 58%;
-    font-size: small;
-    text-align: center;
-}
-
 .cs-acbStatement {
     position: relative;
     display: block;
@@ -92,7 +105,6 @@ cs-acbCenter {
     height: 36%;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
     padding: 0;
 }
 
@@ -111,7 +123,7 @@ cs-acbCenter {
 .cs-imgBack {
     position: absolute;
     top: 49.5%;
-    left: 36%;
+    left: 40%;
     color: white;
     font-weight: 550;
     cursor: pointer;
@@ -131,9 +143,17 @@ a {
     text-decoration: none;
 }
 
+.cs-acbFooter {
+    position: relative;
+    top: 3%;
+    width: 58%;
+    font-size: small;
+    text-align: center;
+}
+
 .cs-acbCopyright {
     position: relative;
-    top: 14%;
+    top: 3%;
     width: 16%;
     padding: .5em;
     margin: auto;
@@ -150,3 +170,22 @@ a {
 .cs-acbTrademarkHeader {
     font-size: .4em;
 }
+
+.cs-acbLE {
+    display: block;
+    position: relative;
+    top: 90%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+    height: 12%;
+    width: 80%;
+    margin: auto;
+}
+
+.cs-acbLE1 {
+    font-size: .9rem
+}
+

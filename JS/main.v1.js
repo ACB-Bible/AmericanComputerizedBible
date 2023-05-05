@@ -2,10 +2,8 @@ window.onload = async () => {
 
     let res = false;
     res = await acbLoadBooks(oldBooks);
-    res = false;
-    res = await acbLoadChapter();
-    res = false;
-    res = await acbStartVerses(1, 1);
+    if (res) { res = false; res = await acbLoadChapter() };
+    if (res) { res = false; res = await acbStartVerses(1, 1) };
     if (res) {
         document.getElementById(chapterClicked).style.color = "crimson";
         document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
@@ -13,12 +11,14 @@ window.onload = async () => {
 };
 
 // #region Load functions Section
-async function acbStartVerses() {
+
+
+async function acbStartVerses(bid, cn) {
     const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
     const verse = await fetchJson(url);
     allVerses.push(verse);
     verses = allVerses[0];
-    acbLoadVerses(1, 1);
+    acbLoadVerses(bid, cn);
     return Promise.resolve(true);
 };
 
@@ -150,6 +150,7 @@ function acbClickedP(e) {
     document.getElementById(id).style.backgroundColor = "white";
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
+    //verseClicked = id;
 };
 
 async function acbLoadText(bid, cn) {
@@ -163,15 +164,7 @@ async function acbLoadText(bid, cn) {
     p.id = `id-acbTextTitle1`;
     p.classList.add('cs-acbTextTitle');
     document.getElementById('id-acbMainText').appendChild(p);
-    if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
-        document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
-        let sp = document.createElement("span");
-        sp.textContent = '®';
-        sp.classList ="cs-acbTrademark";
-        document.getElementById('id-acbTextTitle1').appendChild(sp);
-    } else {
-        document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
-    };
+    document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
 
     p = document.createElement("p");
     p.id = `id-acbTextTitle2`;
@@ -202,7 +195,6 @@ async function acbLoadText(bid, cn) {
             if (newLine) {
                 let p = document.createElement("p");
                 p.id = `id-acbP${pIndx}`;
-                p.addEventListener("click", acbClickedP, true);
                 p.classList.add('cs-acbP');
                 document.getElementById(`id-acbMainText`).appendChild(p);
                 newLine = 0;
@@ -218,6 +210,7 @@ async function acbLoadText(bid, cn) {
             sp.id = `id-acbSP${verses[i].vn}-2`;
             sp.textContent = `${verses[i].vt} `;
             document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
+            document.getElementById(`id-acbSP${verses[i].vn}-2`).addEventListener("click", acbClickedP, true);
             i++;
         };
     };
@@ -249,17 +242,6 @@ async function acbChangeVersion(e) {
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
     if (verses) { acbLoadText(bid, cn); };
-
-    if (document.getElementById(versionClicked).textContent === 'Twenty-First Century Bible®') {
-        document.getElementById('id-acbTextTitle1').textContent = 'Twenty-First Century Bible';
-        let sp = document.createElement("span");
-        sp.textContent = '®';
-        sp.classList ="cs-acbTrademark";
-        document.getElementById('id-acbTextTitle1').appendChild(sp);
-    } else {
-        document.getElementById('id-acbTextTitle1').textContent = document.getElementById(versionClicked).textContent;
-    };
-
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
 
     acbCloseBox();
@@ -313,7 +295,12 @@ function acbGoToVerse(e) {
     let id = `id-acbSP${e.target.dataset.vn}`;
     document.getElementById(id).scrollIntoView({ block: 'center' });
     acbCloseBox();
-    document.getElementById(`${id}-2`).style.backgroundColor = "#aed0fc"
+    document.getElementById(`${id}-2`).style.backgroundColor = "#aed0fc";
+    if (!firstHighlight) {
+        document.getElementById(textHighlight).style.backgroundColor = "white";
+    }
+    firstHighlight = false;
+    textHighlight = `${id}-2`;
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
     e.target.style.color = "crimson";
@@ -388,6 +375,7 @@ function acbCloseBox() {
 // #endregion End OpenClose functions Section
 
 // #region Miscellaneous functions Sectionasync function fetchJson(url) {
+
 async function fetchFile(url) {
     document.getElementById('id-acbHtml').style.cursor = 'wait';
     document.getElementById('id-acbHtml').style.pointerEvents = 'none';
@@ -431,7 +419,7 @@ async function acbSetNewTestament() {
     let res = false;
     res = await acbLoadBooks(newBooks);
     acbLoadChapter();
-    acbLoadVerses(1, 1);
+    acbLoadVerses(40, 1);
     if (res) { acbLoadText(40, 1) };
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
@@ -494,5 +482,7 @@ function acbSortBooks() {
         };
     };
 };
+
+
 
 // #endregion End Miscellaneous functions Section
