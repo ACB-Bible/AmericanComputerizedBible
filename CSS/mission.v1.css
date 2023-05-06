@@ -72,6 +72,7 @@ cs-acbCenter {
 
 .cs-acbCrimson {
     color: crimson;
+    color: #be1754;
     font-size: .9rem;
     font-weight: 600;
 }
@@ -130,8 +131,9 @@ cs-acbCenter {
 }
 
 .cs-imgBack:hover {
-    font-size: 1.1em;
+    font-weight: 550;
     color: rgb(224, 223, 223);
+    color: #ecf0f7;
 }
 
 a {
@@ -189,3 +191,6 @@ a {
     font-size: .9rem
 }
 
+.test {
+    color: #a23021;
+}

@@ -12,7 +12,6 @@ window.onload = async () => {
 
 // #region Load functions Section
 
-
 async function acbStartVerses(bid, cn) {
     const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
     const verse = await fetchJson(url);
@@ -115,6 +114,17 @@ async function acbLoadVerses(bid, cn) {
     acbScroll('id-acbInnerVerse');
 };
 
+function acbRedBegin(verse) {
+    let textContent = '';
+
+    verses[i].vn;
+};
+
+function acbRedEnd(verse) {
+    let textContent = '';
+
+    verses[i].vn;
+};
 function acbSingleParagraph(bid, cn, i) {
 
     var pIndx = 0;
@@ -150,6 +160,7 @@ function acbClickedP(e) {
     document.getElementById(id).style.backgroundColor = "white";
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
+    highlighted = 0;
     //verseClicked = id;
 };
 
@@ -209,6 +220,7 @@ async function acbLoadText(bid, cn) {
             sp = document.createElement("span");
             sp.id = `id-acbSP${verses[i].vn}-2`;
             sp.textContent = `${verses[i].vt} `;
+            //if (Number(verses[i].jq) === 1) { sp.classList.add('cs-acbCrimson') };
             document.getElementById(`id-acbP${pIndx}`).appendChild(sp);
             document.getElementById(`id-acbSP${verses[i].vn}-2`).addEventListener("click", acbClickedP, true);
             i++;
@@ -226,6 +238,7 @@ async function acbChangeVersion(e) {
     versionClicked = this.event.target.id;
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
+    let textLoaded = false;
 
     if (loaded === 1) {
         let idx = Number(document.getElementById(versionClicked).dataset.idx);
@@ -241,10 +254,14 @@ async function acbChangeVersion(e) {
     };
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
-    if (verses) { acbLoadText(bid, cn); };
+    if (verses) { textLoaded = acbLoadText(bid, cn); };
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
-
     acbCloseBox();
+
+    if (textLoaded && highlighted === 1) {
+        document.getElementById(textHighlight).style.backgroundColor = "#aed0fc";
+        document.getElementById(textHighlight).scrollIntoView({ block: 'center' });
+    };
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
@@ -306,6 +323,7 @@ function acbGoToVerse(e) {
     e.target.style.color = "crimson";
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     verseClicked = e.target.id;
+    highlighted = 1;
 };
 // #endregion End Change functions Section
 
