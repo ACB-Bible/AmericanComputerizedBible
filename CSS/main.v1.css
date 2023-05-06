@@ -88,7 +88,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 550;
-    color: #9e6105;
+    color: #be1717;
 }
 
 /* #region Controls for selecting books, chapter, and verses */
@@ -255,6 +255,7 @@ body {
 
 .cs-acbSortBooks:hover {
     color: crimson;
+    color: #be1754;
 }
 
 /* #endregion Controls for selecting books, chapter, and verses */
