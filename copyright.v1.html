@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Do not change this <base> url unless the host location changes-->
+    <base href="https://acbible.com/">
+    <!--<base href="./">-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Computerized Bible - Copyright</title>
+    <link href="IMAGES/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="CSS/copyright.v1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="cs-acbPage">
+        <br>
+
+        <p class="cs-acbCopyright" onclick="acbNavIndex()" title="Go to the American Computerized Bible"
+            alt="Go to the American Computerized Bible">American Computerized Bible
+        </p>
+
+        <p class="cs-acbRights">American Computerized Bible<br> is a computerized Bible platform and it's source code is
+            the wholly owned property of Gregg Butler that was begun in 2019 and was first published in 2023.<br><br>
+            Twenty-First Century Bible<br>
+            is a translation of the Holy Bible which is part of the American Computerized Bible, and it's the wholly
+            owned property of Gregg Butler. Translation of the Twenty-First Century Bible was begun in 2019 and was
+            first published in 2023.<br><br>
+            These properties include, but are not limited to all the source code files, css files, javascript files,
+            html files, text files, sql database files, and Json files. The American Computerized Bible and the
+            Twenty-First Century Bible are both incomplete at this time, and work on both projects will continue for
+            some time.
+        </p>
+
+        <p class="cs-acbRights cs-acbText">Copyright © 2019-2023 Gregg Butler</p>
+        <p class="cs-acbRights cs-acbText1">All rights reserved. Unauthorized reproduction of these files, in any
+            manner, is prohibited.</p>
+        <p class="cs-acbRights cs-acbText2">Users are allowed to freely read and study the content of these Bibles while
+            using this website. Users are allowed to freely quote the Bible verses from this website, but copying or
+            unauthorized reproduction of the source code files, including but not limited to all css files, javascript
+            files, html files, text files, sql database files, and Json files is strictly prohibited.</p>
+    </div>
+</body>
+<script>
+
+    function acbNavIndex() {
+
+        if (localStorage.getItem("loaded")) {
+            window.close();
+        } else {
+            window.location.href = 'index.html';
+        };
+        if (localStorage.getItem("loaded")) { localStorage.removeItem("loaded"); };
+    };
+</script>
+
+</html>

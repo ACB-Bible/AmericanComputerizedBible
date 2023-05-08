@@ -132,8 +132,7 @@ cs-acbCenter {
 
 .cs-imgBack:hover {
     font-weight: 550;
-    color: rgb(224, 223, 223);
-    color: #ecf0f7;
+    color: navy;
 }
 
 a {
@@ -165,12 +164,10 @@ a {
     color: #9e6105;
 }
 
-.cs-acbTrademark {
-    font-size: .58em;
-}
-
-.cs-acbTrademarkHeader {
-    font-size: .4em;
+.cs-acbCopyright:hover {
+    cursor: pointer;
+    color: rgb(73, 73, 73);
+    font-weight: 550;
 }
 
 .cs-acbLE {

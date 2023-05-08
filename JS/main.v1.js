@@ -1,6 +1,7 @@
 window.onload = async () => {
 
     let res = false;
+    if (localStorage.getItem("loaded")) {localStorage.removeItem("loaded")};
     res = await acbLoadBooks(oldBooks);
     if (res) { res = false; res = await acbLoadChapter() };
     if (res) { res = false; res = await acbStartVerses(1, 1) };
@@ -8,6 +9,22 @@ window.onload = async () => {
         document.getElementById(chapterClicked).style.color = "crimson";
         document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     };
+};
+
+if (typeof window.onbeforeunload === "function") {
+    window.onbeforeunload = function () {
+        if (localStorage.getItem("loaded")) {localStorage.removeItem("loaded");};
+    };
+};
+
+function acbNavMission() {
+    localStorage.setItem("loaded", "true");
+    window.open('mission.v1.html', '_blank');
+};
+
+function acbNavCopyright() {
+    localStorage.setItem("loaded", "true");
+    window.open('copyright.v1.html', '_blank');
 };
 
 // #region Load functions Section
@@ -161,7 +178,6 @@ function acbClickedP(e) {
     document.getElementById(verseClicked).style.color = "black";
     document.getElementById(verseClicked).style.backgroundColor = "white";
     highlighted = 0;
-    //verseClicked = id;
 };
 
 async function acbLoadText(bid, cn) {
@@ -500,7 +516,5 @@ function acbSortBooks() {
         };
     };
 };
-
-
 
 // #endregion End Miscellaneous functions Section

@@ -254,7 +254,7 @@ body {
 }
 
 .cs-acbSortBooks:hover {
-    color: crimson;
+    color: #db143c;
     color: #be1754;
 }
 
@@ -363,8 +363,10 @@ body {
     color: #9e6105;
 }
 
-.cs-acbTrademark {
-    font-size: .6em;
+.cs-acbCopyright:hover {
+    cursor: pointer;
+    color: rgb(73, 73, 73);
+    font-weight: 550;
 }
 
 .cs-acbLE {
