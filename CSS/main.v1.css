@@ -347,6 +347,7 @@ body {
 }
 
 .cs-acbMission:hover {
+    cursor: pointer;
     color: rgb(176, 184, 184);
     color: #ecf0f7;
     font-weight: 550;
@@ -394,3 +395,10 @@ body {
 .cs-acbCrimson {
     color: #be1754;
 }
+
+@media (max-width: 768px) {
+    .cs-acbImage1 {
+        display: none;
+
+    }
+  }

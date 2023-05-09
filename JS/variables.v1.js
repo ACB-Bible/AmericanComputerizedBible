@@ -1,7 +1,7 @@
 //-Do not change mainPath variable url unless the host location changes
 var mainPath = "https://acbible.com/";
 //var mainPath = "./";
-//testment old testament = 0 new testament = 1
+//var testment old testament = 0 new testament = 1
 var highlighted = 0;
 var testament = 0;
 var firstText = true;

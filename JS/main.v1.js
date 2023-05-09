@@ -28,7 +28,6 @@ function acbNavCopyright() {
 };
 
 // #region Load functions Section
-
 async function acbStartVerses(bid, cn) {
     const url = `${mainPath}DATA/${versionActive}/${versionActive}Verses.json`;
     const verse = await fetchJson(url);
@@ -131,6 +130,18 @@ async function acbLoadVerses(bid, cn) {
     acbScroll('id-acbInnerVerse');
 };
 
+function acbClickedP(e) {
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    id = e.target.id;
+    document.getElementById(id).style.color = "black";
+    document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(verseClicked).style.color = "black";
+    document.getElementById(verseClicked).style.backgroundColor = "white";
+    highlighted = 0;
+};
+
 function acbRedBegin(verse) {
     let textContent = '';
 
@@ -142,6 +153,7 @@ function acbRedEnd(verse) {
 
     verses[i].vn;
 };
+
 function acbSingleParagraph(bid, cn, i) {
 
     var pIndx = 0;
@@ -166,18 +178,6 @@ function acbSingleParagraph(bid, cn, i) {
         pIndx++;
 
     };
-};
-
-function acbClickedP(e) {
-
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    id = e.target.id;
-    document.getElementById(id).style.color = "black";
-    document.getElementById(id).style.backgroundColor = "white";
-    document.getElementById(verseClicked).style.color = "black";
-    document.getElementById(verseClicked).style.backgroundColor = "white";
-    highlighted = 0;
 };
 
 async function acbLoadText(bid, cn) {
