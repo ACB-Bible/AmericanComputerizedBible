@@ -205,9 +205,11 @@ async function acbLoadText(bid, cn) {
     p.addEventListener("click", acbClickedP, true);
     document.getElementById('id-acbMainText').appendChild(p);
     let img = document.createElement("img");
-    img.src = "./IMAGES/open.png";
+    img.src = "./IMAGES/open.webp";
     img.alt = "First Verse";
     img.classList = "cs-acbImage2";
+    img.setAttribute('async', true);
+    img.setAttribute('loading', 'lazy');
     document.getElementById(`id-acbP0`).appendChild(img);
 
     let i = verses.findIndex(vrs => vrs.bid === bid && vrs.cn === cn);
