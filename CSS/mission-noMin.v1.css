@@ -3,30 +3,29 @@ html {
     height: 100%;
     width: 100%;
     z-index: 200;
-    overflow: hidden;
+    overflow: hidden
 }
 
 body {
     height: 100%;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto
 }
-
 
 h2 {
     width: 35%;
-    margin: auto;
+    margin: auto
 }
 
 h4 {
     width: 13%;
-    margin: auto;
+    margin: auto
 }
 
 .cs-acbMain {
     position: relative;
     width: 70%;
-    margin: auto;
+    margin: auto
 }
 
 .cs-acbParagraph {
@@ -35,50 +34,50 @@ h4 {
     font-size: 1.1em;
     text-align: justify;
     word-break: keep-all;
-    padding-bottom: 1em;
+    padding-bottom: 1em
 }
 
 .cs-acbParagraph1 {
-    width: 48%;
+    width: 48%
 }
 
 cs-acbCenter {
-    text-align: center;
+    text-align: center
 }
 
 .cs-acbItalic {
-    font-style: italic;
+    font-style: italic
 }
 
 .cs-acbBox {
-    box-shadow: 0 4px 7px rgba(59, 59, 59, 0.25);
+    box-shadow: 0 4px 7px rgba(59, 59, 59, .25);
     padding: .3em;
-    padding-top: .1em;
+    padding-top: .1em
 }
 
 .cs-acbBox:hover {
-    background-color: rgba(59, 59, 59, 0.25);
+    background-color: rgba(59, 59, 59, .25)
 }
 
 .cs-acbTitle {
     font-size: 2.2rem;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .cs-acbTitle:hover {
     cursor: pointer;
-    color: #9e6105;
+    color: #9e6105
 }
 
 .cs-acbCrimson {
     color: crimson;
     color: #be1754;
     font-size: .9rem;
-    font-weight: 600;
+    font-weight: 600
 }
 
 .cs-acbGold {
-    color: #9e6105;
+    color: #9e6105
 }
 
 .cs-acbNumber {
@@ -86,7 +85,7 @@ cs-acbCenter {
     font-weight: 600;
     padding-right: .15em;
     color: #9e6105;
-    vertical-align: .15em;
+    vertical-align: .15em
 }
 
 .cs-acbStatement {
@@ -94,7 +93,7 @@ cs-acbCenter {
     display: block;
     width: 99%;
     margin: auto;
-    text-align: center;
+    text-align: center
 }
 
 .cs-acbPic1 {
@@ -106,19 +105,19 @@ cs-acbCenter {
     height: 36%;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    padding: 0;
+    padding: 0
 }
 
 .cs-acbImage1 {
     width: 100%;
     height: 100%;
     border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-right-radius: 6px
 }
 
 .cs-acbImage2 {
     height: 50%;
-    width: 75%;
+    width: 75%
 }
 
 .cs-imgBack {
@@ -127,12 +126,12 @@ cs-acbCenter {
     left: 40%;
     color: white;
     font-weight: 550;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .cs-imgBack:hover {
     font-weight: 550;
-    color: navy;
+    color: navy
 }
 
 a {
@@ -141,7 +140,7 @@ a {
     left: 9%;
     top: 36.5%;
     padding-top: 1.5em;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .cs-acbFooter {
@@ -149,7 +148,7 @@ a {
     top: 3%;
     width: 58%;
     font-size: small;
-    text-align: center;
+    text-align: center
 }
 
 .cs-acbCopyright {
@@ -160,14 +159,14 @@ a {
     margin: auto;
     font-size: small;
     text-align: center;
-    border:  2px solid rgba(77, 76, 76, 0.4);
-    color: #9e6105;
+    border: 2px solid rgba(77, 76, 76, .4);
+    color: #9e6105
 }
 
 .cs-acbCopyright:hover {
     cursor: pointer;
     color: rgb(73, 73, 73);
-    font-weight: 550;
+    font-weight: 550
 }
 
 .cs-acbLE {
@@ -181,7 +180,7 @@ a {
     font-size: 1.6rem;
     height: 12%;
     width: 80%;
-    margin: auto;
+    margin: auto
 }
 
 .cs-acbLE1 {
@@ -189,5 +188,5 @@ a {
 }
 
 .test {
-    color: #a23021;
+    color: #a23021
 }

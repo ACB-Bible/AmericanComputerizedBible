@@ -309,6 +309,9 @@ async function acbSetNewTestament() {
     bookClicked = 'id-acbBk40';
     chapterClicked = 'id-acbChp1';
     verseClicked = 'id-acbVrs0';
+    textHighlight = 'id-acbSP1-2'
+    firstHighlight = true;
+    highLighted = 0;
     chapterCount = 28;
     let res = false;
     res = await acbLoadBooks(newBooks);
@@ -328,6 +331,9 @@ async function acbSetOldTestament() {
     bookClicked = 'id-acbBk1';
     chapterClicked = 'id-acbChp1';
     verseClicked = 'id-acbVrs0';
+    textHighlight = 'id-acbSP1-2';
+    firstHighlight = true;
+    highLighted = 0;
     chapterCount = 50;
     let res = false;
     res = await acbLoadBooks(oldBooks);
