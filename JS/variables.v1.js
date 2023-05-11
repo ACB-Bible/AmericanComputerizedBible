@@ -16,7 +16,6 @@ var versionClicked = 'id-acbVrsn5';
 
 var bookOpen = 0;
 var bookClicked = 'id-acbBk1';
-//var bookSorted = false;
 var bookAlph = false;
 
 var chapterOpen = 0;
