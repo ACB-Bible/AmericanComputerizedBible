@@ -330,6 +330,11 @@ function acbGoToVerse(e) {
     let id = `id-acbSP${e.target.dataset.vn}`;
     document.getElementById(id).scrollIntoView({ block: 'center' });
     acbCloseBox();
+    if (mobileMenuOpen) {
+        document.getElementById('id-acbSelectContainer').style.display = 'none';
+        document.getElementById('id-acbSelectContainer').style.width = "0";
+        mobileMenuOpen = false;
+    }
     document.getElementById(`${id}-2`).style.backgroundColor = "#aed0fc";
     if (!firstHighlight) {
         document.getElementById(textHighlight).style.backgroundColor = "white";
@@ -519,4 +524,15 @@ function acbSortBooks() {
     };
 };
 
+function acbMobileMenu() {
+    if (mobileMenuOpen) {
+        document.getElementById('id-acbSelectContainer').style.display = 'none';
+        document.getElementById('id-acbSelectContainer').style.width = "0";
+        mobileMenuOpen = false;
+    } else {
+        document.getElementById('id-acbSelectContainer').style.display = 'block';
+        document.getElementById('id-acbSelectContainer').style.width = '65%';
+        mobileMenuOpen = true;
+    };
+};
 // #endregion End Miscellaneous functions Section

@@ -34,7 +34,7 @@ body {
 
 .cs-acbRights {
     position: relative;
-    top: 15%;
+    top: 12%;
     width: 35%;
     margin-left: auto;
     margin-right: auto;
@@ -44,17 +44,22 @@ body {
 
 .cs-acbText {
     position: relative;
-    top: 25%;
+    top: 14%;
 }
 
 .cs-acbText1 {
     position: relative;
-    top: 26%;
+    top: 15%;
 }
 
 .cs-acbText2 {
     position: relative;
-    top: 28%;
+    top: 16%;
+}
+
+.cs-acbText3 {
+    position: relative;
+    top: 17%;
 }
 
 

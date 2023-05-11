@@ -6,9 +6,6 @@
     <!--Do not change this <base> url unless the host location changes-->
     <base href="https://acbible.com/">
     <!--<base href="./">-->
-    <!--<meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>-->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +25,10 @@
             "author": {
               "@type": "Person",
               "name": "Gregg Butler",
-              "url": "https://acbible.com/about.v1.html"
+              "url": "https://acbible.com/mission.v1.html"
             },
-            "copyrightHolder": "Gregg Butler",
-            "copyrightNotice": "© 2019-2023 Gregg Butler - All Rights Reserved",
+            "copyrightHolder": "ACB-Bible",
+            "copyrightNotice": "© 2019-2023 ACB-Bible - All Rights Reserved",
             "copyrightYear": "2019-2023",
             "image": [
             "https://acbible.com/IMAGES/RSNIPPETS/Crucifixion-of-Jesus1x1.v1.jpg",
@@ -48,11 +45,16 @@
     <link async href="CSS/main.v1.css" rel="stylesheet" type="text/css">
 </head>
 
-<body id="id-acbBody">
+<body id="id-acbBody" style="height: 100%;
+width: 100%;">
+    <div id="id-acbMobileHeader" class="cs-acbMobileHeader">
+        <h1 class="cs-acbTitle cs-acbMobileTitle">American <span class="cs-acbGold">Computerized</span> Bible</h1>
+    </div>
 
     <div id="id-acbHeader" class="cs-acbHeader">
-        <h1 class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible</h1>
+        <h1 class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span> Bible</h1><br>
         <div class="cs-acbMenu">
+            <img src="IMAGES/menu.webp" alt="Click to Select Book,Chapter, and Verse" class="cs-acbMenuImg" onclick="acbMobileMenu()" type="image/webp">
             <button id="id-acbBtn1" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old</button>
             <button id="id-acbBtn2" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New</button>
             <button id="id-acbBtn3" onclick="acbOpenClose()" class="cs-acbMenuBtn">Versions</button>
@@ -90,8 +92,8 @@
         <div id="id-acbSelectContainer" onclick="acbOpenClose()" class="cs-acbSelectContainer">
             <h2 id="id-acbTestament" class="cs-acbTestament">Old Testament</h2>
 
-            <div class="cs-acbBox cs-acbBookBox">
-                <label id="id-acbBookLabel" for="id-acbBook" onclick="acbOpenClose()" class="cs-acbSelectLabel"
+            <div class="cs-acbBox cs-acbBookBox cs-acbBookList">
+                <label id="id-acbBookLabel" onclick="acbOpenClose()" class="cs-acbSelectLabel cs-acbSelectBookLabel"
                     title="Select a Book">Book
                     <span id="id-acbSortBooks" class="cs-acbSortBooks" onclick="acbSortBooks()"
                         title="Sort Books Alphabetically">sort
@@ -100,31 +102,31 @@
 
                 <div id="id-acbBook" class="cs-acbSelectBox">
 
-                    <div id="id-acbInnerBook" class=" cs-acbInnerSelectBox">
+                    <div id="id-acbInnerBook" class=" cs-acbInnerSelectBox cs-acbBookSelector">
 
                     </div>
                 </div>
             </div>
 
             <div class="cs-acbBox cs-acbChapterBox">
-                <label id="id-acbChapterLabel" for="id-acbChapter" onclick="acbOpenClose()"
+                <label id="id-acbChapterLabel" onclick="acbOpenClose()"
                     class="cs-acbSelectLabel cs-acbNarrowLabel" title="Select a Chapter">Chapter
                 </label>
 
                 <div id="id-acbChapter" class="cs-acbSelectBox">
-                    <div id="id-acbInnerChapter" class=" cs-acbInnerSelectBox">
+                    <div id="id-acbInnerChapter" class=" cs-acbInnerSelectBox cs-acbInnerSelector">
 
                     </div>
                 </div>
             </div>
 
             <div class="cs-acbBox cs-acbVerseBox">
-                <label id="id-acbVerseLabel" for="id-acbVerse" onclick="acbOpenClose()"
+                <label id="id-acbVerseLabel" onclick="acbOpenClose()"
                     class="cs-acbSelectLabel cs-acbNarrowLabel" title="Select a Verse">Verse&nbsp;&nbsp;&nbsp;
                 </label>
 
                 <div id="id-acbVerse" class="cs-acbSelectBox">
-                    <div id="id-acbInnerVerse" class=" cs-acbInnerSelectBox">
+                    <div id="id-acbInnerVerse" class=" cs-acbInnerSelectBox cs-acbInnerSelector">
 
                     </div>
                 </div>
@@ -133,17 +135,17 @@
         </div>
 
         <div class="cs-acbPic1">
-            <label for="id-acbLE" class="cs-acbLE">Let there be light<br><span class="cs-acbLE1">And There Was
+            <label class="cs-acbLE">Let there be light<br><span class="cs-acbLE1">And There Was
                     Light</span></label>
-            <img async id="id-acbLE" src="IMAGES/BOOKS/genesis.jpg" alt="Let There Be Light" title="Let There Be Light" class="cs-acbImage1" type="image/jpg" loading="lazy">
-<!--src="IMAGES/BOOKS/genesis.jpg"-->
+            <img async id="id-acbLE" src="IMAGES/BOOKS/genesis.webp" alt="Let There Be Light" title="Let There Be Light" class="cs-acbImage1" type="image/webp" loading="lazy">
+
         </div>
 
         <div id="id-acbMainText" class="cs-acbMainText">
             <p id="id-acbTextTitle1" class="cs-acbTextTitle">Twenty-First Century Bible</p>
-            <p id="id-acbTextTitle2" class="cs-acbTextTitle cs-acbGold">Genesis 1</p>
+            <p id="id-acbTextTitle2" class="cs-acbTextTitle cs-acbMaroon">Genesis 1</p>
             <p id="id-acbP0">
-                <img async src="IMAGES/open.webp" class="cs-acbImage2" type="image/png" alt="Illustration for the first verse of each chapter" loading="lazy">
+                <img async src="IMAGES/open.webp" class="cs-acbImage2" type="image/webp" alt="Illustration for the first verse of each chapter" loading="lazy">
                 <span id="id-acbSP1" class="cs-acbNumber"></span>
                 <span id="id-acbSP1-2" onclick="acbClickedP(event)">In the
                     beginning, God created Heaven and Earth. </span><span id="id-acbSP2"
@@ -255,7 +257,7 @@
         </div>
 
         <br><br><br>
-        <p class="cs-acbCopyright" onclick="acbNavCopyright()">Copyright © 2019-2023 Gregg Butler - All Rights Reserved
+        <p class="cs-acbCopyright" onclick="acbNavCopyright()">Copyright © 2019-2023 ACB-Bible - All Rights Reserved
         </p>
         <br>
     </div>

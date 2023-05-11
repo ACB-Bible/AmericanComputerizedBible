@@ -46,7 +46,7 @@ body {
 
 .cs-acbMenu {
     position: relative;
-    top: 1.7rem;
+    top: 6%;
     left: 6%;
     height: 1.9rem;
     width: 35%;
@@ -62,7 +62,7 @@ body {
 }
 
 .cs-acbMenuBtn {
-    font-size: .9rem;
+    font-size: 1rem;
     padding-left: 2em;
     outline: none;
     border: none;
@@ -166,7 +166,7 @@ body {
     z-index: 10;
 }
 
-.cs-acbInnerVersion{
+.cs-acbInnerVersion {
     position: relative;
     top: 0;
     height: 100%;
@@ -222,8 +222,8 @@ body {
 }
 
 .cs-acbSelector:hover {
-    color: white!important;
-    background-color: #adb6bb!important;
+    color: white !important;
+    background-color: #adb6bb !important;
     cursor: pointer;
 }
 
@@ -312,9 +312,12 @@ body {
     font-size: 1.3rem;
     font-weight: 550;
     word-break: normal;
-    text-align: left;;
+    text-align: left;
 }
 
+.cs-acbMaroon {
+    color: #720D0D;
+}
 .cs-acbNumber {
     font-size: .75rem;
     font-weight: 600;
@@ -324,10 +327,10 @@ body {
 }
 
 .cs-acbLink {
+    display: block;
     width: 100%;
     height: 4%;
     text-align: center;
-    display: block;
 }
 
 .cs-acbMission {
@@ -342,7 +345,7 @@ body {
     padding-top: .75em;
     height: 100%;
     width: 18%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .cs-acbMission:hover {
@@ -359,7 +362,7 @@ body {
     margin: auto;
     font-size: small;
     text-align: center;
-    border:  2px solid rgba(77, 76, 76, 0.4);
+    border: 2px solid rgba(77, 76, 76, 0.4);
     color: #9e6105;
 }
 
@@ -395,9 +398,128 @@ body {
     color: #be1754;
 }
 
+.cs-acbMobileHeader {
+    display: none;
+}
+
+.cs-acbMenuImg {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: 100%;
+    }
+
+    .cs-acbMobileHeader {
+        display: inline-block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #ecf0f7;
+    }
+
+    .cs-acbMobileTitle {
+        width: 80%;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+
+    .cs-acbHeader {
+        top: 9;
+        left: 0;
+        height: 15%;
+        padding-bottom: .5rem;
+    }
+
+    .cs-acbTitle {
+        width: 80%;
+        height: 40%;
+        margin: auto;
+        font-size: 1.2rem;
+        padding-top: .5em;
+    }
+
+    .cs-acbMenu {
+        display: flex;
+        top: .3rem;
+        width: 90%;
+    }
+
+    .cs-acbMainContainer {
+        position: relative;
+        top: 18%;
+        left: -1%;
+        width: 98%;
+    }
+
+    .cs-acbSelectContainer {
+        position: fixed;
+        top: 16.5%;
+        left: 0;
+        width: 0;
+        display: none;
+        transition: all .3s ease;
+    }
+
+    .cs-acbMainText {
+        position: relative;
+        top: 0;
+        left: -2%;
+        width: 88%;
+        margin: auto;
+    }
+
     .cs-acbImage1 {
         display: none;
-
     }
-  }
+
+    .cs-acbMission {
+        width: 56%;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    .cs-acbCopyright {
+        width: 56%;
+    }
+
+    .cs-acbMenuBtn {
+        position: relative;
+        left: 10%;
+    }
+    .cs-acbMenuImg {
+        display: inline-block;
+        height: 96%;
+        width: 10%;
+    }
+
+    .cs-acbInnerSelectBox {
+        left: -.6em;
+        padding-left: .6em;
+    }
+
+    .cs-acbBookSelector {
+        height: 100%;
+    }
+
+    .cs-acbBookList {
+        height: 50%;
+    }
+
+    .cs-acbSelectBookLabel {
+        height: 11.4%;
+    }
+
+    .cs-acbInnerSelector {
+        padding-left: 0;
+    }
+
+    .cs-acbVersion {
+        left: 49.5%;
+        top: 16.9%;
+        height: 50%;
+        width: 50%;
+    }
+
+}

@@ -2,10 +2,11 @@
 var mainPath = "https://acbible.com/";
 //var mainPath = "./";
 //var testment old testament = 0 new testament = 1
-var highlighted = 0;
-var testament = 0;
 var firstText = true;
 var firstHighlight = true;
+var highlighted = 0;
+var mobileMenuOpen = false;
+var testament = 0;
 var textHighlight = 'id-acbSP1-2';
 
 var versionIdx = 1;
