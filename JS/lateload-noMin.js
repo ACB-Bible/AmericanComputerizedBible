@@ -150,11 +150,10 @@ async function acbChangeVersion(e) {
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
     acbCloseBox();
 
-    if (textLoaded && highlighted === 1 && setTestament) {
+    if (textLoaded && highlighted === 1 && !setTestament) {
         document.getElementById(textHighlight).style.backgroundColor = "#aed0fc";
         document.getElementById(textHighlight).scrollIntoView({ block: 'center' });
     };
-    setTestament = false;
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
