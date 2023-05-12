@@ -46,7 +46,13 @@ cs-acbCenter {
 }
 
 .cs-acbItalic {
-    font-style: italic
+    font-style: italic;
+}
+
+.cs-acbSignature {
+    font-style: italic;
+    color: #2d6ab9;
+    font-weight: 550;
 }
 
 .cs-acbBox {
@@ -177,8 +183,4 @@ a {
 
 .cs-acbLE1 {
     font-size: .9rem
-}
-
-.test {
-    color: #a23021
 }
