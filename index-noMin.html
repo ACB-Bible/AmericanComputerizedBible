@@ -22,38 +22,44 @@
             "author": {
               "@type": "Person",
               "name": "Gregg Butler",
-              "url": "https://acbible.com/mission.v1.html"
+              "url": "https://acbible.com/mission.html"
             },
             "copyrightHolder": "ACB-Bible",
             "copyrightNotice": "© 2019-2023 ACB-Bible - All Rights Reserved",
             "copyrightYear": "2019-2023",
             "image": [
-            "https://acbible.com/IMAGES/RSNIPPETS/Crucifixion-of-Jesus1x1.v1.jpg",
-            "https://acbible.com/IMAGES/RSNIPPETS/Jesus4x3.v1.jpg",
+            "https://acbible.com/IMAGES/RSNIPPETS/Crucifixion-of-Jesus1x1.jpg",
+            "https://acbible.com/IMAGES/RSNIPPETS/Jesus4x3.jpg",
             "https://acbible.com/IMAGES/RSNIPPETS/Jesus-Christ16x9.jpg"
             ]
           }
     </script>
+
     <meta name="description"
         content="The American Computerized Bible is free for everyone to read and study. Read and study the Holy Bible online anywhere at anytime, and let it lift your spirit up.">
     <link href="IMAGES/favicon.ico" rel="icon" type="image/x-icon">
-    <link async href="CSS/main.v1.css" rel="stylesheet" type="text/css">
+    <link async href="CSS/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="id-acbBody" style="height: 100%;
 width: 100%;">
 
-
     <div id="id-acbHeader" class="cs-acbHeader">
         <h1 class="cs-acbTitle">American <span class="cs-acbGold">Computerized</span>Bible</h1><br>
-        <div id="id-acbMobileHeader" class="cs-acbMobileHeader"><h2 class="cs-acbTitle cs-acbMobileTitle">American <span class="cs-acbGold">Computerized</span>Bible</h2></div>
+        <div id="id-acbMobileHeader" class="cs-acbMobileHeader">
+            <h2 class="cs-acbTitle cs-acbMobileTitle">American <span class="cs-acbGold">Computerized</span>Bible
+            </h2>
+        </div>
 
-        <div class="cs-acbMenu"><img src="IMAGES/menu.webp" alt="Click to Select Book,Chapter, and Verse"
-                class="cs-acbMenuImg" onclick="acbMobileMenu()" type="image/webp"><button id="id-acbBtn1"
-                onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old</button><button id="id-acbBtn2"
-                onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New</button><button id="id-acbBtn3"
-                onclick="acbOpenClose()" class="cs-acbMenuBtn">Versions</button></div>
+        <div class="cs-acbMenu">
+            <img src="IMAGES/menu.webp" alt="Click to Select Book,Chapter, and Verse" class="cs-acbMenuImg"
+                onclick="acbMobileMenu()" type="image/webp">
+            <button id="id-acbBtn1" onclick="acbSetOldTestament()" class="cs-acbMenuBtn">Old</button>
+            <button id="id-acbBtn2" onclick="acbSetNewTestament()" class="cs-acbMenuBtn">New</button>
+            <button id="id-acbBtn3" onclick="acbOpenClose()" class="cs-acbMenuBtn">Versions</button>
+        </div>
     </div>
+
     <div id="id-acbFixedPanel" onclick="acbOpenClose()" class="cs-acbFixedPanel"></div>
     <div id="id-acbVersionList" class="cs-acbVersion">
         <div id="id-acbInnerVersion" class="cs-acbInnerVersion cs-acbInnerSelectBox">
@@ -76,6 +82,7 @@ width: 100%;">
                     data-loaded="0" class="cs-acbSelect">Young's Literal Translation</span></div>
         </div>
     </div>
+
     <div id="id-acbMainContainer" class="cs-acbMainContainer">
         <div id="id-acbSelectContainer" onclick="acbOpenClose()" class="cs-acbSelectContainer">
             <h2 id="id-acbTestament" class="cs-acbTestament">Old Testament</h2>
@@ -100,13 +107,22 @@ width: 100%;">
                 </div>
             </div>
         </div>
+
         <div class="cs-acbPic1">
             <label class="cs-acbLE">Let there be light<br><span class="cs-acbLE1">And There Was Light</span></label>
-            <img async id="id-acbLE" src="IMAGES/BOOKS/genesis.webp"
-                alt="Let There Be Light" title="Let There Be Light" class="cs-acbImage1" type="image/webp"
-                loading="lazy">
+            <img async id="id-acbLE" src="IMAGES/BOOKS/genesis.webp" alt="Let There Be Light" title="Let There Be Light"
+                class="cs-acbImage1" type="image/webp" loading="lazy">
         </div>
-        <p class="cs-acbAbout">The American Computerized Bible website is a mission of love that the Lord has laid on my heart, and it currently contains eight different versions of the Holy Bible, it's a work in progress, and it's only one part of my ministry. The Twenty-First Century Bibleis the second part of this ministry, and it's included as part of the American Computerized Bible website. The Twenty-First Century Bible will be a modern, new, tewnty-first century version of the Bible that's being translated from various versions of ancient biblical texts. I believe if anyone finds salvation through this effort, the mission that God has given me will have been accomplished.</p>
+
+        <p class="cs-acbAbout">The American Computerized Bible website is a mission of love that the Lord has laid on my
+            heart, and it currently contains eight different versions of the Holy Bible, it's a work in progress, and
+            it's only one part of my ministry. The Twenty-First Century Bibleis the second part of this ministry, and
+            it's included as part of the American Computerized Bible website. The Twenty-First Century Bible will be a
+            modern, new, tewnty-first century version of the Bible that's being translated from various versions of
+            ancient biblical texts. I believe if anyone finds salvation through this effort, the mission that God has
+            given me will have been accomplished.
+        </p>
+
         <div id="id-acbMainText" class="cs-acbMainText">
             <p id="id-acbTextTitle1" class="cs-acbTextTitle">Twenty-First Century Bible</p>
             <p id="id-acbTextTitle2" class="cs-acbTextTitle cs-acbMaroon">Genesis 1</p>
@@ -121,7 +137,9 @@ width: 100%;">
                     id="id-acbSP4-2" onclick="acbClickedP(event)">God saw that the light was good, and He separated the
                     light from the darkness. </span><span id="id-acbSP5" class="cs-acbNumber">5</span><span
                     id="id-acbSP5-2" onclick="acbClickedP(event)">God called the light Day and the darkness Night, and
-                    that morning and that evening were the first day. </span></p>
+                    that morning and that evening were the first day. </span>
+                </p>
+
             <p id="id-acbP1" class="cs-acbP"><span id="id-acbSP6" class="cs-acbNumber">6</span><span id="id-acbSP6-2"
                     onclick="acbClickedP(event)">And God said, "Let there be a firmament in the middle of the waters,
                     and it'll divide the waters from the waters." </span><span id="id-acbSP7"
@@ -129,7 +147,9 @@ width: 100%;">
                     firmament and divided the waters under the firmament from the waters above the firmament, and it was
                     so. </span><span id="id-acbSP8" class="cs-acbNumber">8</span><span id="id-acbSP8-2"
                     onclick="acbClickedP(event)">God called the firmament Heaven, and that morning and that evening were
-                    the second day. </span></p>
+                    the second day. </span>
+                </p>
+
             <p id="id-acbP2" class="cs-acbP"><span id="id-acbSP9" class="cs-acbNumber">9</span><span id="id-acbSP9-2"
                     onclick="acbClickedP(event)">And God said, "Let the waters under Heaven be gathered together into
                     one place and let the dry land appear,"and it was so. </span><span id="id-acbSP10"
@@ -142,7 +162,9 @@ width: 100%;">
                     onclick="acbClickedP(event)">And the Earth brought forth all the seed bearing plants, including
                     every kind of grass, herb, and fruit tree that there was, and God saw that it was good. </span><span
                     id="id-acbSP13" class="cs-acbNumber">13</span><span id="id-acbSP13-2"
-                    onclick="acbClickedP(event)">And that morning and that evening were the third day. </span></p>
+                    onclick="acbClickedP(event)">And that morning and that evening were the third day. </span>
+            </p>
+
             <p id="id-acbP3" class="cs-acbP"><span id="id-acbSP14" class="cs-acbNumber">14</span><span id="id-acbSP14-2"
                     onclick="acbClickedP(event)">And God said, "Let there be lights in the Heavens to divide the day
                     from the night and let them be a sign for the seasons, to seperate the days, months, and years.
@@ -156,7 +178,9 @@ width: 100%;">
                     onclick="acbClickedP(event)">And to divide the light from the darkness and rule over the days and
                     nights, and God saw that it was good. </span><span id="id-acbSP19"
                     class="cs-acbNumber">19</span><span id="id-acbSP19-2" onclick="acbClickedP(event)">And that morning
-                    and that evening were the fourth day. </span></p>
+                    and that evening were the fourth day. </span>
+                </p>
+
             <p id="id-acbP4" class="cs-acbP"><span id="id-acbSP20" class="cs-acbNumber">20</span><span id="id-acbSP20-2"
                     onclick="acbClickedP(event)">And God said, "Let the waters bring forth abundant life with living
                     creatures that move and birds that fly in the Heavens above the Earth." </span><span id="id-acbSP21"
@@ -167,13 +191,17 @@ width: 100%;">
                     onclick="acbClickedP(event)">And God blessed them and said, "Be fruitful, multiply, and fill the
                     waters of the seas with abundant life, and let the birds multiply abundantly upon the Earth."
                 </span><span id="id-acbSP23" class="cs-acbNumber">23</span><span id="id-acbSP23-2"
-                    onclick="acbClickedP(event)">And that morning and that evening were the fifth day. </span></p>
+                    onclick="acbClickedP(event)">And that morning and that evening were the fifth day. </span>
+                </p>
+
             <p id="id-acbP5" class="cs-acbP"><span id="id-acbSP24" class="cs-acbNumber">24</span><span id="id-acbSP24-2"
                     onclick="acbClickedP(event)">And God said, "Let the Earth bring forth every kind of living creature
                     including cattle, animals, creeping things, and every other living thing on Earth"and it was so.
                 </span><span id="id-acbSP25" class="cs-acbNumber">25</span><span id="id-acbSP25-2"
                     onclick="acbClickedP(event)">God created animals of every kind, including cattle, creeping things,
-                    and every other living thing on the Earth, and God saw that it was good. </span></p>
+                    and every other living thing on the Earth, and God saw that it was good. </span>
+                </p>
+
             <p id="id-acbP6" class="cs-acbP"><span id="id-acbSP26" class="cs-acbNumber">26</span><span id="id-acbSP26-2"
                     onclick="acbClickedP(event)">And God said, "Let's make man in our image, a man who looks like us,
                     and man will preserve and control all the fish, birds, cattle, creeping things, and every other
@@ -181,7 +209,9 @@ width: 100%;">
                     id="id-acbSP27-2" onclick="acbClickedP(event)">So God created man in his image, both male and
                     female. </span><span id="id-acbSP28" class="cs-acbNumber">28</span><span id="id-acbSP28-2"
                     onclick="acbClickedP(event)">Then God blessed them and said, "Be fruitful, multiply, and replenish
-                    the Earth; Take control of the fish, birds, and every other living thing on Earth." </span></p>
+                    the Earth; Take control of the fish, birds, and every other living thing on Earth." </span>
+                </p>
+
             <p id="id-acbP7" class="cs-acbP"><span id="id-acbSP29" class="cs-acbNumber">29</span><span id="id-acbSP29-2"
                     onclick="acbClickedP(event)">And God said, "Behold, I've given you every seed-bearing herb and fruit
                     tree on the Earth for you to eat. </span><span id="id-acbSP30" class="cs-acbNumber">30</span><span
@@ -189,18 +219,22 @@ width: 100%;">
                     including every beast and bird, the creeping things, green herbs for food, and every other living
                     thing on the Earth,"and it was so. </span><span id="id-acbSP31" class="cs-acbNumber">31</span><span
                     id="id-acbSP31-2" onclick="acbClickedP(event)">And God saw that everything that He'd created was
-                    very good, and that morning and that evening were the sixth day. </span></p>
+                    very good, and that morning and that evening were the sixth day. </span>
+                </p>
         </div><br><br><br>
+
         <div class="cs-acbLink">
             <p onclick="acbNavMission()" class="cs-acbMission">My Mission</p>
         </div><br><br><br>
-        <p class="cs-acbCopyright" onclick="acbNavCopyright()">Copyright © 2019-2023 ACB-Bible - All Rights Reserved
-        </p><br>
+
+        <p class="cs-acbCopyright" onclick="acbNavCopyright()">Copyright © 2019-2023 ACB-Bible - MIT License</p><br>
+
     </div><br><br>
+
 </body>
 
-<script id="id-acbVar" src="JS/variables.v1.js" type="text/javascript"></script>
-<script src="JS/main.v1.js" type="text/javascript" async></script>
-<script src="JS/late-load.v1.js" type="text/javascript" defer></script>
+<!--<script id="id-acbVar" src="JS/variables.js" type="text/javascript"></script>-->
+<script src="JS/main.js" type="text/javascript" async></script>
+<script src="JS/lateload.js" type="text/javascript" defer></script>
 
 </html>

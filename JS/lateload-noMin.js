@@ -7,12 +7,12 @@ if (typeof window.onbeforeunload === "function") {
 
 function acbNavMission() {
     localStorage.setItem("loaded", "true");
-    window.open('mission.v1.html', '_blank');
+    window.open('mission.html', '_blank');
 };
 
 function acbNavCopyright() {
     localStorage.setItem("loaded", "true");
-    window.open('copyright.v1.html', '_blank');
+    window.open('copyright.html', '_blank');
 };
 
 function acbClickedP(e) {

@@ -32,6 +32,13 @@ body {
     color: navy
 }
 
+.cs-acbFooter {
+    width: 58%;
+    margin: auto;
+    font-size: small;
+    text-align: center
+}
+
 .cs-acbRights {
     position: relative;
     top: 12%;
