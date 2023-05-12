@@ -8,7 +8,7 @@ var highlighted = 0;
 var mobileMenuOpen = false;
 var testament = 0;
 var textHighlight = 'id-acbSP1-2';
-var steTestament = false;
+var setTestament = false;
 
 var versionIdx = 1;
 var versionOpen = 0;
