@@ -127,6 +127,7 @@ async function acbChangeVersion(e) {
     this.event.preventDefault();
     this.event.stopImmediatePropagation();
     versionClicked = this.event.target.id;
+
     versionActive = document.getElementById(versionClicked).dataset.ar;
     let loaded = document.getElementById(versionClicked).dataset.loaded;
     let textLoaded = false;
@@ -149,10 +150,11 @@ async function acbChangeVersion(e) {
     document.getElementById('id-acbTextTitle2').textContent = `${document.getElementById(bookClicked).textContent} ${cn}`;
     acbCloseBox();
 
-    if (textLoaded && highlighted === 1) {
+    if (textLoaded && highlighted === 1 && setTestament) {
         document.getElementById(textHighlight).style.backgroundColor = "#aed0fc";
         document.getElementById(textHighlight).scrollIntoView({ block: 'center' });
     };
+    setTestament = false;
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
 };
@@ -170,6 +172,7 @@ function acbChangeBook(e) {
     acbLoadChapter();
     verseClicked = 'id-acbVrs0';
     chapterClicked = 'id-acbChp1';
+    setTestament = false;
     acbLoadVerses(bid, 1);
     acbLoadText(bid, 1);
     document.getElementById('id-acbBody').scrollTo(0, 0);
@@ -191,6 +194,7 @@ function acbChangeChapter(e) {
     let bid = Number(document.getElementById(bookClicked).dataset.bid);
     let cn = Number(document.getElementById(chapterClicked).dataset.cn);
     verseClicked = 'id-acbVrs0';
+    setTestament = false;
     acbLoadVerses(bid, cn);
     acbLoadText(bid, cn);
     document.getElementById('id-acbBody').scrollTo(0, 0);
@@ -220,6 +224,7 @@ function acbGoToVerse(e) {
     e.target.style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     verseClicked = e.target.id;
     highlighted = 1;
+    setTestament = false;
 };
 // #endregion End Change functions Section
 
@@ -313,6 +318,8 @@ async function acbSetNewTestament() {
     firstHighlight = true;
     highLighted = 0;
     chapterCount = 28;
+    setTestament = true;
+
     let res = false;
     res = await acbLoadBooks(newBooks);
     acbLoadChapter();
@@ -335,11 +342,13 @@ async function acbSetOldTestament() {
     firstHighlight = true;
     highLighted = 0;
     chapterCount = 50;
+    setTestament = true;
+
     let res = false;
     res = await acbLoadBooks(oldBooks);
     acbLoadChapter();
     acbLoadVerses(1, 1);
-    acbLoadText(1, 1);
+    if (res) {acbLoadText(1, 1)};
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     document.getElementById('id-acbBody').scrollTo(0, 0);
