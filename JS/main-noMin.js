@@ -1,3 +1,4 @@
+//The main.js Javascript file contains all the code needed to initialize the index.html page and loads first
 window.onload = async () => {
 
     let res = false;

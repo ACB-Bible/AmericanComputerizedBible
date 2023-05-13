@@ -1,4 +1,4 @@
-//Deferred Loading JS page
+// The lateload.js file is a deferred Loading JS file
 if (typeof window.onbeforeunload === "function") {
     window.onbeforeunload = function () {
         if (localStorage.getItem("loaded")) {localStorage.removeItem("loaded");};

@@ -1,3 +1,4 @@
+//The variables.js file contains all the global variables and loads before all other Javascript links
 //-Do not change mainPath variable url unless the host location changes
 var mainPath = "https://acbible.com/";
 //var mainPath = "./";
