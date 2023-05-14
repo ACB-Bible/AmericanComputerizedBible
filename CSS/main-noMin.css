@@ -14,9 +14,7 @@ body {
     position: fixed;
 }
 
-.cs-acbAbout {
-    display: none;
-}
+.cs-acbAbout { display: none; }
 
 .cs-acbHeader {
     position: fixed;
@@ -36,9 +34,7 @@ body {
     font-size: large;
 }
 
-.cs-acbGold {
-    color: #9e6105
-}
+.cs-acbGold { color: #9e6105 }
 
 .cs-acbTitle {
     position: relative;
@@ -96,11 +92,12 @@ body {
 }
 
 .cs-acbSelectContainer {
+    display: block;
     position: fixed;
     float: Left;
     top: 8%;
     left: 0;
-    width: 13.5%;
+    width: 14.5%;
     height: 100%;
     overflow: hidden;
     box-shadow: 0 5px 7px rgba(112, 111, 111, .25);
@@ -115,17 +112,9 @@ body {
     width: 100%;
 }
 
-.cs-acbBookBox {
-    top: 12%;
-}
-
-.cs-acbChapterBox {
-    top: 22%;
-}
-
-.cs-acbVerseBox {
-    top: 32%;
-}
+.cs-acbBookBox { top: 12%; }
+.cs-acbChapterBox { top: 22%; }
+.cs-acbVerseBox { top: 32%; }
 
 .cs-acbSelectLabel {
     position: relative;
@@ -142,9 +131,7 @@ body {
     margin: auto;
 }
 
-.cs-acbNarrowLabel {
-    width: 78%;
-}
+.cs-acbNarrowLabel { width: 78%; }
 
 .cs-acbInnerSelectBox {
     position: relative;
@@ -256,13 +243,8 @@ body {
     left: 20%;
 }
 
-.cs-acbSortBooks:hover {
-    color: #be1754;
-}
-
-.cs-acbLight {
-    font-size: .8rem;
-}
+.cs-acbSortBooks:hover { color: #be1754; }
+.cs-acbLight { font-size: .8rem; }
 
 .cs-acbPic1 {
     position: fixed;
@@ -388,30 +370,17 @@ body {
     margin: auto;
 }
 
-.cs-acbLE1 {
-    font-size: .9rem;
-}
+.cs-acbLE1 { font-size: .9rem; }
+::selection { background: #aed0fc; }
+.cs-acbCrimson { color: #be1754; }
+.cs-acbMobileHeader { display: none; }
+.cs-acbMenuImg { display: none; }
 
-::selection {
-    background: #aed0fc;
-}
+/*Media Queries*/
 
-.cs-acbCrimson {
-    color: #be1754;
-}
+@media (max-width: 920px) {
 
-.cs-acbMobileHeader {
-    display: none;
-}
-
-.cs-acbMenuImg {
-    display: none;
-}
-
-@media (max-width:768px) {
-    html {
-        font-size: 100%;
-    }
+    html { font-size: 100%; }
 
     .cs-acbHeader {
         top: 9;
@@ -446,6 +415,7 @@ body {
         top: 16.5%;
         left: 0;
         width: 0;
+        width: 65%;
         display: none;
     }
 
@@ -457,9 +427,7 @@ body {
         margin: auto;
     }
 
-    .cs-acbImage1 {
-        display: none
-    }
+    .cs-acbImage1 { display: none }
 
     .cs-acbMission {
         width: 56%;
@@ -467,9 +435,7 @@ body {
         padding-bottom: .5em;
     }
 
-    .cs-acbCopyright {
-        width: 56%;
-    }
+    .cs-acbCopyright { width: 56%; }
 
     .cs-acbMenuBtn {
         position: relative;
@@ -487,21 +453,10 @@ body {
         padding-left: .6em;
     }
 
-    .cs-acbBookSelector {
-        height: 100%;
-    }
-
-    .cs-acbBookList {
-        height: 50%;
-    }
-
-    .cs-acbSelectBookLabel {
-        height: 11.4%;
-    }
-
-    .cs-acbInnerSelector {
-        padding-left: 0;
-    }
+    .cs-acbBookSelector { height: 100%; }
+    .cs-acbBookList { height: 50%; }
+    .cs-acbSelectBookLabel { height: 11.4%; }
+    .cs-acbInnerSelector { padding-left: 0; }
 
     .cs-acbVersion {
         left: 49.5%;
@@ -511,35 +466,26 @@ body {
     }
 }
 
-@media (max-height: 920px) {
+@media (max-width: 768px) {
 
-    .cs-acbHeader {
-        height: 10%;
-    }
-
-    .cs-acbMainText {
-        top: -5%;
-    }
-
-    .cs-acbSelectContainer {
-        top: 11%;
-    }
+    html { font-size: 105%; }
+    .cs-acbHeader { height: 11%; }
+    .cs-acbSelectContainer { top: 12%; }
+    .cs-acbMainContainer { top: 12%; }
 
     .cs-acbVersion {
-        top: 11%;
-        height: 31%;
+        top: 12%;
+        height: 34.5%;
     }
+
 }
 
-@media (max-height: 670px) {
+@media (max-height: 820px) {
 
-    html {
-        font-size: 100%;
-    }
+    html { font-size: 100%; }
 
     .cs-acbHeader {
         top: 9;
-        left: 0;
         height: 13%;
         padding-bottom: .5rem;
     }
@@ -549,9 +495,7 @@ body {
         height: 38%;
     }
 
-    .cs-acbSelectContainer {
-        top: 14.5%;
-    }
+    .cs-acbSelectContainer { top: 14.5%; }
 
     .cs-acbTitle {
         width: 80%;
@@ -568,15 +512,90 @@ body {
     }
 }
 
-@media (max-height: 520px) {
+@media (max-height: 550px) {
 
-    .cs-acbSelectContainer {
-        top: 17%;
-    }
+    .cs-acbSelectContainer { top: 17%; }
 
     .cs-acbVersion {
         top: 17%;
         height: 50%;
+    }
+
+}
+
+@media (height: 514px) and (width: 360px) {
+
+    .cs-acbHeader { height: 16%; }
+    .cs-acbMainContainer { top: 18%; }
+    .cs-acbSelectContainer { top: 17.5%; }
+
+}
+
+@media (height: 1024px) and (width: 768px) {
+
+    .cs-acbHeader { height: 8%; }
+    .cs-acbMainContainer { top: 8%; }
+
+    .cs-acbVersion {
+        top: 8.8%;
+        left: 42%;
+        height: 22%;
+        width: 24%;
+    }
+
+    .cs-acbSelect { padding-left: 2em; }
+
+    .cs-acbSelectContainer {
+        top: 8.8%;
+        width: 40%;
+    }
+
+    .cs-acbSelectBox {
+        left: 0;
+        width: 83%;
+    }
+
+    .cs-acbInnerSelectBox { margin-left: -.8em; }
+    .cs-acbMenuImg { width: 5%; }
+}
+
+@media (height: 1180px) and (width: 820px) {
+
+    .cs-acbHeader { height: 8%; }
+    .cs-acbMainContainer { top: 8%; }
+
+    .cs-acbVersion {
+        top: 8.8%;
+        left: 40%;
+        height: 22%;
+        width: 24%;
+    }
+
+    .cs-acbSelect { padding-left: 2em; }
+    .cs-acbSelectContainer { top: 8.8%; width: 40%; }
+
+    .cs-acbSelectBox {
+        left: 0;
+        width: 82%;
+    }
+
+    .cs-acbInnerSelectBox { margin-left: -.8em; }
+    .cs-acbMenuImg { width: 5%; }
+}
+
+@media (height: 1368px) and (width: 912px) {
+    .cs-acbHeader { height: 8%; }
+    .cs-acbSelectContainer { top: 8.8%; width: 40%;}
+    .cs-acbMenuImg { width: 5%; }
+    .cs-acbMainContainer { top: 11%; }
+    .cs-acbSelectLabel { height: 12%;}
+    .cs-acbSelectBookLabel { height: 8%; }
+
+    .cs-acbVersion {
+        top: 8.8%;
+        left: 38%;
+        height: 22%;
+        width: 24%;
     }
 
 }

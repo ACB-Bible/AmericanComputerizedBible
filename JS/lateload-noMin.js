@@ -1,7 +1,7 @@
-// The lateload.js file is a deferred Loading JS file
+//Deferred Loading JS page
 if (typeof window.onbeforeunload === "function") {
     window.onbeforeunload = function () {
-        if (localStorage.getItem("loaded")) {localStorage.removeItem("loaded");};
+        if (localStorage.getItem("loaded")) { localStorage.removeItem("loaded"); };
     };
 };
 
@@ -262,7 +262,7 @@ function acbOpenClose() {
                 verseOpen = 1;
                 break;
             case "id-acbBtn3":
-            case "id-acbBtn3":
+                if (mobileMenuOpen) { return; };
                 acbOpenBox('id-acbVersionList');
                 acbScroll("id-acbInnerVersion");
                 versionOpen = 1;
@@ -347,7 +347,7 @@ async function acbSetOldTestament() {
     res = await acbLoadBooks(oldBooks);
     acbLoadChapter();
     acbLoadVerses(1, 1);
-    if (res) {acbLoadText(1, 1)};
+    if (res) { acbLoadText(1, 1) };
     document.getElementById(chapterClicked).style.color = "crimson";
     document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     document.getElementById('id-acbBody').scrollTo(0, 0);
@@ -394,11 +394,11 @@ function acbSortBooks() {
 function acbMobileMenu() {
     if (mobileMenuOpen) {
         document.getElementById('id-acbSelectContainer').style.display = 'none';
-        document.getElementById('id-acbSelectContainer').style.width = "0";
+        //document.getElementById('id-acbSelectContainer').style.width = "0";
         mobileMenuOpen = false;
     } else {
         document.getElementById('id-acbSelectContainer').style.display = 'block';
-        document.getElementById('id-acbSelectContainer').style.width = '65%';
+        //document.getElementById('id-acbSelectContainer').style.width = '65%';
         mobileMenuOpen = true;
     };
 };
