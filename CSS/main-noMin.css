@@ -511,31 +511,46 @@ body {
     }
 }
 
-@media (max-height: 525px) {
+@media (max-height: 920px) {
+
+    .cs-acbHeader {
+        height: 10%;
+    }
+
+    .cs-acbMainText {
+        top: -5%;
+    }
+
+    .cs-acbSelectContainer {
+        top: 11%;
+    }
+
+    .cs-acbVersion {
+        top: 11%;
+        height: 31%;
+    }
+}
+
+@media (max-height: 670px) {
 
     html {
         font-size: 100%;
     }
 
-    .cs-acbMobileHeader {
-        display: inline-block;
-        position: fixed;
-        left: 0;
-        top: 0;
-        background-color: #ecf0f7;
-    }
-
-    .cs-acbMobileTitle {
-        width: 80%;
-        margin: auto;
-        font-size: 1.2rem;
-    }
-
     .cs-acbHeader {
         top: 9;
         left: 0;
-        height: 15%;
+        height: 13%;
         padding-bottom: .5rem;
+    }
+
+    .cs-acbVersion {
+        top: 14.5%;
+        height: 38%;
+    }
+
+    .cs-acbSelectContainer {
+        top: 14.5%;
     }
 
     .cs-acbTitle {
@@ -551,4 +566,17 @@ body {
         top: .3rem;
         width: 90%;
     }
+}
+
+@media (max-height: 520px) {
+
+    .cs-acbSelectContainer {
+        top: 17%;
+    }
+
+    .cs-acbVersion {
+        top: 17%;
+        height: 50%;
+    }
+
 }
