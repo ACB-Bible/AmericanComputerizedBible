@@ -522,15 +522,6 @@ body {
 
 }
 
-@media (height: 569px) and (width: 320px) {
-
-    .cs-acbHeader { height: 14%; }
-    .cs-acbTitle { font-size: .98rem; }
-    .cs-acbMainContainer { top: 16%; margin-left: -.75em;}
-    .cs-acbSelectContainer { top: 15.5%; }
-    .cs-acbVersion { top: 15.8%; }
-}
-
 @media (height: 1024px) and (width: 768px) {
 
     .cs-acbHeader { height: 8%; }
@@ -619,4 +610,13 @@ body {
     .cs-acbVersion { left: 55%; width: 32%; height: 40.5%; }
     .cs-acbMenuImg { width: 8%; }
     .cs-acbSelectContainer { width: 38%;}
+}
+
+@media (height: 569px) and (width: 320px) {
+
+    .cs-acbHeader { height: 14%; }
+    .cs-acbTitle { font-size: .98rem; }
+    .cs-acbMainContainer { top: 16%; margin-left: -.75em;}
+    .cs-acbSelectContainer { top: 15.5%; }
+    .cs-acbVersion { top: 15.8%; }
 }
