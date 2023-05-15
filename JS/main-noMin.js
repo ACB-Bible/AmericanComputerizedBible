@@ -10,6 +10,7 @@ window.onload = async () => {
         document.getElementById(chapterClicked).style.color = "crimson";
         document.getElementById(chapterClicked).style.backgroundColor = "rgba(112, 111, 111, 0.25)";
     };
+    document.getElementById('id-acbIntro').textContent = "American Computerized Bible";
 };
 
 async function acbStartVerses(bid, cn) {
