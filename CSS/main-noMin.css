@@ -239,12 +239,11 @@ body {
     color: rgb(73, 73, 73);
     padding: .35em;
     padding-bottom: .35em;
-    font-size: .60em;
+    font-size: .8em;
     left: 20%;
 }
 
 .cs-acbSortBooks:hover { color: #be1754; }
-.cs-acbLight { font-size: .8rem; }
 
 .cs-acbPic1 {
     position: fixed;
@@ -334,7 +333,6 @@ body {
 
 .cs-acbMission:hover {
     cursor: pointer;
-    color: rgb(176, 184, 184);
     color: #ecf0f7;
     font-weight: 550;
 }

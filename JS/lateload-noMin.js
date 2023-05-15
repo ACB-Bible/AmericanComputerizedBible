@@ -394,11 +394,11 @@ function acbSortBooks() {
 function acbMobileMenu() {
     if (mobileMenuOpen) {
         document.getElementById('id-acbSelectContainer').style.display = 'none';
-        //document.getElementById('id-acbSelectContainer').style.width = "0";
+        document.getElementById('id-acbFixedPanel2').style.display = 'none';
         mobileMenuOpen = false;
     } else {
         document.getElementById('id-acbSelectContainer').style.display = 'block';
-        //document.getElementById('id-acbSelectContainer').style.width = '65%';
+        document.getElementById('id-acbFixedPanel2').style.display = 'block';
         mobileMenuOpen = true;
     };
 };
