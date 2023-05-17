@@ -250,7 +250,7 @@ body {
     top: 25.8%;
     left: 81%;
     float: right;
-    width: 13.5%;
+    width: 12.15%;
     height: 36%;
 }
 
@@ -307,6 +307,20 @@ body {
     padding-right: .15em;
     color: #9e6105;
     vertical-align: .15em;
+}
+
+.cs-acbFirstNumber {
+    display: block;
+    float: left;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-right: .15em;
+    margin-top: .15em;
+    padding-right: .15em;
+    padding: .15em;
+    padding-top: .1;
+    color: white;
+    background-color: navy;
 }
 
 .cs-acbLink {
@@ -507,6 +521,10 @@ body {
         display: flex;
         top: .3rem;
         width: 90%;
+    }
+
+    .cs-acbFirstNumber {
+        margin-top: .1em;
     }
 }
 

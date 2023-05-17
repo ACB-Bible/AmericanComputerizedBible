@@ -77,13 +77,11 @@ async function acbLoadText(bid, cn) {
     p.id = `id-acbP${pIndx}`;
     p.addEventListener("click", acbClickedP, true);
     document.getElementById('id-acbMainText').appendChild(p);
-    let img = document.createElement("img");
-    img.src = "./IMAGES/open.webp";
-    img.alt = "First Verse";
-    img.classList = "cs-acbImage2";
-    img.setAttribute('async', true);
-    img.setAttribute('loading', 'lazy');
-    document.getElementById(`id-acbP0`).appendChild(img);
+
+    let sp = document.createElement("span");
+    sp.textContent = '1';
+    sp.classList = "cs-acbFirstNumber";
+    document.getElementById(`id-acbP0`).appendChild(sp);
 
     let i = verses.findIndex(vrs => vrs.bid === bid && vrs.cn === cn);
     if (verses[i].pn === 0) {
@@ -102,7 +100,7 @@ async function acbLoadText(bid, cn) {
                 newLine = 0;
             };
 
-            let sp = document.createElement("span");
+            sp = document.createElement("span");
             if (verses[i].vn !== 1) { sp.textContent = verses[i].vn };
             sp.id = `id-acbSP${verses[i].vn}`;
             sp.classList.add('cs-acbNumber');
