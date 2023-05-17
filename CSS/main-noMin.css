@@ -245,7 +245,7 @@ body {
 
 .cs-acbSortBooks:hover { color: #be1754; }
 
-.cs-acbPic1 {
+.cs-acbPic {
     position: fixed;
     top: 25.8%;
     left: 81%;
@@ -259,14 +259,6 @@ body {
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-}
-
-.cs-acbImage2 {
-    position: relative;
-    top: .3em;
-    height: 3rem;
-    float: left;
-    margin-right: .5em;
 }
 
 .cs-acbMainText {
