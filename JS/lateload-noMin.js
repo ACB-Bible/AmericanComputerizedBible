@@ -206,7 +206,8 @@ function acbGoToVerse(e) {
     acbCloseBox();
     if (mobileMenuOpen) {
         document.getElementById('id-acbSelectContainer').style.display = 'none';
-        document.getElementById('id-acbSelectContainer').style.width = "0";
+        //document.getElementById('id-acbSelectContainer').style.width = "0";
+        document.getElementById('id-acbFixedPanel2').style.display = 'none';
         mobileMenuOpen = false;
     }
     document.getElementById(`${id}-2`).style.backgroundColor = "#aed0fc";
@@ -390,6 +391,7 @@ function acbSortBooks() {
 };
 
 function acbMobileMenu() {
+
     if (mobileMenuOpen) {
         document.getElementById('id-acbSelectContainer').style.display = 'none';
         document.getElementById('id-acbFixedPanel2').style.display = 'none';
