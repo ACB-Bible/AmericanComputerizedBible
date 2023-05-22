@@ -254,12 +254,29 @@ body {
     height: 36%;
 }
 
-.cs-acbImage1 {
+.cs-acbImage {
     width: 100%;
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
+
+
+.cs-acbLE {
+    display: block;
+    position: relative;
+    top: 86%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-family: Tahoma;
+    font-size: 1.2rem;
+    height: 12%;
+    width: 80%;
+    margin: auto;
+}
+
+
 
 .cs-acbMainText {
     position: relative;
@@ -360,21 +377,7 @@ body {
     font-weight: 550;
 }
 
-.cs-acbLE {
-    display: block;
-    position: relative;
-    top: 86%;
-    color: white;
-    text-align: center;
-    align-items: center;
-    font-family: Tahoma;
-    font-size: 1.2rem;
-    height: 12%;
-    width: 80%;
-    margin: auto;
-}
-
-.cs-acbLE1 { font-size: .9rem; }
+.cs-acbSP { font-size: .9rem; }
 ::selection { background: #aed0fc; }
 .cs-acbCrimson { color: #be1754; }
 .cs-acbMobileHeader { display: none; }
