@@ -206,7 +206,6 @@ function acbGoToVerse(e) {
     acbCloseBox();
     if (mobileMenuOpen) {
         document.getElementById('id-acbSelectContainer').style.display = 'none';
-        //document.getElementById('id-acbSelectContainer').style.width = "0";
         document.getElementById('id-acbFixedPanel2').style.display = 'none';
         mobileMenuOpen = false;
     }

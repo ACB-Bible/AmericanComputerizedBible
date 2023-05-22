@@ -12,41 +12,41 @@ body {
     overflow-x: auto
 }
 
-h2 {
-    width: 35%;
-    margin: auto
-}
-
+h2,
 h4 {
-    width: 13%;
-    margin: auto
+    width: 35%;
+    margin: auto;
+    text-align: center;
 }
 
 .cs-acbMain {
     position: relative;
     width: 70%;
-    margin: auto
+    margin: auto;
 }
 
 .cs-acbParagraph {
     width: 62%;
     margin: auto;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     text-align: justify;
     word-break: keep-all;
     padding-bottom: 1em
 }
 
 .cs-acbParagraph1 {
-    width: 48%
+    width: 48%;
+    text-align: center;
 }
 
 cs-acbCenter {
     text-align: center
 }
 
-.cs-acbItalic {
-    font-style: italic;
+.cs-acbEmph {
+    /*font-style: italic;*/
+    font-weight: 550;
+    font-size: 1.09rem;
 }
 
 .cs-acbSignature {
@@ -76,7 +76,6 @@ cs-acbCenter {
 }
 
 .cs-acbCrimson {
-    color: crimson;
     color: #be1754;
     font-size: .9rem;
     font-weight: 600
@@ -115,15 +114,27 @@ cs-acbCenter {
 }
 
 .cs-acbImage1 {
+    position: fixed;
+    left: 10%;
+    top: 15%;
+    height: 4.5%;
+    width: 2.25%
+}
+
+.cs-acbLink1:hover,
+.cs-acbImage1:hover {
+    cursor: pointer;
+    height: 7%;
+    width: 3.5%;
+    margin-top: -.4%;
+    margin-left: -.35%;
+}
+
+.cs-acbImage2 {
     width: 100%;
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px
-}
-
-.cs-acbImage2 {
-    height: 50%;
-    width: 75%
 }
 
 .cs-imgBack {
@@ -183,4 +194,64 @@ a {
 
 .cs-acbLE1 {
     font-size: .9rem
+}
+
+.cs-acbHide {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 1420px) {
+    .cs-acbHide {
+        display: block;
+    }
+}
+
+@media (max-width: 419px) {
+    html {
+        font-size: 90%;
+    }
+
+    h2,
+    h4 {
+        width: 93%;
+    }
+
+    .cs-acbHide {
+        display: block;
+    }
+
+    .cs-acbMain {
+        position: relative;
+        left: -3%;
+        top: -6%;
+        width: 98%;
+    }
+
+    .cs-acbPic1,
+    .cs-acbImage1,
+    .cs-acbImage2 {
+        display: none;
+    }
+
+    .cs-acbParagraph {
+        width: 88%;
+    }
+
+    #id-acbParagraph3 {
+        font-size: 1.3rem;
+    }
+
+    .cs-acbCopyright {
+        width: 70%;
+    }
+
+    .cs-acbSignature {
+        font-size: 1rem;
+    }
+
+    .cs-acbStatement {
+        text-align: justify;
+        word-break: keep-all;
+    }
 }
