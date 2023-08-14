@@ -368,12 +368,6 @@ body {
     color: #9e6105;
 }
 
-.cs-acbCopyright:hover {
-    cursor: pointer;
-    color: rgb(73, 73, 73);
-    font-weight: 550;
-}
-
 .cs-acbSP { font-size: .9rem; }
 ::selection { background: #aed0fc; }
 .cs-acbCrimson { color: #be1754; }
