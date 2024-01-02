@@ -5,6 +5,7 @@ The "American Computerized Bible" Project is an online bible project that offers
 
 1. [BibleDB Project](https://github.com/ACB-Bible/BibleDB)
 2. [New Christian Bible Project](https://github.com/ACB-Bible/NCB)
+3. [Project Documentation](https://github.com/ACB-Bible/BibleDB/tree/main/Documentation) - Documentation for all projects.
 
 ---
 
