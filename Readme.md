@@ -15,9 +15,8 @@ The "Bible Code" GitHub repositories that are actively being developed.
 2. [New Christian Bible Project](https://github.com/ACB-Bible/NCB) - The "New Christian Bible" is a project with complete CSS, HTML, Javascript source code, and Json file  examples that use data from the "BibleDB" project for developing an online Bible.
 3. [Bible Code Documentation](https://github.com/ACB-Bible/DOC) - Complete documentation for all "Bible Code" projects.
 
-The operational webpages can be viewed here.
+Operational webpages can be viewed here:
 1.  [ACB Webpage](https://acbible.com)
-2.  [NCB Webpage](https://acbible.com)
 
 [Back to Top](#top)
 
